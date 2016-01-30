@@ -1,0 +1,263 @@
+---
+title: "Theme 1: Growth"
+author: "Stefano Allesina"
+date: ""
+runtime: shiny
+
+output: 
+  ioslides_presentation:
+    widescreen: yes
+    smaller: true
+---
+
+## Organization of the class
+
+- **5 weeks**
+- Each week, we pick **a theme** 
+- We explore **data**, **concepts**, and **mathematical models** on the theme
+- We stress **ecological thinking**
+
+You can find all the material (slides, data, code, papers) on the website for the class
+
+[**github.com/StefanoAllesina/Bios20150**](https://github.com/StefanoAllesina/Bios20150)
+
+
+## Theme 1: Growth
+<div class="centered">
+**How many people are on Earth?** 
+</div>
+
+<div class="centered">
+**How many people can the Earth support?**
+</div>
+
+<div class="centered">
+**Can we model the growth of populations?**
+</div>
+
+## Human growth: historical time series
+
+```{r echo = FALSE}
+sliderInput(
+  "range_years", 
+  label = "Years",
+  min = -1000, 
+  max = 2100, value = c(-1000, 2100))
+```
+```{r echo = FALSE}
+library(ggplot2)
+library(ggthemes)
+library(grid)
+library(gridExtra)
+
+renderPlot(height = 400, {
+    human_pop <- read.csv("../../data/theme_1/world_population.csv", stringsAsFactors = FALSE)
+    min_max <- input$range_years
+    to_draw <- human_pop[(human_pop$year >= min_max[1]) & (human_pop$year <= min_max[2]),]
+    if (dim(to_draw)[1] <= 2){
+      to_draw <- human_pop
+    }
+    # by default only plot the population
+    pl <- ggplot(to_draw, aes(x = year, y = world_population, colour = reference)) + 
+      geom_point() + 
+      geom_line() + 
+      scale_x_continuous("Year",  limits = min_max) + 
+      scale_y_log10("Population (millions)") + 
+      theme_bw() + 
+      theme(legend.title=element_blank()) + 
+      theme(legend.position = "top")
+    print(pl)
+})
+```
+
+## Why do we care?
+
+## Estimates for 2100
+
+
+## Fibonacci
+
+Leonardo da Pisa (a.k.a. Fibonacci) was the son of a trader from Pisa. 
+In 1192, he followed his father to Bejaia, Algeria, where he studied
+the number systems the Arabs had brought from India. This is the decimal
+system we use today.
+
+In 1202 he published the *Liber Abaci* where he introduced the number system
+that rapidly spread through Europe. The book contains a problem on the growth
+of the growth of rabbits, giving raise to the famous Fibonacci's sequence.
+
+<div class="centered">
+![pair](./images/liber_abaci.jpg)
+</div>
+
+## Rabbits {.build}
+Take a couple of rabbits.
+<div class="centered">
+![pair](./images/fib1.jpg)
+</div>
+They're fully grown in one month.
+<div class="centered">
+![pair](./images/fib2.jpg)
+</div>
+The next month they reproduce: a new pair of rabbits!
+<div class="centered">
+![pair](./images/fib2.jpg) ![pair](./images/fib1.jpg)
+</div>
+They reproduce again, while their offspring matures:
+<div class="centered">
+![pair](./images/fib2.jpg) ![pair](./images/fib2.jpg) ![pair](./images/fib1.jpg)
+</div>
+
+## Many rabbits!
+
+In a few years, the Earth would be scorched by hordes of rabbits!
+
+$N_t = N_{t-1} + N_{t - 2}$
+
+```{r echo = FALSE}
+nmonths <- 50
+months <- 1:nmonths
+rabbits <- rep(0, nmonths)
+rabbits[1:2] <- c(1,1)
+for (i in 3:nmonths) rabbits[i] <- rabbits[i - 1] + rabbits[i - 2]
+
+mytable <- matrix(0, 2, nmonths)
+mytable[1, ] <- months
+mytable[2, ] <- rabbits
+rownames(mytable) <- c("Months", "Pairs")
+colnames(mytable) <- NULL
+print(mytable[,1:12])
+
+library(ggplot2)
+plrabbits <- ggplot(data = data.frame("Months" = months, "Pairs" = rabbits), aes(x = Months, y = Pairs)) + 
+  geom_point(size = 3) + geom_line() + 
+  scale_y_log10() + 
+  theme_bw() + 
+  theme(legend.title=element_blank()) + 
+  theme(legend.position = "top") + 
+  theme(axis.text=element_text(size=14, face="bold"),
+  axis.title=element_text(size=14, face="bold"))
+renderPlot(height = 270,
+print(plrabbits)
+)
+```
+
+## Geometric growth
+
+The Swiss mathematician Euler (1707-1783) has left an indelible mark on science, publishing fundamental works in a number of mathematical disciplines. He became interested in the growth of populations because of what he read (and believed) in the Bible:
+
+*These three were the sons of Noah; and from these the whole earth was peopled* (Genesis 9:19)
+
+How long would it take to the sons of Noah to "people" the Earth? Euler considered the following model:
+
+$N_t = (1 + x)N_{t-1}$
+
+The number $x$ is called the *annual growth rate* of the population. Starting from a certain population size (i.e., knowing $N_0$), we can project forward:
+
+$N_1 = (1 + x) N_0$
+
+$N_2 = (1 + x) N_1 = (1 + x)^2 N_0$
+
+$N_3 = (1 + x) N_2 = (1 + x)^3 N_0$
+
+$\ldots$
+
+## Geometric growth
+
+In his treatise *Introduction to the Analysis of the Infinite* (1748), Euler wrote:
+
+*Since after the Flood all men descended from a population of six, if we suppose that the population after two hundred years was 1,000,000, we would like to find the annual rate of growth.*
+
+Mathematically, you want to solve for $x$:
+
+$N_{200} = (1 + x)^{200} N_0$
+
+$10^6 = (1 + x)^{200} 6$
+
+This sounds very easy to solve, but it is not, if you don't have a calculator! Euler exploited a very recent invention, the table of logarithms (introduced by Napier in 1614):
+
+$\log_{10} (10^6) = \log_{10}((1 + x)^{200} 6)$
+
+$(6 - log_{10}(6)) / 200 = \log_{10} (1 + x)$
+
+yielding $x \approx 0.0619$, meaning about $6.2\%$ per year. Not an unrealistic result according to Euler, who concluded:
+
+*For this reason, it is quite ridiculous for the incredulous to object that in such a short space of time the whole earth could not be populated beginning with a single man*
+
+## Geometric growth?
+
+Interestingly, Euler repeated his calculation projecting forward of 400 years (instead of 200), and found that it would lead to more that 166 billion humans. He noted:
+
+*However, the whole earth would never be able to sustain that population.*
+
+Hold this thought, as we're going to explore it later.
+
+## Just how fast is geometric growth?
+
+Meet *Escherichia coli*, a Gram-negative bacterium that lives in your intestine (and in many other places). Some strains of *E. coli* can cause serious food poisoning.
+
+<div class="centered">
+![ecoli](./images/EscherichiaColi.jpg) 
+</div>
+
+Under ideal conditions, it can reproduce every 20 minutes (72 times per day). Each cell weighs about $10^{-15}$kg.
+
+We can write an equation for the mass of a population of *E. coli*, starting with a single bacterium, at time $d$ days:
+
+$M_d = M_0 2^{72 d}$
+
+and project forward
+
+## *E. coli* colony growth
+
+```{r echo = FALSE}
+mass_earth <- 5.9721986 * 10^24
+mass_sun <- 1.988435 *10^30
+mass_solar <- 1.9912 * 10^30 
+mass_universe <- 3.4 * 10^54
+mass_you <- 70
+m0 <- 10^(-12)
+lm0 <- log(m0)
+step <- 1 / 72
+times <- seq(0, 3, by = step)
+dfcoli <- data.frame(time = times, mass = exp(72 * times * log(2) + lm0))
+require(ggplot2)
+plcoli <- ggplot(dfcoli, aes(x = time, y = mass)) + 
+  geom_line(colour = "red", size = 2) + 
+  scale_y_log10("Mass (kg)") + 
+  scale_x_continuous("days") +
+  geom_hline(yintercept = mass_you, colour = "black", linetype="dashed") + 
+  annotate("text", x = 0.5, y = 1000, label = "you") + 
+  geom_hline(yintercept = mass_earth, colour = "black", linetype="dashed") + 
+  annotate("text", x = 0.5, y = 10^23, label = "mass of the Earth") + 
+  geom_hline(yintercept = mass_sun, colour = "black", linetype="dashed") + 
+  annotate("text", x = 0.5, y = 10^33, label = "mass of the Sun") + 
+  geom_hline(yintercept = mass_universe, colour = "black", linetype="dashed") + 
+  annotate("text", x = 0.5, y = 10^52, label = "mass of the visible universe") + 
+  theme_bw() + 
+  theme(legend.title=element_blank()) + 
+  theme(legend.position = "top") + 
+  theme(axis.text=element_text(size=14, face="bold"), 
+  axis.title=element_text(size=14, face="bold"))
+renderPlot(height = 500,
+print(plcoli))
+```
+
+## What about continuously reproducing organisms?
+
+Continuous growth
+
+## Population structure
+
+
+## First law of ecology
+
+If left unchecked, populations will grow very fast!
+
+## Correcting: logistic growth
+
+## A model
+
+
+
+
