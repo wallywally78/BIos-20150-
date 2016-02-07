@@ -49,6 +49,7 @@ library(ggplot2)
 library(ggthemes)
 library(grid)
 library(gridExtra)
+library(scales)
 
 renderPlot(height = 400, {
     human_pop <- read.csv("../../data/theme_1/world_population.csv", stringsAsFactors = FALSE)
@@ -71,6 +72,34 @@ renderPlot(height = 400, {
 ```
 
 ## Why do we care?
+```{r echo = FALSE}
+renderPlot(height = 400, {
+  human_pop <- read.csv("../../data/theme_1/world_population.csv", stringsAsFactors = FALSE)
+pl_zoom_human <- ggplot(human_pop, aes(x = year, y = world_population, colour = reference)) + 
+      geom_point() + 
+      geom_line() + 
+      scale_x_continuous("Year",  limits = c(1800, 2011)) + 
+      scale_y_continuous("Population (millions)") + 
+      theme_bw() + 
+      theme(legend.title=element_blank()) + 
+      theme(legend.position = "top")
+    print(pl_zoom_human)})
+```
+
+## Why do we care?
+```{r echo = FALSE}
+carbon <- read.csv("../../data/theme_1/carbon.csv")
+renderPlot(height = 400, {
+pl_zoom_carbon <- ggplot(carbon, aes(x = year, y = carbon)) + 
+      geom_point() + 
+      geom_line() + 
+      scale_x_continuous("Year",  limits = c(1800, 2011)) + 
+      scale_y_continuous("Carbon emission (Million metric tons)") + 
+      theme_bw() + 
+      theme(legend.title=element_blank()) + 
+      theme(legend.position = "top")
+    print(pl_zoom_carbon)})
+```
 
 ## Estimates for 2100
 
@@ -243,9 +272,40 @@ renderPlot(height = 500,
 print(plcoli))
 ```
 
-## What about continuously reproducing organisms?
+## Synchronized births
 
-Continuous growth
+- Reproduction is synchronized in many animals
+
+- Besides obvious seasonal effects, there might be more subtle causes leading to clustering in births
+
+- These include phenological (i.e., pollinators hatch when plants are flowering), ecological (e.g., escape predators), and sociobiological (e.g., cooperative breeders)
+
+- One of the most amazing cases is that of the banded mongoose (*Mungos mungo*): within a group, 64% of the births happen in the same night! (The reason for this is not very romantic: read Hodge *et al.* 2010)
+
+<div class="centered">
+![mungo](./images/mongoose.jpg) 
+</div>
+
+## Births by day in US 1969-88 (50 states and DC)
+```{r echo = FALSE}
+num_births_by_day <- read.csv("../../data/theme_1/births_69_88.csv")
+birthdays <- as.Date(paste(num_births_by_day$month, num_births_by_day$day, "1969"), "%m %d %Y")
+pl_birthdays <- ggplot(data = data.frame(date_b = as.Date(birthdays), 
+                                         number_of_births = num_births_by_day$births), 
+                       aes(x = date_b, y = number_of_births)) + 
+  geom_point() + 
+  theme_bw() + 
+  theme(axis.text=element_text(size=14, face="bold"), axis.title=element_text(size=14, face="bold")) +
+  scale_x_date("", labels = date_format("%b")) + 
+  scale_y_continuous("Number of births (1969-1988)") + 
+  annotate("text", x = birthdays[185], y = 175000, label = "Fourth of July", colour = "blue") + 
+  annotate("text", x = birthdays[5], y = 162000, label = "New Year", colour = "blue") + 
+  annotate("text", x = birthdays[359], y = 155000, label = "Xmas", colour = "blue") + 
+  annotate("text", x = birthdays[259], y = 215000, label = "38 weeks after Xmas", colour = "blue") 
+renderPlot(height = 450,
+print(pl_birthdays))
+```
+
 
 ## Population structure
 
