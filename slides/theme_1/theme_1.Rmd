@@ -102,7 +102,9 @@ pl_zoom_carbon <- ggplot(carbon, aes(x = year, y = carbon)) +
 ```
 
 ## Estimates for 2100
-
+<div class="centered">
+<img src="./images/World-Population-1800-2100.svg" alt="worldpopestimates" height="500">
+</div>
 
 ## Fibonacci
 
@@ -116,7 +118,7 @@ that rapidly spread through Europe. The book contains a problem on the growth
 of the growth of rabbits, giving raise to the famous Fibonacci's sequence.
 
 <div class="centered">
-![pair](./images/liber_abaci.jpg)
+![abaci](./images/liber_abaci.jpg)
 </div>
 
 ## Rabbits {.build}
@@ -290,6 +292,23 @@ print(plcoli))
 ```{r echo = FALSE}
 num_births_by_day <- read.csv("../../data/theme_1/births_69_88.csv")
 birthdays <- as.Date(paste(num_births_by_day$month, num_births_by_day$day, "1969"), "%m %d %Y")
+pl_birthdays_nohigh <- ggplot(data = data.frame(date_b = as.Date(birthdays), 
+                                         number_of_births = num_births_by_day$births), 
+                       aes(x = date_b, y = number_of_births)) + 
+  geom_point() + 
+  theme_bw() + 
+  theme(axis.text=element_text(size=14, face="bold"), axis.title=element_text(size=14, face="bold")) +
+  scale_x_date("", labels = date_format("%b")) + 
+  scale_y_continuous("Number of births (1969-1988)") 
+renderPlot(height = 450,
+print(pl_birthdays_nohigh))
+```
+
+
+## Births by day in US 1969-88 (50 states and DC)
+```{r echo = FALSE}
+num_births_by_day <- read.csv("../../data/theme_1/births_69_88.csv")
+birthdays <- as.Date(paste(num_births_by_day$month, num_births_by_day$day, "1969"), "%m %d %Y")
 pl_birthdays <- ggplot(data = data.frame(date_b = as.Date(birthdays), 
                                          number_of_births = num_births_by_day$births), 
                        aes(x = date_b, y = number_of_births)) + 
@@ -306,13 +325,88 @@ renderPlot(height = 450,
 print(pl_birthdays))
 ```
 
+## Continuous growth
 
-## Population structure
+$\Delta N = N_(t + \Delta t) - N_t$
 
+$N_(t + \Delta t) = N_t (1 + x)$
+
+$\Delta N = x N_t$
+
+## Exponential growth
+
+Define initial population $X(0) = X_0$. 
+
+We model the **growth rate** of the population as:
+
+$\dfrac{d X(t)}{d t} = r X(t)$
+
+**Meaning:**
+
+- $\dfrac{d X(t)}{d t}$ growth rate of population at time $t$. [units: Kg / time]
+
+- $X(t)$ biomass (alternatively number of individuals, density per square Km, etc.) at time $t$. [units: Kg]
+
+- $r$ intrinsic growth rate [units: 1 / time]. $r>0$ means the population grows, $r<0$ shrinks, $r=0$ is constant.
+
+**Solution:**
+
+$X(t) = X(0) e^{r t}$
+
+- $e$ is Euler's number $2.718281828459045235360287471352...$
+
+## Doubling time
+
+How long before the population doubles in size?
+
+$X(\tau) = 2 X(0)$
+
+$X(\tau) = X(0) e^{r \tau} = 2 X(0)$
+
+Independent of $X(0)>0$!
+
+$e^{r \tau} = 2$
+
+$r \tau = \log(2)$
+
+$\tau = \frac{log(2)}{r} = \frac{0.301029995...}{r}$
+
+Thus, if $r = 0.01$, then the population doubles every 30 years or so; $r = 0.05$, every 6 years; and so on.
+
+## Halving time and carbon dating
+
+Unstable atoms release energy through radioactive decay. This process is random, and, at the level of the single atom, cannot be predicted. However, we can measure statistically  the rate at which atoms decay. The Carbon isotope $\mathrm{^{14}C}$ is formed in the athmosphere when cosmic rays strike Nitrogen atoms:
+
+$n + \mathrm{^{14}_{7}N} \rightarrow \mathrm{^{14}_{6}C} + p$
+
+Radioactive carbon forms $\mathrm{CO}_2$ that is used by plants. Animals eat plants, etc. so that it is widely distributed in the biosphere. When an organism dies, it stops acquiring  $\mathrm{^{14}_{6}C}$. In the athmosphere/living organisms, there are about $1.5$ atoms of $\mathrm{^{14}C}$ for every $10^{12}$ of $\mathrm{^{12}C}$. The radioactive carbon loses an electron, and changes a proton into a neutron by emitting an electron antineutrino, resulting in Nitrogen. 
+
+$\mathrm{~^{14}_{6}C}\rightarrow\mathrm{~^{14}_{7}N}+ e^- + \bar{\nu}_e$
+
+In about 5730 years, half of the radioactive carbon has decayed. Hence, $r = -log(2)/5730 = 0.000052535...$. If a tissue has only $0.75$ parts of $\mathrm{^{14}C}$ for every $10^{12}$ of $\mathrm{^{12}C}$, the tissue is 5730 years old. A proportion of of $0.25 / 10^{12}$ would yield 34380 years, and so forth.
+
+This method was proposed by Willard Libby (UofC) and collaborators in 1949. They were awarded the Nobel prize in 1960.
 
 ## First law of ecology
+<div class="centered">
+<h4>If left unchecked, populations will grow/decay very fast!</h4>
+</div>
+**Rabbits (again) **
 
-If left unchecked, populations will grow very fast!
+- Lore has it, Thomas Austin released 24 rabbits in his property near Victoria (Australia) in 1859
+
+- By 1886, the population had covered Victoria and New South Wales.
+
+- In the 1920s, they were billions.
+
+- Efforts to contain rabbits included building three rabbit-proof fences (failed), releasing the virus for mixomatosis and rabbit  haemorrhagic disease. Read Bergstrom *et al.* 2009 for a detailed account on Macquarie Island in Tasmania.
+
+<div class="centered">
+<img src="./images/rabbits-mixo.jpg" alt="rabbitsmixo" height="200">
+</div>
+
+
+
 
 ## Correcting: logistic growth
 
