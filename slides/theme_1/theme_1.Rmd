@@ -21,19 +21,20 @@ You can find all the material (slides, data, code, papers) on the website for th
 
 [**github.com/StefanoAllesina/Bios20150**](https://github.com/StefanoAllesina/Bios20150)
 
-
 ## Theme 1: Growth
+
 <div class="centered">
-**How many people are on Earth?** 
+<h2>How many people can the Earth support?</h2>
 </div>
 
 <div class="centered">
-**How many people can the Earth support?**
+<h2> </h2>
 </div>
 
 <div class="centered">
-**Can we model the growth of populations?**
+**I was ever of opinion, that the honest man who married and brought up a large family, did more service than he who continued single, and only talked of population.** *The Vicar of Wakefield (1776) by Oliver Goldsmith*
 </div>
+
 
 ## Human growth: historical time series
 
@@ -108,7 +109,7 @@ pl_zoom_carbon <- ggplot(carbon, aes(x = year, y = carbon)) +
 
 ## Fibonacci
 
-Leonardo da Pisa (a.k.a. Fibonacci) was the son of a trader from Pisa. 
+Leonardo Pisano (a.k.a. Fibonacci) was the son of a trader from Pisa. 
 In 1192, he followed his father to Bejaia, Algeria, where he studied
 the number systems the Arabs had brought from India. This is the decimal
 system we use today.
@@ -181,9 +182,9 @@ The Swiss mathematician Euler (1707-1783) has left an indelible mark on science,
 
 How long would it take to the sons of Noah to "people" the Earth? Euler considered the following model:
 
-$N_t = (1 + x)N_{t-1}$
+$N_t = (1 + x) N_{t-1}$
 
-The number $x$ is called the *annual growth rate* of the population. Starting from a certain population size (i.e., knowing $N_0$), we can project forward:
+$x$ is called the *annual growth rate* of the population. Starting from a certain population size (i.e., knowing $N_0$), we can project forward:
 
 $N_1 = (1 + x) N_0$
 
@@ -205,7 +206,7 @@ $N_{200} = (1 + x)^{200} N_0$
 
 $10^6 = (1 + x)^{200} 6$
 
-This sounds very easy to solve, but it is not, if you don't have a calculator! Euler exploited a very recent invention, the table of logarithms (introduced by Napier in 1614):
+This looks very easy to solve, but it is not, if you don't have a calculator! Euler exploited a very recent invention, the table of logarithms (introduced by Napier in 1614):
 
 $\log_{10} (10^6) = \log_{10}((1 + x)^{200} 6)$
 
@@ -276,13 +277,13 @@ print(plcoli))
 
 ## Synchronized births
 
-- Reproduction is synchronized in many animals
+- Reproduction is synchronized in many animals and plants.
 
-- Besides obvious seasonal effects, there might be more subtle causes leading to clustering in births
+- Besides obvious seasonal effects, there might be more subtle causes leading to clustering in births (see Ims, 1990).
 
-- These include phenological (i.e., pollinators hatch when plants are flowering), ecological (e.g., escape predators), and sociobiological (e.g., cooperative breeders)
+- These include phenological (e.g., pollinators hatch when plants are flowering), ecological (e.g., escape predators), and sociobiological (e.g., cooperative breeders).
 
-- One of the most amazing cases is that of the banded mongoose (*Mungos mungo*): within a group, 64% of the births happen in the same night! (The reason for this is not very romantic: read Hodge *et al.* 2010)
+- One of the most amazing cases is that of the banded mongoose (*Mungos mungo*): within a group, 64% of the births happen in the same night! (The reason for this is not very romantic: read Hodge *et al.* 2010).
 
 <div class="centered">
 ![mungo](./images/mongoose.jpg) 
@@ -299,11 +300,14 @@ pl_birthdays_nohigh <- ggplot(data = data.frame(date_b = as.Date(birthdays),
   theme_bw() + 
   theme(axis.text=element_text(size=14, face="bold"), axis.title=element_text(size=14, face="bold")) +
   scale_x_date("", labels = date_format("%b")) + 
-  scale_y_continuous("Number of births (1969-1988)") 
+  scale_y_continuous("Number of births (1969-1988)") + 
+  annotate("text", x = birthdays[185], y = 175000, label = "Fourth of July", colour = "blue", alpha = 0) + 
+  annotate("text", x = birthdays[5], y = 162000, label = "New Year", colour = "blue", alpha = 0) + 
+  annotate("text", x = birthdays[359], y = 155000, label = "Xmas", colour = "blue", alpha = 0) + 
+  annotate("text", x = birthdays[259], y = 215000, label = "38 weeks after Xmas", colour = "blue", alpha = 0) 
 renderPlot(height = 450,
 print(pl_birthdays_nohigh))
 ```
-
 
 ## Births by day in US 1969-88 (50 states and DC)
 ```{r echo = FALSE}
@@ -325,13 +329,17 @@ renderPlot(height = 450,
 print(pl_birthdays))
 ```
 
-## Continuous growth
+## From discrete to continuous growth
 
-$\Delta N = N_(t + \Delta t) - N_t$
+$X(t + \Delta t) = X(t) (1 + r \Delta t)$
 
-$N_(t + \Delta t) = N_t (1 + x)$
+$X(t + \Delta t) - X(t) =  r \Delta t X(t)$
 
-$\Delta N = x N_t$
+$\dfrac{X(t + \Delta t) - X(t)}{\Delta t} = r X (t)$
+
+Take the limit $\Delta t \to 0$:
+
+$\dfrac{d X(t)}{d t} = r X(t)$
 
 ## Exponential growth
 
@@ -391,9 +399,15 @@ This method was proposed by Willard Libby (UofC) and collaborators in 1949. They
 <div class="centered">
 <h4>If left unchecked, populations will grow/decay very fast!</h4>
 </div>
-**Rabbits (again) **
 
-- Lore has it, Thomas Austin released 24 rabbits in his property near Victoria (Australia) in 1859
+<div class="centered">
+<img src="./images/rabbits-mixo.jpg" alt="rabbitsmixo" height="200">
+</div>
+
+
+**Example: rabbits (again)**
+
+- Lore has it, Thomas Austin released 24 rabbits in his property near Victoria (Australia) in 1859.
 
 - By 1886, the population had covered Victoria and New South Wales.
 
@@ -401,17 +415,225 @@ This method was proposed by Willard Libby (UofC) and collaborators in 1949. They
 
 - Efforts to contain rabbits included building three rabbit-proof fences (failed), releasing the virus for mixomatosis and rabbit  haemorrhagic disease. Read Bergstrom *et al.* 2009 for a detailed account on Macquarie Island in Tasmania.
 
-<div class="centered">
-<img src="./images/rabbits-mixo.jpg" alt="rabbitsmixo" height="200">
-</div>
+## Limits to growth
+
+Thomas R. Malthus (anonymously) published in 1978 a book entitled *An Essay on the Principle of Population, as It Affects the Future Improvement of Society, With Remarks
+on the Speculations of Mr Godwin, Mr Condorcet and Other Writers*.
+
+The central idea of the book is that human populations will grow until they reach the limit of starvation. This negative view of progress inspired subsequent work (esp. Darwin), and elicited strong reactions (esp. Marx).
+
+*[...] the power of population is indefinitely greater than the power in the earth to produce subsistence for man. Population, when unchecked, increases in a  geometrical ratio. Subsistence increases only in an arithmetical ratio. A slight acquaintance with numbers will shew the immensity of the first power in comparison of the second. By that law of our nature which makes food necessary to the life of man, the effects of these two unequal powers must be kept equal. This implies a strong and constantly operating check on population from the difficulty of subsistence. This difficulty must fall somewhere; and must necessarily be severely felt by a large portion of mankind.*
 
 
+In the second edition, titled *An Essay on the Principle
+of Population, or a View of its Past and Present Effects on Human Happiness, With an Enquiry Into Our Prospects Respecting the Future Removal or Mitigation of the Evils Which It Occasions* Malthus expanded on the possible ways to keep populations in check, including war, famine, abortion, economic factors, and delayed marriage.
+
+## Logistic growth
+
+Inspired by Malthus, the Belgian mathematician Pierre-Francois Verhulst noted that there must be a limit to geometric growth, which can only be achieved in very special cases:
+
+*We shall not insist on the hypothesis of geometric progression, given that it can hold only in very special circumstances; for example, when a fertile territory of almost unlimited size happens to be inhabited by people with an advanced civilization, as was the case for the first American colonies.*
+
+He wrote a simple ordinary differential equation to describe the slowing down of growth at high population values:
+
+$\dfrac{d X(t)}{d t} = r X(t) \left(1  - \dfrac{X(t)}{K} \right)$
+
+This is now known as **logistic growth**, with $r$ representing the intrinsic growth rate of the population when at low abundance, and $K$ being the carrying capacity.
+
+## Logistic growth: behavior
+```{r echo = FALSE}
+fluidRow(
+  column(4,
+  numericInput('x0', 'Initial density X(0)', 0.5,
+                 min = 0, max = 100)),
+  column(4,
+       numericInput('r', 'Intrinsic growth r', 0.25,
+                 min = 0, max = 100)),
+  column(4,
+      numericInput('K', 'Carrying capacity K', 5,
+                 min = 0, max = 100))
+)
+```
+```{r echo = FALSE}
+library(deSolve)
+library(reshape2)
+renderPlot(height = 400, {
+    logistic_growth <- function(time, state, params){
+    with(as.list(c(state, params)), {
+      dXdt <- r * X  * (1 - X / K)
+      return(list(c(dXdt)))
+      })
+    }
+    pars <- c(r = input$r, K = input$K)
+    xini <- c(X = input$x0)
+    times <- seq(0, 100, by = 0.05)
+    out <- as.data.frame(ode(xini, times, logistic_growth, pars))
+    m <- melt(out, id.vars = "time")
+    pl_logistic <- ggplot(m, aes(x = time, y = value, colour = variable)) + 
+      geom_line(size = 2, alpha = 0.7) + 
+      scale_x_continuous("Time t") + 
+      scale_y_continuous("X(t)", limits = c(0, NA)) +
+      geom_hline(yintercept = input$K, linetype = 2, colour = "black") + 
+      theme_bw() + 
+      theme(axis.text=element_text(size=14, face="bold"), axis.title=element_text(size=14, face="bold")) +
+      theme(legend.position = "none")
+    print(pl_logistic)
+})
+```
+
+## You can estimate parameters from data
+
+You can solve the equation:
+
+$X(t) = \dfrac{X(0) e^{r t}} {1 + X(0) (e^{r t} -1) / K}$
+
+Take the population at three equally spaced points: $X_0$, $X_1$, $X_2$, each at $T$ time units apart. Then:
+
+$K = X_1 \dfrac{X_0 X_1 + X_1 X_2 - 2 X_0 X_2}{X_1^2 - X_0 X_2}$
+
+and 
+
+$r = \dfrac{1}{T} \log \left( \dfrac{1/X_0 - 1 / K}{1/X_1 - 1 / K}\right)$
+
+## Example: US Population
+
+```{r echo = FALSE}
+fluidRow(
+  column(4,
+       numericInput('yearstart', 'Starting date', 1660,
+                 min = 1610, max = 1990, step = 10)),
+  column(4,
+      numericInput('spacing', 'T', 10,
+                 min = 10, max = 100, step = 10))
+)
+```
+```{r echo = FALSE}
+renderPlot(height = 375, {
+us_pop <- read.csv("../../data/theme_1/us_pop.csv")
+year0 <- input$yearstart
+year1 <- input$yearstart + input$spacing
+year2 <- input$yearstart + 2 * input$spacing
+X0 <- 1.0 * us_pop$Population[which(us_pop$Year == year0)]
+X1 <- 1.0 * us_pop$Population[which(us_pop$Year == year1)]
+X2 <- 1.0 * us_pop$Population[which(us_pop$Year == year2)]
+
+K <- abs(X1 * (X0 * X1 + X1 * X2 - 2 * X0 * X2) / (X1^2 - X0 * X2))
+
+r <- (1 / input$spacing) * log((1 / X0 - 1 / K) / (1 / X1 - 1 / K))
+
+  yearshift <- us_pop$Year - year0
+  predicted <- X0 * exp(r * yearshift) / (1 + X0 * (exp(r * yearshift) - 1) / K)
+  us_pop$Predicted <- predicted
+  pl_us_fit <- ggplot(data = us_pop, aes(x = Year, y = Population)) + geom_point() + geom_line(aes(x = Year, y = Predicted), colour = "red")  + geom_point(x = year0, y = X0, colour = "red") + geom_point(x = year1, y = X1, colour = "red") + geom_point(x = year2, y = X2, colour = "red") + theme_bw() + 
+      theme(axis.text=element_text(size=14, face="bold"), axis.title=element_text(size=14, face="bold")) +
+      theme(legend.position = "none")
+    
+  print(pl_us_fit)
+})
+```
 
 
-## Correcting: logistic growth
+## Interesting cases
 
-## A model
+$\dfrac{d X(t)}{d t} = r X(t) \left(1  - \dfrac{X(t)}{K} \right)$
+
+When $X \approx 0$, then we can approximate:
+
+$\dfrac{d X(t)}{d t} = r X(t) - \dfrac{r X(t)^2}{K} \approx r X(t)$
+
+...exponential growth!
+
+When $X \approx K$, then the growth rate is close to zero (equilibrium, or steady-state).
+
+When $X > K$, then the growth is negative.
 
 
+## Equilibria
 
+For which values of $X(t)$ does $\dfrac{d X(t)}{d t} = 0$?
+```{r echo = FALSE}
+fluidRow(
+  column(4,
+       numericInput('r1', 'Intrinsic growth r', 0.25,
+                 min = 0, max = 100)),
+  column(4,
+      numericInput('K1', 'Carrying capacity K', 5,
+                 min = 0, max = 100))
+)
+```
+```{r echo = FALSE}
+renderPlot(height = 375, {
+  Xs <- seq(0, 1.15 * input$K1, length.out = 100)
+  growth_rate_logistic <- data.frame(X = Xs, dXdt = input$r1 * Xs * (1 - Xs / input$K1))
+  eq_logistic <- ggplot(growth_rate_logistic, 
+                        aes(x = X, y = dXdt)) + 
+      geom_line(size = 2, alpha = 0.5, colour = "black") +
+      scale_x_continuous("X(t)") + 
+      scale_y_continuous("dX(t)/dt") +
+      geom_point(x = 0, y = 0, shape = 1, size = 4) +
+      geom_point(x = input$K1, y = 0, shape = 1, size = 4) +
+    geom_hline(yintercept = 0) + 
+    geom_vline(xintercept = 0) + 
+      theme_bw() + 
+      theme(axis.text=element_text(size=14, face="bold"), axis.title=element_text(size=14, face="bold")) +
+      theme(legend.position = "none")
+    print(eq_logistic)
+})
+```
 
+## Stability
+
+Will the population go back to the equilibrium if perturbed?
+
+```{r echo = FALSE}
+fluidRow(
+  column(4,
+       numericInput('r2', 'Intrinsic growth r', 0.25,
+                 min = 0, max = 100)),
+  column(4,
+      numericInput('K2', 'Carrying capacity K', 5,
+                 min = 0, max = 100))
+)
+```
+```{r echo = FALSE}
+renderPlot(height = 375, {
+  Xs <- seq(0, 1.15 * input$K2, length.out = 100)
+  growth_rate_logistic <- data.frame(X = Xs, dXdt = input$r2 * Xs * (1 - Xs / input$K2))
+  eq_logistic <- ggplot(growth_rate_logistic, 
+                        aes(x = X, y = dXdt)) + 
+      geom_line(size = 2, alpha = 0.5, colour = "black") +
+      scale_x_continuous("X(t)") + 
+      scale_y_continuous("dX(t)/dt") +
+      geom_point(x = 0, y = 0, shape = 16, size = 4, colour = "darkred") +
+      geom_point(x = input$K2, y = 0, shape = 16, size = 4, colour = "darkgreen") +
+      geom_hline(yintercept = 0) + 
+      geom_vline(xintercept = 0) + 
+      theme_bw() + 
+      theme(axis.text = element_text(size = 14, face = "bold"), axis.title = element_text(size=14, face="bold")) +
+      theme(legend.position = "none") + 
+      geom_segment(aes(x = 0 + 1/5 * input$K2, 
+                     y = input$K2 * input$r2 / 24, 
+                     xend = 4/5 * input$K2, 
+                     yend = input$K2 * input$r2 / 24),
+                    arrow = arrow(length = unit(0.03, "npc"))) + 
+      geom_segment(aes(x = 1.15 * input$K2, 
+                     y = input$K2 * input$r2 / 24, 
+                     xend = 1.01 * input$K2, 
+                     yend = input$K2 * input$r2 / 24),
+                    arrow = arrow(length = unit(0.03, "npc")))
+
+    print(eq_logistic)
+})
+```
+
+## What's carrying capacity?
+
+## Intra-specific competition
+
+## Second law of ecology
+
+## Demographic transition
+
+## Technological changes
+
+## Conclusions
