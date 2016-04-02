@@ -1,0 +1,15 @@
+*~
+*.Rhistory
+*.bbl
+*.blg
+*.log
+*.aux
+*.toc
+*.synctex.gz
+.DS_Store
+*.flat
+*.gdx
+scratch/
+.ipynb_checkpoints/
+*.fai
+

@@ -82,7 +82,6 @@ Bistability is a special case of systems with multiple **alternative stable stat
 
 *Scheffer et al., Nature, 2001*
 
-
 ## Bifurcation
 
 <div class="centered">
@@ -91,11 +90,207 @@ Bistability is a special case of systems with multiple **alternative stable stat
 
 *Scheffer et al., Nature, 2001*
 
-## Maximum Sustainable Yield
+## Allee effect
 
-Take the logistic model:
+Warder Clyde Allee (a professor at U of C) in the 1930s conducted a series of experiments to test whether goldfish grown in a tank containing silver suspension (toxic). Because each fish would absorb part of the toxic compounds, fish grown in tanks with other conspecifics would live longer than isolated fishes. 
 
-We introduce a term
+The idea that populations could grow faster when in groups than in isolation came to be known as the *Allee effect* in the 1950s. Possible processed leading to an Allee effect are:
+
+- finding a mate can be hard when the population is at low abundance.
+- social cooperation could help escaping predators.
+- social hunting could be beneficial.
+- inbreeding depression.
+- demographic stochasticity.
+
+## A simple model with Allee effect
+
+We can write a simple model for the (strong) Allee effect by modifying that for the logistic growth:
+
+$\dfrac{dN}{dt} = r N \left( \dfrac{N}{A} - 1 \right) \left( 1 - \dfrac{N}{K} \right)$
+
+Where $A < K$ is the *critical population size*: if $N > A$, then the population grows; if $N < A$, on the other hand, the population decreases.
+
+## Model behavior
+```{r echo = FALSE}
+fluidRow(
+  column(3,
+  numericInput('x0', 'Initial density N(0)', 2.5,
+                 min = 0, max = 100)),
+  column(3,
+       numericInput('r', 'Intrinsic growth r', 0.15,
+                 min = 0, max = 100)),
+  column(3,
+      numericInput('K', 'Carrying capacity K', 8,
+                 min = 0, max = 100)),
+  column(3,
+      numericInput('A', 'Critical size A', 2,
+                 min = 0, max = 100))
+)
+```
+```{r echo = FALSE}
+library(deSolve)
+library(reshape2)
+renderPlot(height = 400, {
+    allee_growth <- function(time, state, params){
+    with(as.list(c(state, params)), {
+      dXdt <- r * X  * (1 - X / K) * (X / A - 1)
+      return(list(c(dXdt)))
+      })
+    }
+    pars <- c(r = input$r, K = input$K, A = input$A)
+    xini <- c(X = input$x0)
+    times <- seq(0, 100, by = 0.05)
+    out <- as.data.frame(ode(xini, times, allee_growth, pars))
+    m <- melt(out, id.vars = "time")
+    pl_logistic <- ggplot(m, aes(x = time, y = value, colour = variable)) + 
+      geom_line(size = 2, alpha = 0.7) + 
+      scale_x_continuous("Time t") + 
+      scale_y_continuous("N(t)", limits = c(0, NA)) +
+      geom_hline(yintercept = input$K, linetype = 2, colour = "black") + 
+      theme_bw() + 
+      theme(axis.text=element_text(size=14, face="bold"), axis.title=element_text(size=14, face="bold")) +
+      theme(legend.position = "none")
+    print(pl_logistic)
+})
+```
+
+## Equilibria and Stability
+```{r echo = FALSE}
+fluidRow(
+  column(3,
+       numericInput('r2', 'Intrinsic growth r', 0.15,
+                 min = 0, max = 100)),
+  column(3,
+      numericInput('K2', 'Carrying capacity K', 8,
+                 min = 0, max = 100)),
+  column(3,
+      numericInput('A2', 'Critical size A', 2,
+                 min = 0, max = 100))
+)
+```
+```{r echo = FALSE}
+renderPlot(height = 375, {
+  Xs <- seq(0, 1.15 * input$K2, length.out = 100)
+  growth_rate_allee <- data.frame(X = Xs, dXdt = input$r2 * Xs * (1 - Xs / input$K2) * (Xs / input$A2 - 1))
+  eq_allee <- ggplot(growth_rate_allee, 
+                        aes(x = X, y = dXdt)) + 
+      geom_line(size = 2, alpha = 0.5, colour = "black") +
+      scale_x_continuous("N(t)") + 
+      scale_y_continuous("dN(t)/dt") +
+      geom_point(x = 0, y = 0, shape = 16, size = 4, colour = "darkgreen") +
+      geom_point(x = input$K2, y = 0, shape = 16, size = 4, colour = "darkgreen") +
+      geom_point(x = input$A2, y = 0, shape = 16, size = 4, colour = "darkred") +
+      geom_hline(yintercept = 0) + 
+      geom_vline(xintercept = 0) + 
+      theme_bw() + 
+      theme(axis.text = element_text(size = 14, face = "bold"), axis.title = element_text(size=14, face="bold")) +
+      theme(legend.position = "none")
+    print(eq_allee)
+})
+```
+
+## Allee effect in a bottle and tipping points
+
+A dynamical system with the Allee effect can experience abrupt, catastrophic shifts in which the population, having crossed the critical size, rapidly collapses. 
+
+Critical transition (catastrophic bifurcation): small changes in conditions trigger extreme, discontinuous responses that might be difficult to reverse.
+
+There is a growing interest in documenting such critical transition, and finding indicators of the approaching of such critical points.
+
+## Brewer's yeast
+
+*Saccharomyces cerevisiae* ("sugar-mold of the beer") is a common yeast used for baking and brewing. It has been intensively studied as a model organism.
+
+<div class="centered">
+<img src="./images/yeast.jpg" alt="yeast" height="300">
+</div>
+
+Yeast cannot directly metabolize sucrose (table sugar). To use sucrose as an energy source, it must first convert it to the monosaccharides (simple sugars) glucose and fructose.
+
+## Sucrose is split outside the cells
+
+<div class="centered">
+<img src="./images/invertase.gif" alt="invertase" height="200">
+</div>
+
+Invertase is an enzyme that catalyzes the hydrolysis of sucrose. 
+
+In yeast, invertase is released outside the cell, so that sucrose is split into fructose and glucose, which are then carried inside the cell.
+
+However, the process is far from efficient: when yeast cells are isolated, the cost of producing the enzyme is higher than the benefit produced, as most of the monosaccharides produced are lost.
+
+However, at high density yeast can be "cooperative": each cell produces the enzyme, and absorbs the monosaccharides produced by the pool, rather than their own. 
+
+This mechanism produces an Allee effect: at low densities, growth rate is negative, at high-densities, it is positive.
+
+## Sucrose is split outside the cells
+
+<div class="centered">
+<img src="./images/sucrose.jpg" alt="sugar" height="550">David Healey
+</div>
+
+## Dai et al. Science 2012, Setup
+
+Dai and colleagues grew *S. cerevisiae* in monoculture using sucrose. 
+
+They artificially imposed a mortality through daily dilutions.
+
+They started at different initial densities and used a variety of dilution rates.
+
+This can be modeled as:
+
+$\dfrac{dN}{dt} = r N \left( \dfrac{N}{A} - 1 \right) \left( 1 - \dfrac{N}{K} \right) - mN$ 
+
+Three equilibria:
+
+$N^* = 0$
+
+$N^* = \frac{1}{2} \left(-\sqrt{(A-K)^2-\frac{4 A K m}{r}}+A+K\right)$
+
+$N^* = \frac{\sqrt{r \left(r (A-K)^2-4 A K m\right)}+r (A+ K)}{2 r}$
+
+## Equilibria and stability
+
+```{r echo = FALSE}
+fluidRow(
+  column(3,
+       numericInput('r3', 'Intrinsic growth r', 0.25,
+                 min = 0, max = 100)),
+  column(3,
+      numericInput('K3', 'Carrying capacity K', 8,
+                 min = 0, max = 100)),
+  column(3,
+      numericInput('A3', 'Critical size A', 2,
+                 min = 0, max = 100)),
+  column(3,
+      numericInput('m3', 'Mortality m', 0.1,
+                 min = 0, max = 1))
+)
+```
+```{r echo = FALSE}
+renderPlot(height = 375, {
+  Xs <- seq(0, 1.15 * input$K3, length.out = 100)
+  growth_rate_allee <- data.frame(X = Xs, dXdt = input$r3 * Xs * (1 - Xs / input$K3) * (Xs / input$A3 - 1) - input$m3 * Xs)
+  eq_allee <- ggplot(growth_rate_allee, 
+                        aes(x = X, y = dXdt)) + 
+      geom_line(size = 2, alpha = 0.5, colour = "black") +
+      scale_x_continuous("N(t)") + 
+      scale_y_continuous("dN(t)/dt") +
+      geom_point(x = 0, y = 0, shape = 16, size = 4, colour = "darkgreen") +
+      geom_point(x = (sqrt(input$r3 * (input$r3 * (input$A3-input$K3)^2 - 4 * input$A3 *  input$K3 *  input$m3) ) + 
+                        input$r3 * (input$A3 + input$K3)) / (2 *input$r3)
+                   , y = 0, shape = 16, size = 4, colour = "darkgreen") +
+      geom_point(x = 0.5 * (-sqrt((input$A3 - input$K3)^2 -(4 * input$A3 * input$K3 * input$m3)/(input$r3)) + 
+                              input$A3 + input$K3)
+                   , y = 0, shape = 16, size = 4, colour = "darkred") +
+      geom_hline(yintercept = 0) + 
+      geom_vline(xintercept = 0) + 
+      theme_bw() + 
+      theme(axis.text = element_text(size = 14, face = "bold"), axis.title = element_text(size=14, face="bold")) +
+      theme(legend.position = "none")
+    print(eq_allee)
+})
+```
 
 ## Dai et al. Science 2012, Results
 ```{r echo = FALSE, message=FALSE, warning=FALSE}
@@ -137,28 +332,137 @@ pl_growth <- ggplot(data = data_growth %>% filter(dilution == 250 | dilution == 
 show(pl_growth)
 ```
 
-## Allee effect
-
-## A model
-
-
-
-## MSY with Allee effect
-
-## Collapse of Cod
-
-## Bistability
-
-## Example: shallow lakes
-
-## Hysteresis
-
-## Example: brewer's yeast
-
-## Other biological cases
-
-## Predicting the approaching of tipping points
-
 ## Expecting the unexpected
 
+System with Allee effect or similar mechanisms can experience abrupt, catastrophic regime shifts.
+
+Many natural and man-made systems experience similar mechanisms.
+
+There is a growing interest in developing measures that can anticipate the approaching of such transitions.
+
+## Climate
+
+<div class="centered">
+<img src="./images/climate.jpg" alt="climate" height="500">
+
+Lenton et al., PNAS 2007
+</div>
+
+## Climate
+
+<div class="centered">
+<img src="./images/climate2.jpg" alt="climate" height="500">
+
+Scheffer et al., Nature 2009
+</div>
+
+## Vegetation in arid regions
+
+<div class="centered">
+<img src="./images/vegetation1.jpg" alt="climate" height="500">
+
+Rietkerk et al., Science 2004
+</div>
+
+## Vegetation in arid regions
+
+<div class="centered">
+<img src="./images/vegetation2.jpg" alt="climate" height="500">
+
+Rietkerk et al., Science 2004
+</div>
+
+## Epileptic seizures
+
+<div class="centered">
+<img src="./images/seizure.jpg" alt="seizure" height="500">
+
+Scheffer et al., Nature 2009
+</div>
+
+
+
+## Critical slowing down
+
+Take the model:
+
+$\dfrac{dN}{dt} = r N \left( \dfrac{N}{A} - 1 \right) \left( 1 - \dfrac{N}{K} \right)$
+
+When $N$ is close to $A$, we have that $\dfrac{N}{A} - 1$ is close to zero: the growth of the population will be slow. 
+
+Suppose that by altering the environmental conditions, we are increasing $A$ --- then we will see that 
+
+## Slowing down at play: cyanobacteria
+
+*Aphanizomenon flos-aquae* is a photosynthetic bacterium, commonly found in brackish waters. The bacteria form large surface aggregations (blooms), typically triggered by eutrophication. Most varieties are toxic.
+
+<div class="centered">
+<img src="./images/Aphanizomenon_Bloom.jpg" alt="bloom" height="400">
+</div>
+
+## Photoinhibition
+
+Light is necessary for photosynthesis, but interestingly light (especially UV) also damages the molecular machinery responsible for photosynthesis. Hence, plants and photosynthetic bacteria are most productive at intermediate levels of light. 
+
+Cyanobacteria provide shading for each other. As such, we expect that when we go from darkness to increased light conditions, the population will grow. However, once we reach a critical point, we will observe the sudden collapse of photosynthetic activity.
+
+## Photoinhibition
+<div class="centered">
+<img src="./images/photoinhibition1.png" alt="pi1" height="500"> goo.gl/mfAHku
+</div>
+
+## Veraart et al., Nature 2012 - Setup
+<div class="centered">
+<img src="./images/chemostatportrait.jpg" alt="pi2" height="500"> goo.gl/mfAHku
+</div>
+
+## Veraart et al., Nature 2012 - Perturbations
+<div class="centered">
+<img src="./images/photoinhibition2.png" alt="pi2" height="500"> goo.gl/mfAHku
+</div>
+
+
+## Photoinhibition - Results
+<div class="centered">
+<img src="./images/photoinhibition3.png" alt="pi3" height="500"> goo.gl/mfAHku
+</div>
+
+## Fisheries
+
+TODO A slide on the importance of fisheries
+
+## Critical transitions in fisheries
+
+```{r echo = FALSE, message=FALSE, warning=FALSE }
+require(ggplot2)
+require(dplyr)
+cod_data <- read.csv("../../data/theme_2/cod_newfoundland-NAFO.csv")
+pl_cod <- ggplot(data = cod_data %>% filter(Division == "2J" | Division == "3PS" | Division == "3K" | Division == "4R"),
+                 aes(x = Year, y = Catch, colour = Division)) + geom_line(size = 2, alpha = 0.8) + theme_bw() + 
+  theme(axis.text = element_text(size = 14, face = "bold"), axis.title = element_text(size=14, face="bold")) +
+      theme(legend.position = "none") + ggtitle("Cod in Newfoundland (Tons)")
+show(pl_cod)
+```
+
+## Anchovies vs. Sardines
+
+<div class="centered">
+<img src="./images/sardines.jpg" alt="sardines" height="500"> 
+
+Lluch-Cota, PNAS 2013
+</div>
+
+## Maximum Sustainable Yield
+
+TODO Concept of MSY
+
+## MSY - Derivation
+
+TODO Maths
+
+## MSY Leading to critical transition?
+
+TODO
+
 ## Conclusions
+

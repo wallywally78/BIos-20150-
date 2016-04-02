@@ -1,9 +1,5 @@
-Data on cod landings taken from NOAA fisheries service
-
-https://www.st.nmfs.noaa.gov/st1/commercial/index.html
-
-Data on Peruvian anchoveta from FAO
-http://www.fao.org/fishery/en
+Data on cod landings taken from NAFO
+http://www.nafo.int/
 
 Data by Dai et al. Science 2012:
 Elaboration of 
