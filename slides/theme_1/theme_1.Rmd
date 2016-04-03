@@ -1,5 +1,5 @@
 ---
-title: "Theme 1: Growth"
+title: "Growth"
 author: "Stefano Allesina"
 date: ""
 runtime: shiny

@@ -1,0 +1,318 @@
+---
+title: "The Plague"
+author: "Stefano Allesina"
+date: ""
+runtime: shiny
+
+output: 
+  ioslides_presentation:
+    widescreen: yes
+    smaller: true
+---
+
+## Can a pandemic wipe out the human race?
+**Pile upon pile the throng of their own dead:**
+**And weary with woe and weeping wandered home;**
+**And then the most would take to bed from grief.**
+**Nor could be found not one, whom nor disease**
+**Nor death, nor woe had not in those dread times**
+**Attacked.** *De Rerum Natura (around 50 BCE) by Lucretius*
+
+**It was the peculiar and dreadful distinction of our visitation, that none who had been attacked by the pestilence had recovered. The first symptom of the disease was the death-warrant, which in no single instance had been followed by pardon or reprieve. ** *The Last Man (1826) by Mary Shelley*
+
+**the astonishing quickness with which this germ destroyed human beings, and [by] the fact that it inevitably killed any human body it entered. [...] From the moment of the first signs of it, a man would be dead in an hour. Some lasted for several hours. Many died within ten or fifteen minutes of the appearance of the first signs** *The Scarlet Plague (1915) by Jack London*
+
+## Deadly pandemics
+
+-*Plague of Justinian* (541-542 CE) **Bubonic plague** -- ca. 40% of the population of Europe
+
+-*Black Death* (1346-1350)  **Plague** -- up to 70% of the population of Europe
+
+-*Cocoliztli* (1545-1548) **Viral hemorragic fever** -- 80% of the population of Mexico
+
+-*Spanish flu* (1918-1920) **Influenza** -- 75M deaths around the world
+
+-*AIDS* (1960-today) **HIV/AIDS** -- More than 30M victims
+
+-*No name* (today) **Yellow fever** -- hundreds of victims in Angola
+
+-*Swine flu* (today) **Influenza A, H1N1** -- >2000 victims in India
+
+-*Zika* (today) **Zika virus** -- hundreds of cases
+
+## Infectious disease
+
+Illness resulting from the presence of pathogenic microbial agent:
+
+- Virus (e.g., HIV/AIDS, chickenpox, Herpes, Human Papilloma Virus, Ebola)
+
+- Bacteria (e.g., tubercolosis, *Legionella*)
+
+- Fungi (e.g., *Candida*)
+
+- Protozoa, helmints, trematodes (e.g., malaria, caused by the protozoan *Plasmodium*; Scistosomiasis, caused by the trematode *Schistosoma*)
+
+- Prions (e.g., mad cow disease)
+
+*Communicable* diseases can be spread from person to person. Some diseases are *infectious* but not *communicable* (e.g., tetanus).
+
+## Mode of transmission
+
+- **Person-to-person**: either direct (e.g., STDs) or indirect contact (e.g., exchange of blood or other bodily fluids).
+
+- **Airborne**: ihalation of infected air (e.g., influenza, chickenpox, measles, tubercolosis).
+
+- **Vector-borne**: transmitted by a vector (e.g., mosquito, tick, snail). West Nile virus, malaria, dengue, Zika are all vector-borne.
+
+- **Food-borne** and **water-borne**: ingestion of contaminated food or water. E.g., salmonella, cholera.
+
+- **Vertical**: from mother to child before birth (e.g., hepatitis B, herpes simplex).
+
+## Modeling infectious diseases
+
+In 1926 Anderson Gray McKendrick published *Applications of mathematics to medical problems*, which contained a continuous-time dynamical model that serves as the jumping board for many models produced today. 
+
+In 1927 McKendrick and William Ogilvy Kermack published *Contributions to the mathematical theory of epidemics*, where they studied the famed S-I-R model.
+
+Main concepts:
+
+- $N$ individuals (constant --- no births/immigration).
+
+- Each individual is in one of three states: $S$, susceptible; $I$, infected; $R$, recovered.
+
+- Susceptibles can become Infected; Infected can Recover.
+
+## Contacts
+
+$N$ is the number of people in the population. 
+
+$c N$ is the number of contacts one infected individual makes per unit-time. We assume that the population is well-mixed (i.e., every person has the same contact rate). 
+
+$S(t) / N$ is the probability that a contact involves a susceptible individual.
+
+Therefore, $c N S(t) / N = c S(t)$ is the number of contacts between an infected individual and susceptibles per unit time.
+
+If each contact leads to the transmission of the disease with probability $p$, then $p c S(t)$ is the number of susceptibles that an infected individual infects per unit time. 
+
+If there are $I(t)$ infected and $S(t)$ susceptibles, $p c S(t) I(t) = \beta S(t) I(t)$ is the number of individuals that are infected per unit time.
+
+Therefore:
+
+$\dfrac{d S(t)}{d t} = - \beta S(t) I(t)$
+
+## Susceptible-Infected
+
+Suppose that one cannot recover from the disease, and that the disease does not really change the mortality of individuals. The most fitting example is not the spread of a disease, but of rumors or other information.
+
+We have only two equations. 
+
+$\begin{cases}
+\dfrac{d S(t)}{d t} = - \beta S(t) I(t)\\
+\dfrac{d I(t)}{d t} = \beta S(t) I(t)
+\end{cases}$
+
+But because we keep the population fixed, $N = S(t) + I(t)$, we really have only one equation:
+
+$\dfrac{d I(t)}{d t} = \beta S(t) I(t) = \beta S(t) (N - S(t)) = -\beta N S(t) (1 - S(t)/N)$, 
+
+which should remind you of something....
+
+$\dfrac{d X(t)}{d t} = r X(t) (1 - X(t) / K)$
+
+Then, for any positive initial number of infected, $I(0)$, the whole population is infected in the end. 
+
+## Models
+
+```{r echo = FALSE}
+fluidRow(
+  column(3,
+  selectInput(inputId = "model",
+                label = "Model:",
+                choices = c("S-I"      = "si",
+                            "S-I-S"    = "sis",
+                            "S-I-R"    = "sir"),
+                selected = "si")),
+  column(3,
+    numericInput('i_t0', 'I(0)', 0.01,
+                 min = 0, max = 1.0, step = 0.05)),
+    
+    column(3,
+           numericInput('beta', 'Contact rate', 0.1,
+                 min = 0, max = 1000.0, step = 0.1)),
+    
+    uiOutput("gamma")
+    )
+```
+```{r echo = FALSE}
+library(deSolve)
+library(ggplot2)
+library(ggthemes)
+library(gridExtra)
+library(reshape2)
+de_si <- function(time, state, params){
+  with(as.list(c(state, params)), {
+    dSdt <- -beta * S * I
+    dIdt <- beta * S * I
+    return(list(c(dSdt, dIdt)))
+  })
+}
+
+de_sis <- function(time, state, params){
+  with(as.list(c(state, params)), {
+    dSdt <- -beta * S * I + gamma * I
+    dIdt <- beta * S * I - gamma * I
+    return(list(c(dSdt, dIdt)))
+  })
+}
+
+de_sir <- function(time, state, params){
+  with(as.list(c(state, params)), {
+    dSdt <- -beta * S * I 
+    dIdt <- beta * S * I - gamma * I
+    dRdt <- gamma * I
+    return(list(c(dSdt, dIdt, dRdt)))
+  })
+}
+
+output$gamma = renderUI(
+  {
+    if (input$model %in% c("sis", "sir"))
+    {
+      column(3,
+      numericInput('gamma', 'Recovery rate', 0.05,
+                   min = 0, max = 1000.0, step = 0.01))
+    }
+  })
+  renderPlot({ 
+    if (input$model == "si"){
+      pars <- c(beta = input$beta)
+      yini <- c(S = 1.0 - input$i_t0, I = input$i_t0)
+      times <- seq(0, 100, by = 0.05)
+      out <- as.data.frame(ode(yini, times, de_si, pars))
+      m <- melt(out, id.vars = "time")
+      pl <- ggplot(m, aes(x = time, y = value, colour = variable)) + geom_line(size = 2)
+      pl <- pl + theme_bw() + theme(axis.text = element_text(size = 14, face = "bold"), axis.title = element_text(size=14, face="bold"))
+      show(pl)
+    }
+    if (input$model == "sis"){
+      #shiny:::flushReact()
+      pars <- c(beta = input$beta, gamma = input$gamma)
+      yini <- c(S = 1.0 - input$i_t0, I = input$i_t0)
+      times <- seq(0, 100, by = 0.05)
+      out <- as.data.frame(ode(yini, times, de_sis, pars))
+      m <- melt(out, id.vars = "time")
+      pl <- ggplot(m, aes(x = time, y = value, colour = variable)) + geom_line(size = 2)
+      pl <- pl + theme_bw() + theme(axis.text = element_text(size = 14, face = "bold"), axis.title = element_text(size=14, face="bold"))
+      show(pl)
+    }
+    if (input$model == "sir"){
+      pars <- c(beta = input$beta, gamma = input$gamma)
+      yini <- c(S = 1.0 - input$i_t0, I = input$i_t0, R = 0.0)
+      times <- seq(0, 100, by = 0.05)
+      out <- as.data.frame(ode(yini, times, de_sir, pars))
+      m <- melt(out, id.vars = "time")
+      pl <- ggplot(m, aes(x = time, y = value, colour = variable)) + geom_line(size = 2)
+      pl <- pl + theme_bw() + theme(axis.text = element_text(size = 14, face = "bold"), axis.title = element_text(size=14, face="bold"))
+      show(pl)
+    }
+  })
+```
+
+## Recovery rate
+
+Suppose that at time $0$, a certain number of individuals, $I(0)$ is infected, and that they are isolated from the rest of the population.  We call $\gamma$ the "recovery rate" of infected individuals, and write:
+
+$\dfrac{d I(t)}{d t} = - \gamma I(t)$
+
+This is an equation we know how to solve:
+
+$I(t) = I(0) e^{-\gamma t}$ (exponential growth/decay). 
+
+Then, $I(t) / I(0)$ is the proportion of individuals who are still infected at time $t$, and
+
+$1 - \dfrac{I(t)}{I(0)} = 1 - e^{-\gamma t}$ 
+
+is the probability of having recovered in the time interval $[0, t)$. 
+
+## Recovery rate
+
+Because this is a cumulative distribution function, taking derivatives we find the probability density function:
+
+$\dfrac{\partial 1 - e^{-\gamma t}}{\partial t} = \gamma e^{-\gamma t}$
+
+Taking the expectation (average time spent infected):
+
+$\int_0^\infty t (\gamma e^{-\gamma t}) dt = \dfrac{1}{\gamma}$
+
+Which means that $\gamma$ is simply the inverse than the mean time spent in the infected class.
+For example, influenza lasts about 5 days, meaning that $\gamma \approx 1/5$.
+
+We can therefore write:
+
+$\dfrac{d I(t)}{d t} = \beta S(t) I(t) - \gamma I(t)$
+
+## Susceptible-Infected-Susceptible
+
+Now we can write a slightly more complex model, in which individuals go back to the susceptible class once they recover from the disease. This is the case of bacterial infections, or other infections that do not provide lifelong immunity.
+
+$\begin{cases}
+\dfrac{d S(t)}{d t} = - \beta S(t) I(t) + \gamma I(t)\\
+\dfrac{d I(t)}{d t} = \beta S(t) I(t) - \gamma I(t)
+\end{cases}$
+
+Again, we really have only one equation, as $S(t) = N - I(t)$:
+
+$\dfrac{d I(t)}{d t} = \beta I(t) (N - I(t)) - \gamma I(t)$
+
+With some rearranging, we obtain:
+
+$\dfrac{d I(t)}{d t} = (\beta N - \gamma) I(t) \left(1 - \dfrac{I(t)}{N -\frac{\gamma}{\beta}}\right)$
+
+...which is again a logistic growth! $I(\infty) = N - \frac{\gamma}{\beta}$
+
+## Susceptible-Infected-Recovered
+
+Finally, we can write the famous S-I-R model, which plays a major role in understanding viral diseases. Instead of making the recovered individuals susceptible again, we move them into a new class ($R$, recovered, or, in the case of deadly diseases, removed).
+
+$\begin{cases}
+\dfrac{d S(t)}{d t} = - \beta S(t) I(t)\\
+\dfrac{d I(t)}{d t} = \beta S(t) I(t) - \gamma I(t)
+\dfrac{d R(t)}{d t} =  \gamma I(t)
+\end{cases}$
+
+$N(t) = S(t) + R(t) + I(t)$. From the equations, we see that 
+
+$\dfrac{d N(t)}{d t} = \dfrac{d S(t)}{d t} + \dfrac{d I(t)}{d t} + \dfrac{d R(t)}{d t} = 0$ --- we have constant population size.
+
+- The number of susceptibles is always declining in time.
+
+- The number of recovered is always increasing in time.
+
+- The number of infected is increasing whenever $\beta S(t) > \gamma$. 
+
+## Basic reproductive number
+
+Suppose that at the beginning of the epidemic we have only a few infected individuals, and that no one has recovered yet. Then: $R(0) = 0$
+
+Will we have an epidemic? We write:
+
+$\dfrac{1}{I(t)}\dfrac{d I(t)}{d t} = \beta S(t) - \gamma$
+
+Substituting $S(0) \approx N$, we have: $\dfrac{1}{I(0)}\dfrac{d I(0)}{d t} \beta N - \gamma$.
+
+Thus, the infection will spread whenever $\beta N - \gamma > 0$, which we write as:
+
+$\dfrac{\beta N}{\gamma} = \mathscr R_0 > 1$
+
+$\mathscr R_0$ ("r-naught") is the **basic reproduction number**, and it expresses the number of infections generated by the first infected individual in a otherwise susceptible population.
+
+## Endemic SIR
+
+
+## SEIR
+
+
+
+
+
+
