@@ -1,8 +1,8 @@
 # Bios20150
 
-Material for the ecology portion of the class BIOS 20150 *How Can We Understand the Biosphere?*, Spring of 2016.
+Material for the ecology portion of the class BIOS 20150 *How Can We Understand the Biosphere?*, taught at the University of Chicago in the Spring Quarter of 2016. The material was prepared by [yours truly](http://allesinalab.uchicago.edu/?page_id=2).
 
-## This repository contains slides, data and readings for each of the four themes we are going to explore in class:
+This repository contains slides, data and readings for each of the four themes we are going to explore in class:
 
 - **Theme 1: Growth**
 - **Theme 2: Tipping Points**
