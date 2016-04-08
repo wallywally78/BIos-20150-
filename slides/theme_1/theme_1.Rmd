@@ -93,7 +93,7 @@ renderPlot(height = 400, {
       theme_bw() + 
       theme(legend.title=element_blank()) + 
       theme(legend.position = "top")
-    print(pl)
+    show(pl)
 })
 ```
 
@@ -109,7 +109,7 @@ pl_zoom_human <- ggplot(human_pop, aes(x = year, y = world_population, colour = 
       theme_bw() + 
       theme(legend.title=element_blank()) + 
       theme(legend.position = "top")
-    print(pl_zoom_human)})
+    show(pl_zoom_human)})
 ```
 
 ## Why do we care? $\mathcal \Delta$
@@ -124,7 +124,7 @@ pl_zoom_carbon <- ggplot(carbon, aes(x = year, y = carbon)) +
       theme_bw() + 
       theme(legend.title=element_blank()) + 
       theme(legend.position = "top")
-    print(pl_zoom_carbon)})
+    show(pl_zoom_carbon)})
 ```
 
 ## Estimates for 2100
@@ -143,25 +143,28 @@ that rapidly spread through Europe. The book contains a problem on the growth
 of the growth of rabbits, giving raise to the famous Fibonacci's sequence.
 
 <div class="centered">
-![abaci](./images/liber_abaci.jpg)
+<img src="./images/liber_abaci.jpg" alt="fib" height="600">
 </div>
 
 ## Rabbits {.build}
 Take a couple of rabbits.
 <div class="centered">
-![pair](./images/fib1.jpg)
+<img src="./images/fib1.jpg" alt="f1" height="75">
 </div>
 They're fully grown in one month.
 <div class="centered">
-![pair](./images/fib2.jpg)
+<img src="./images/fib2.jpg" alt="fq" height="100">
 </div>
 The next month they reproduce: a new pair of rabbits!
 <div class="centered">
-![pair](./images/fib2.jpg) ![pair](./images/fib1.jpg)
+<img src="./images/fib2.jpg" alt="f2" height="100">
+<img src="./images/fib1.jpg" alt="f1" height="75">
 </div>
 They reproduce again, while their offspring matures:
 <div class="centered">
-![pair](./images/fib2.jpg) ![pair](./images/fib2.jpg) ![pair](./images/fib1.jpg)
+<img src="./images/fib2.jpg" alt="f2" height="100">
+<img src="./images/fib2.jpg" alt="f2" height="100">
+<img src="./images/fib1.jpg" alt="f1" height="75">
 </div>
 
 ## Many rabbits! $\mathcal \chi$
@@ -193,7 +196,7 @@ plrabbits <- ggplot(data = data.frame("Months" = months, "Pairs" = rabbits), aes
   theme(axis.text=element_text(size=14, face="bold"),
   axis.title=element_text(size=14, face="bold"))
 renderPlot(height = 270,
-print(plrabbits)
+show(plrabbits)
 )
 ```
 
@@ -246,9 +249,8 @@ Hold this thought, as we're going to explore it later.
 
 ## Just how fast is geometric growth?
 Meet *Escherichia coli*, a Gram-negative bacterium that lives in your intestine (and in many other places). Some strains of *E. coli* can cause serious food poisoning.
-
 <div class="centered">
-![ecoli](./images/EscherichiaColi.jpg) 
+<img src="./images/EscherichiaColi.jpg" alt="ecoli" height="200">
 </div>
 
 Under ideal conditions, it can reproduce every 20 minutes (72 times per day). Each cell weighs about $10^{-15}$kg.
@@ -290,7 +292,7 @@ plcoli <- ggplot(dfcoli, aes(x = time, y = mass)) +
   theme(axis.text=element_text(size=14, face="bold"), 
   axis.title=element_text(size=14, face="bold"))
 renderPlot(height = 500,
-print(plcoli))
+show(plcoli))
 ```
 
 ## Synchronized births $\mathcal \Pi$
@@ -323,7 +325,7 @@ pl_birthdays_nohigh <- ggplot(data = data.frame(date_b = as.Date(birthdays),
   annotate("text", x = birthdays[359], y = 155000, label = "Xmas", colour = "blue", alpha = 0) + 
   annotate("text", x = birthdays[259], y = 215000, label = "38 weeks after Xmas", colour = "blue", alpha = 0) 
 renderPlot(height = 450,
-print(pl_birthdays_nohigh))
+show(pl_birthdays_nohigh))
 ```
 
 ## Births by day in US 1969-88 (50 states and DC) $\mathcal \Delta$
@@ -343,7 +345,7 @@ pl_birthdays <- ggplot(data = data.frame(date_b = as.Date(birthdays),
   annotate("text", x = birthdays[359], y = 155000, label = "Xmas", colour = "blue") + 
   annotate("text", x = birthdays[259], y = 215000, label = "38 weeks after Xmas", colour = "blue") 
 renderPlot(height = 450,
-print(pl_birthdays))
+show(pl_birthdays))
 ```
 
 ## From discrete to continuous growth
@@ -414,7 +416,6 @@ This method was proposed by Willard Libby (UofC) and collaborators in 1949. They
 In 1988, three laboratories analyzed the sample. They found that it had lost about $8\%$ of its $\mathrm{^{14}C}$. Can you date the Shroud?
 
 You can use the forumla $N(t) = N(0) e^{-0.000121 t}$ to find the answer.
-
 
 ## First law of ecology $\mathcal \Pi$
 <div class="centered">
@@ -495,7 +496,7 @@ renderPlot(height = 400, {
       theme_bw() + 
       theme(axis.text=element_text(size=14, face="bold"), axis.title=element_text(size=14, face="bold")) +
       theme(legend.position = "none")
-    print(pl_logistic)
+    show(pl_logistic)
 })
 ```
 
@@ -544,7 +545,7 @@ r <- (1 / input$spacing) * log((1 / X0 - 1 / K) / (1 / X1 - 1 / K))
       theme(axis.text=element_text(size=14, face="bold"), axis.title=element_text(size=14, face="bold")) +
       theme(legend.position = "none")
     
-  print(pl_us_fit)
+  show(pl_us_fit)
 })
 ```
 
@@ -590,7 +591,7 @@ renderPlot(height = 375, {
       theme_bw() + 
       theme(axis.text=element_text(size=14, face="bold"), axis.title=element_text(size=14, face="bold")) +
       theme(legend.position = "none")
-    print(eq_logistic)
+    show(eq_logistic)
 })
 ```
 
@@ -606,8 +607,7 @@ fluidRow(
       numericInput('K2', 'Carrying capacity K', 5,
                  min = 0, max = 100))
 )
-```
-```{r echo = FALSE, message=FALSE, warning=FALSE}
+require(ggplot2)
 renderPlot(height = 375, {
   Xs <- seq(0, 1.15 * input$K2, length.out = 100)
   growth_rate_logistic <- data.frame(X = Xs, dXdt = input$r2 * Xs * (1 - Xs / input$K2))
@@ -634,7 +634,7 @@ renderPlot(height = 375, {
                      yend = input$K2 * input$r2 / 24),
                     arrow = arrow(length = unit(0.03, "npc")))
 
-    print(eq_logistic)
+    show(eq_logistic)
 })
 ```
 
@@ -684,7 +684,6 @@ USFWS
 </div>
 
 ## Population structure
-
 - So far, we've considered populations in which each individual has the same probability of reproducing dying. 
 
 - Of course, that's not the case at all.
@@ -768,20 +767,41 @@ show(pl_halley_bar)
 <img src="./images/P_W2016.jpg" alt="2016" height="500">
 </div>
 
+## Life expectancy Men/Women\
+<img src="./images/gender_life_expectancy_CIA_factbook.jpg" alt="menwomen" height="500"> 
 
-## Life expectancy Men/Women
-<img src="./images/gender_life_expectancy_CIA_factbook.jpg" alt="menwomen" height="500">
+## Projected growth $\mathcal \Pi$
+<div class="centered">
+<img src="./images/graphic_population.jpg" alt="growth" height="1150">
 </div>
 
+## Fertility and family planning
+- One of the main responses to rapid growth has been setting up voluntary family-planning programs
 
-## Adding reproduction --- Leslie matrices
+- In the developing world, 74M unwanted pregnancies per year. About 40% of total pregnancies. About half result in induced abortion.
 
-## Projecting forward
+## Age at first marriage and total fertility
+<div class="centered">
+<img src="./images/WomensAgeMarriage.jpg" alt="womenage" height="400">
+</div>
 
-## Asymptotics and eigenvalues
+## Education and total fertility
+<div class="centered">
+<img src="./images/WomensEducFamSize.jpg" alt="growth" height="400">
+</div>
 
-## Age distribution and demographic transition
+## Summary
+- Human population has grown rapidly (1800, 1B; 1927, 2B; 1960, 3B; 1974, 4B; 1987, 5B; 1999, 6B; 2011, 7B).
 
-## Fertility
+- Humans have strong impact on the environment.
 
-## Conclusions
+- Natural populations will initially growth very rapidly if unchecked (geometric, exponential).
+
+- However, soon they will reach an asymptote (logistic).
+
+- Humans were able to keep moving the asymptote by changing the environment and through technological developments.
+
+- Human populations follow a demographic transition, going from high mortality and high natality, to low mortality and low natality.
+
+- The stage in which mortality is low and birth rates are still high see the rapid rise of population numbers. 
+
