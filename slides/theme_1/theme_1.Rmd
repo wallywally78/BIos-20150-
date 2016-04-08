@@ -10,9 +10,41 @@ output:
     smaller: true
 ---
 
+## What is ecology?
+Ecology is the study of the relationships between **living organisms**, and their **physical environment**.
+
+It is **highly interdisciplinary** (genetics, evolutionary biology, physics and chemistry, geography, ethology, demography, sociology).
+
+It studies living systems at different scales:
+
+- **Individuals** (metabolism, behavior, life-history)
+
+- **Populations** (conspecifics living in the same habitat)
+
+- **Metapopulations** (populations connected by migration/dispersal)
+
+- **Communities** (interacting populations of different species)
+
+- **Ecosystems** (including their physical and chemical characteristics)
+
+## Complex adaptive systems
+
+Ecological systems are prototypical **Complex Adaptive Systems**
+
+- **Complex:** dynamic; composed of many interacting agents; network structure; nonlinear interactions.
+
+- **Adaptive:** respond to change; adapt to new conditions; evolve.
+
+## Modeling complex systems
+<div class="centered">
+<img src="./images/triangle.jpg" alt="rubberband" height="400">
+</div>
+
+*Dickey-Collas et al. ICES Journal of Marine Science, 2014*
+
 ## Organization of the class
 
-- **5 weeks**
+- **4.5 weeks**
 - Each week, we pick **a theme** 
 - We explore **data**, **concepts**, and **mathematical models** on the theme
 - We stress **ecological thinking**
@@ -21,25 +53,24 @@ You can find all the material (slides, data, code, papers) on the website for th
 
 [**github.com/StefanoAllesina/Bios20150**](https://github.com/StefanoAllesina/Bios20150)
 
-## How many people can the Earth support?
+If the title of a slide ends with the symbol $\mathcal \Delta$, then the data is available on the website. Similarly $\mathcal \Pi$ stands for papers, and $\mathcal \chi$ for code.
 
+## How many people can the Earth support?
 <div class="centered">
 **I was ever of opinion, that the honest man who married and brought up a large family, did more service than he who continued single, and only talked of population.** 
 
 *The Vicar of Wakefield (1776) by Oliver Goldsmith*
 </div>
 
-
-## Human growth: historical time series
-
-```{r echo = FALSE}
+## Human growth: historical time series $\mathcal \Delta$
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 sliderInput(
   "range_years", 
   label = "Years",
   min = -1000, 
   max = 2100, value = c(-1000, 2100))
 ```
-```{r echo = FALSE}
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 library(ggplot2)
 library(ggthemes)
 library(grid)
@@ -66,8 +97,8 @@ renderPlot(height = 400, {
 })
 ```
 
-## Why do we care?
-```{r echo = FALSE}
+## Why do we care? $\mathcal \Delta$
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 renderPlot(height = 400, {
   human_pop <- read.csv("../../data/theme_1/world_population.csv", stringsAsFactors = FALSE)
 pl_zoom_human <- ggplot(human_pop, aes(x = year, y = world_population, colour = reference)) + 
@@ -81,8 +112,8 @@ pl_zoom_human <- ggplot(human_pop, aes(x = year, y = world_population, colour = 
     print(pl_zoom_human)})
 ```
 
-## Why do we care?
-```{r echo = FALSE}
+## Why do we care? $\mathcal \Delta$
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 carbon <- read.csv("../../data/theme_1/carbon.csv")
 renderPlot(height = 400, {
 pl_zoom_carbon <- ggplot(carbon, aes(x = year, y = carbon)) + 
@@ -98,11 +129,10 @@ pl_zoom_carbon <- ggplot(carbon, aes(x = year, y = carbon)) +
 
 ## Estimates for 2100
 <div class="centered">
-<img src="./images/World-Population-1800-2100.svg" alt="worldpopestimates" height="500">
+<img src="./images/World-Population-1800-2100.jpg" alt="worldpopestimates" height="500">
 </div>
 
 ## Fibonacci
-
 Leonardo Pisano (a.k.a. Fibonacci) was the son of a trader from Pisa. 
 In 1192, he followed his father to Bejaia, Algeria, where he studied
 the number systems the Arabs had brought from India. This is the decimal
@@ -134,13 +164,12 @@ They reproduce again, while their offspring matures:
 ![pair](./images/fib2.jpg) ![pair](./images/fib2.jpg) ![pair](./images/fib1.jpg)
 </div>
 
-## Many rabbits!
-
+## Many rabbits! $\mathcal \chi$
 In a few years, the Earth would be scorched by hordes of rabbits!
 
 $N_t = N_{t-1} + N_{t - 2}$
 
-```{r echo = FALSE}
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 nmonths <- 50
 months <- 1:nmonths
 rabbits <- rep(0, nmonths)
@@ -169,7 +198,6 @@ print(plrabbits)
 ```
 
 ## Geometric growth
-
 The Swiss mathematician Euler (1707-1783) has left an indelible mark on science, publishing fundamental works in a number of mathematical disciplines. He became interested in the growth of populations because of what he read (and believed) in the Bible:
 
 *These three were the sons of Noah; and from these the whole earth was peopled* (Genesis 9:19)
@@ -189,7 +217,6 @@ $N_3 = (1 + x) N_2 = (1 + x)^3 N_0$
 $\ldots$
 
 ## Geometric growth
-
 In his treatise *Introduction to the Analysis of the Infinite* (1748), Euler wrote:
 
 *Since after the Flood all men descended from a population of six, if we suppose that the population after two hundred years was 1,000,000, we would like to find the annual rate of growth.*
@@ -211,7 +238,6 @@ yielding $x \approx 0.0619$, meaning about $6.2\%$ per year. Not an unrealistic 
 *For this reason, it is quite ridiculous for the incredulous to object that in such a short space of time the whole earth could not be populated beginning with a single man*
 
 ## Geometric growth?
-
 Interestingly, Euler repeated his calculation projecting forward of 400 years (instead of 200), and found that it would lead to more that 166 billion humans. He noted:
 
 *However, the whole earth would never be able to sustain that population.*
@@ -219,7 +245,6 @@ Interestingly, Euler repeated his calculation projecting forward of 400 years (i
 Hold this thought, as we're going to explore it later.
 
 ## Just how fast is geometric growth?
-
 Meet *Escherichia coli*, a Gram-negative bacterium that lives in your intestine (and in many other places). Some strains of *E. coli* can cause serious food poisoning.
 
 <div class="centered">
@@ -234,9 +259,8 @@ $M_d = M_0 2^{72 d}$
 
 and project forward
 
-## *E. coli* colony growth
-
-```{r echo = FALSE}
+## *E. coli* colony growth $\mathcal \chi$
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 mass_earth <- 5.9721986 * 10^24
 mass_sun <- 1.988435 *10^30
 mass_solar <- 1.9912 * 10^30 
@@ -269,8 +293,7 @@ renderPlot(height = 500,
 print(plcoli))
 ```
 
-## Synchronized births
-
+## Synchronized births $\mathcal \Pi$
 - Reproduction is synchronized in many animals and plants.
 
 - Besides obvious seasonal effects, there might be more subtle causes leading to clustering in births (see Ims, 1990).
@@ -283,8 +306,8 @@ print(plcoli))
 ![mungo](./images/mongoose.jpg) 
 </div>
 
-## Births by day in US 1969-88 (50 states and DC)
-```{r echo = FALSE}
+## Births by day in US 1969-88 (50 states and DC) $\mathcal \Delta$
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 num_births_by_day <- read.csv("../../data/theme_1/births_69_88.csv")
 birthdays <- as.Date(paste(num_births_by_day$month, num_births_by_day$day, "1969"), "%m %d %Y")
 pl_birthdays_nohigh <- ggplot(data = data.frame(date_b = as.Date(birthdays), 
@@ -303,8 +326,8 @@ renderPlot(height = 450,
 print(pl_birthdays_nohigh))
 ```
 
-## Births by day in US 1969-88 (50 states and DC)
-```{r echo = FALSE}
+## Births by day in US 1969-88 (50 states and DC) $\mathcal \Delta$
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 num_births_by_day <- read.csv("../../data/theme_1/births_69_88.csv")
 birthdays <- as.Date(paste(num_births_by_day$month, num_births_by_day$day, "1969"), "%m %d %Y")
 pl_birthdays <- ggplot(data = data.frame(date_b = as.Date(birthdays), 
@@ -324,7 +347,6 @@ print(pl_birthdays))
 ```
 
 ## From discrete to continuous growth
-
 $X(t + \Delta t) = X(t) (1 + r \Delta t)$
 
 $X(t + \Delta t) - X(t) =  r \Delta t X(t)$
@@ -336,7 +358,6 @@ Take the limit $\Delta t \to 0$:
 $\dfrac{d X(t)}{d t} = r X(t)$
 
 ## Exponential growth
-
 Define initial population $X(0) = X_0$. 
 
 We model the **growth rate** of the population as:
@@ -358,7 +379,6 @@ $X(t) = X(0) e^{r t}$
 - $e$ is Euler's number $2.718281828459045235360287471352...$
 
 ## Doubling time
-
 How long before the population doubles in size?
 
 $X(\tau) = 2 X(0)$
@@ -376,7 +396,6 @@ $\tau = \frac{log(2)}{r} = \frac{0.301029995...}{r}$
 Thus, if $r = 0.01$, then the population doubles every 30 years or so; $r = 0.05$, every 6 years; and so on.
 
 ## Halving time and carbon dating
-
 Unstable atoms release energy through radioactive decay. This process is random, and, at the level of the single atom, cannot be predicted. However, we can measure statistically  the rate at which atoms decay. The Carbon isotope $\mathrm{^{14}C}$ is formed in the athmosphere when cosmic rays strike Nitrogen atoms:
 
 $n + \mathrm{^{14}_{7}N} \rightarrow \mathrm{^{14}_{6}C} + p$
@@ -385,11 +404,19 @@ Radioactive carbon forms $\mathrm{CO}_2$ that is used by plants. Animals eat pla
 
 $\mathrm{~^{14}_{6}C}\rightarrow\mathrm{~^{14}_{7}N}+ e^- + \bar{\nu}_e$
 
-In about 5730 years, half of the radioactive carbon has decayed. Hence, $r = -log(2)/5730 = 0.000052535...$. If a tissue has only $0.75$ parts of $\mathrm{^{14}C}$ for every $10^{12}$ of $\mathrm{^{12}C}$, the tissue is 5730 years old. A proportion of of $0.25 / 10^{12}$ would yield 34380 years, and so forth.
+In about 5730 years, half of the radioactive carbon has decayed. Hence, $r = -log(2)/5730 = -0.00012096809$. If a tissue has only $0.75$ parts of $\mathrm{^{14}C}$ for every $10^{12}$ of $\mathrm{^{12}C}$, the tissue is 5730 years old. A proportion of of $0.25 / 10^{12}$ would yield 34380 years, and so forth.
 
 This method was proposed by Willard Libby (UofC) and collaborators in 1949. They were awarded the Nobel prize in 1960.
 
-## First law of ecology
+## Exercise: Date a the Shroud of Turin
+"The Shroud of Turin, which many people believe was used to wrap Christ's body, bears detailed front and back images of a man who appears to have suffered whipping and crucifixion.  It was first displayed at Lirey in France in the 1350s and subsequently passed into the hands of the Dukes of Savoy.  After many journeys the shroud was finally brought to Turin in 1578 where, in 1694, it was placed in the royal chapel of Turin Cathedral in a specially designed shrine." (Damon *et al.* *Nature*, 1988)
+
+In 1988, three laboratories analyzed the sample. They found that it had lost about $8\%$ of its $\mathrm{^{14}C}$. Can you date the Shroud?
+
+You can use the forumla $N(t) = N(0) e^{-0.000121 t}$ to find the answer.
+
+
+## First law of ecology $\mathcal \Pi$
 <div class="centered">
 <h4>If left unchecked, populations will grow/decay very fast!</h4>
 </div>
@@ -410,7 +437,6 @@ This method was proposed by Willard Libby (UofC) and collaborators in 1949. They
 - Efforts to contain rabbits included building three rabbit-proof fences (failed), releasing the virus for mixomatosis and rabbit  haemorrhagic disease. Read Bergstrom *et al.* 2009 for a detailed account on Macquarie Island in Tasmania.
 
 ## Limits to growth
-
 Thomas R. Malthus (anonymously) published in 1978 a book entitled *An Essay on the Principle of Population, as It Affects the Future Improvement of Society, With Remarks
 on the Speculations of Mr Godwin, Mr Condorcet and Other Writers*.
 
@@ -418,12 +444,10 @@ The central idea of the book is that human populations will grow until they reac
 
 *[...] the power of population is indefinitely greater than the power in the earth to produce subsistence for man. Population, when unchecked, increases in a  geometrical ratio. Subsistence increases only in an arithmetical ratio. A slight acquaintance with numbers will shew the immensity of the first power in comparison of the second. By that law of our nature which makes food necessary to the life of man, the effects of these two unequal powers must be kept equal. This implies a strong and constantly operating check on population from the difficulty of subsistence. This difficulty must fall somewhere; and must necessarily be severely felt by a large portion of mankind.*
 
-
 In the second edition, titled *An Essay on the Principle
 of Population, or a View of its Past and Present Effects on Human Happiness, With an Enquiry Into Our Prospects Respecting the Future Removal or Mitigation of the Evils Which It Occasions* Malthus expanded on the possible ways to keep populations in check, including war, famine, abortion, economic factors, and delayed marriage.
 
 ## Logistic growth
-
 Inspired by Malthus, the Belgian mathematician Pierre-Francois Verhulst noted that there must be a limit to geometric growth, which can only be achieved in very special cases:
 
 *We shall not insist on the hypothesis of geometric progression, given that it can hold only in very special circumstances; for example, when a fertile territory of almost unlimited size happens to be inhabited by people with an advanced civilization, as was the case for the first American colonies.*
@@ -434,8 +458,8 @@ $\dfrac{d X(t)}{d t} = r X(t) \left(1  - \dfrac{X(t)}{K} \right)$
 
 This is now known as **logistic growth**, with $r$ representing the intrinsic growth rate of the population when at low abundance, and $K$ being the carrying capacity.
 
-## Logistic growth: behavior
-```{r echo = FALSE}
+## Logistic growth: behavior $\mathcal \chi$
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 fluidRow(
   column(4,
   numericInput('x0', 'Initial density X(0)', 0.5,
@@ -448,7 +472,7 @@ fluidRow(
                  min = 0, max = 100))
 )
 ```
-```{r echo = FALSE}
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 library(deSolve)
 library(reshape2)
 renderPlot(height = 400, {
@@ -476,7 +500,6 @@ renderPlot(height = 400, {
 ```
 
 ## You can estimate parameters from data
-
 You can solve the equation:
 
 $X(t) = \dfrac{X(0) e^{r t}} {1 + X(0) (e^{r t} -1) / K}$
@@ -489,9 +512,8 @@ and
 
 $r = \dfrac{1}{T} \log \left( \dfrac{1/X_0 - 1 / K}{1/X_1 - 1 / K}\right)$
 
-## Example: US Population
-
-```{r echo = FALSE}
+## Example: US Population $\mathcal \Delta$
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 fluidRow(
   column(4,
        numericInput('yearstart', 'Starting date', 1660,
@@ -501,7 +523,7 @@ fluidRow(
                  min = 10, max = 100, step = 10))
 )
 ```
-```{r echo = FALSE}
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 renderPlot(height = 375, {
 us_pop <- read.csv("../../data/theme_1/us_pop.csv")
 year0 <- input$yearstart
@@ -526,9 +548,7 @@ r <- (1 / input$spacing) * log((1 / X0 - 1 / K) / (1 / X1 - 1 / K))
 })
 ```
 
-
 ## Interesting cases
-
 $\dfrac{d X(t)}{d t} = r X(t) \left(1  - \dfrac{X(t)}{K} \right)$
 
 When $X \approx 0$, then we can approximate:
@@ -542,10 +562,9 @@ When $X \approx K$, then the growth rate is close to zero (equilibrium, or stead
 When $X > K$, then the growth is negative.
 
 
-## Equilibria
-
+## Equilibria $\mathcal \chi$
 For which values of $X(t)$ does $\dfrac{d X(t)}{d t} = 0$?
-```{r echo = FALSE}
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 fluidRow(
   column(4,
        numericInput('r1', 'Intrinsic growth r', 0.25,
@@ -555,7 +574,7 @@ fluidRow(
                  min = 0, max = 100))
 )
 ```
-```{r echo = FALSE}
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 renderPlot(height = 375, {
   Xs <- seq(0, 1.15 * input$K1, length.out = 100)
   growth_rate_logistic <- data.frame(X = Xs, dXdt = input$r1 * Xs * (1 - Xs / input$K1))
@@ -575,11 +594,10 @@ renderPlot(height = 375, {
 })
 ```
 
-## Stability
-
+## Stability $\mathcal \chi$
 Will the population go back to the equilibrium if perturbed?
 
-```{r echo = FALSE}
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 fluidRow(
   column(4,
        numericInput('r2', 'Intrinsic growth r', 0.25,
@@ -589,7 +607,7 @@ fluidRow(
                  min = 0, max = 100))
 )
 ```
-```{r echo = FALSE}
+```{r echo = FALSE, message=FALSE, warning=FALSE}
 renderPlot(height = 375, {
   Xs <- seq(0, 1.15 * input$K2, length.out = 100)
   growth_rate_logistic <- data.frame(X = Xs, dXdt = input$r2 * Xs * (1 - Xs / input$K2))
@@ -622,12 +640,148 @@ renderPlot(height = 375, {
 
 ## What's carrying capacity?
 
+Carrying capacity is the **maximum population size an environment can sustain indefinitely**.
+
+- Limited resources (food, water, space)
+
+- Crowding and interference
+
+Overshooting the carrying capacity can have devastating effects:
+
+- 1944: St Matthew Island, Bering Sea. 29 reindeers introduced.
+- 1957: $>$ 1000 reindeers on the island. Individuals healthy; small patches overgrazed.
+- 1963: $>$ 6000; thin and showing signs of stress; large overgrazed patches.
+- 1966: only 42 survivors; no males; extinction within one generation.
+
 ## Intra-specific competition
+Intra-specific competition is a special case of density-dependent growth: the per-capita growth rate depends on the density of the population.
+
+In the typical differential equations used to describe population growth, density-dependence appears as a non-linear term.
+
+**Exponential growth:**
+
+$\dfrac{d X(t)}{d t} = r X(t)$
+
+per-capita growth: $\dfrac{1}{X(t)}\dfrac{d X(t)}{d t} = r$  No density-dependence.
+
+**Logistic growth:** 
+
+$\dfrac{d X(t)}{d t} = r X(t) \left(1  - \dfrac{X(t)}{K} \right) = r X(t) - \dfrac{r X(t)^2}{K}$
+
+per-capita growth: $\dfrac{1}{X(t)}\dfrac{d X(t)}{d t} = r - \dfrac{r X(t)}{K}$ Negative density dependence.
 
 ## Second law of ecology
+<div class="centered">
+<h4>No population is left unchecked for a long time</h4>
+(but it could be long enough to cause great damage)
+</div>
+
+<div class="centered">
+
+
+<img src="./images/Zebra-Mussel.jpg" alt="zebramussel" height="300">
+USFWS
+</div>
+
+## Population structure
+
+- So far, we've considered populations in which each individual has the same probability of reproducing dying. 
+
+- Of course, that's not the case at all.
+
+- To make more accurate and realistic models, we need to model populations divided into classes of age/size.
+
+## Halley's life tables 
+Edmond Halley was an astronomer, mathematician, and polymath. He was instrumental in encouraging Newton to publish his *Principia* (Halley also funded the publication). Halley's comet is named after him (last time seen in 1986, will be back in 2061).
+
+Halley also published the first *life table* in the 1693 article *"An estimate of the degrees of the mortality of mankind, drawn from curious tables of the births and funerals at the city of Breslaw, with an attempt to ascertain the price of annuities upon lives"*. 
+
+This contribution marks the beginning of life insurance!
+
+The data he analyzed was collected by Caspar Neumann, a theologian living in Breslau (now Wroclaw, Poland), who gathered it from parochial registries reporting births and deaths.
+
+Halley noticed that the number of births was close to the number of deaths in a given year. Halley assumed the population to be at **steady state**: the population aged $P_k$ and the number of deaths at age $k$, are constant. The number of newborns $P_0$ is also constant. Then:
+
+$P_{k+1} = P_k - D_k$
+
+## Halley's data: life table of Breslau $\mathcal \Delta$
+```{r echo = FALSE, message=FALSE, warning=FALSE}
+require(ggplot2)
+halley <- read.csv("../../data/theme_1/halley.csv")
+pl_halley <- ggplot(data = halley, aes(x = Age, y = Number)) + geom_line() + 
+  theme_bw() + 
+  theme(axis.text = element_text(size = 14, face = "bold"), 
+        axis.title = element_text(size=14, face="bold")) +
+  theme(legend.position = "none")
+show(pl_halley)
+```
+
+## Population pyramid of Breslau $\mathcal \Delta$
+```{r echo = FALSE, message=FALSE, warning=FALSE}
+require(ggplot2)
+halley <- read.csv("../../data/theme_1/halley.csv")
+pl_halley_bar <- ggplot(data = halley, aes(x = Age, y = Number)) + geom_bar(stat = "identity") + 
+  theme_bw() + 
+  theme(axis.text = element_text(size = 14, face = "bold"), 
+        axis.title = element_text(size=14, face="bold")) +
+  theme(legend.position = "none") + 
+  coord_flip()
+show(pl_halley_bar)
+```
 
 ## Demographic transition
+<div class="centered">
+<img src="./images/DemographicTransition.jpg" alt="demotrans" height="550">
+</div>
 
-## Technological changes
+## Demographic transition
+<div class="centered">
+<img src="./images/DemographicTransition2.jpg" alt="demotrans" height="550">
+</div>
+
+## Demographic transition and pyramids
+<div class="centered">
+<img src="./images/Pyramids.jpg" alt="demotrans" height="275">
+</div>
+
+## Stage 1
+<div class="centered">
+<img src="./images/P_Angola.jpg" alt="angola" height="500">
+<img src="./images/P_Benin.jpg" alt="benin" height="500">
+</div>
+
+## Stage 4
+<div class="centered">
+<img src="./images/P_UK.jpg" alt="UK" height="500">
+<img src="./images/P_US.jpg" alt="US" height="500">
+</div>
+
+## Stage 5
+<div class="centered">
+<img src="./images/P_Italy.jpg" alt="it" height="500">
+<img src="./images/P_Japan.jpg" alt="jp" height="500">
+</div>
+
+## World then and now
+<div class="centered">
+<img src="./images/P_W1950.jpg" alt="1950" height="500">
+<img src="./images/P_W2016.jpg" alt="2016" height="500">
+</div>
+
+
+## Life expectancy Men/Women
+<img src="./images/gender_life_expectancy_CIA_factbook.jpg" alt="menwomen" height="500">
+</div>
+
+
+## Adding reproduction --- Leslie matrices
+
+## Projecting forward
+
+## Asymptotics and eigenvalues
+
+## Age distribution and demographic transition
+
+## Fertility
 
 ## Conclusions
