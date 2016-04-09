@@ -7,7 +7,7 @@ runtime: shiny
 output: 
   ioslides_presentation:
     widescreen: yes
-    smaller: true
+    smaller: false
 ---
 
 ## Can ecological systems experience abrupt, catastrophic shifts?
@@ -50,7 +50,7 @@ Bistability is a special case of systems with multiple **alternative stable stat
 
 *By Georg Wiora, CC BY-SA 3.0, commons.wikimedia.org/w/index.php?curid=810601*
 
-## Case study: shallow lakes
+## Case study: shallow lakes $\mathcal \Pi$
 
 <div class="centered">
 <img src="./images/shallowlakes.gif" alt="shallow1" height="450">
@@ -91,7 +91,6 @@ Bistability is a special case of systems with multiple **alternative stable stat
 *Scheffer et al., Nature, 2001*
 
 ## Allee effect
-
 Warder Clyde Allee (a professor at U of C) in the 1930s conducted a series of experiments to test whether goldfish grown in a tank containing silver suspension (toxic). Because each fish would absorb part of the toxic compounds, fish grown in tanks with other conspecifics would live longer than isolated fishes. 
 
 The idea that populations could grow faster when in groups than in isolation came to be known as the *Allee effect* in the 1950s. Possible processed leading to an Allee effect are:
@@ -103,12 +102,11 @@ The idea that populations could grow faster when in groups than in isolation cam
 - demographic stochasticity.
 
 ## A simple model with Allee effect
-
 We can write a simple model for the (strong) Allee effect by modifying that for the logistic growth:
 
 $\dfrac{dN}{dt} = r N \left( \dfrac{N}{A} - 1 \right) \left( 1 - \dfrac{N}{K} \right)$
 
-Where $A < K$ is the *critical population size*: if $N > A$, then the population grows; if $N < A$, on the other hand, the population decreases.
+Where $A < K$ is the **critical population size**: if $N > A$, then the population grows; if $N < A$, on the other hand, the population decreases.
 
 ## Model behavior
 ```{r echo = FALSE}
@@ -190,15 +188,13 @@ renderPlot(height = 375, {
 ```
 
 ## Allee effect in a bottle and tipping points
+A dynamical system with the Allee effect can experience **abrupt, catastrophic shifts** in which the population, having **crossed the critical size, rapidly collapses**. 
 
-A dynamical system with the Allee effect can experience abrupt, catastrophic shifts in which the population, having crossed the critical size, rapidly collapses. 
+Critical transition (catastrophic bifurcation): **small changes** in conditions **trigger extreme, discontinuous responses** that might be difficult to reverse.
 
-Critical transition (catastrophic bifurcation): small changes in conditions trigger extreme, discontinuous responses that might be difficult to reverse.
-
-There is a growing interest in documenting such critical transition, and finding indicators of the approaching of such critical points.
+There is a growing interest in documenting such **critical transition**, and finding **indicators** of the approaching of such critical points.
 
 ## Brewer's yeast
-
 *Saccharomyces cerevisiae* ("sugar-mold of the beer") is a common yeast used for baking and brewing. It has been intensively studied as a model organism.
 
 <div class="centered">
@@ -208,7 +204,6 @@ There is a growing interest in documenting such critical transition, and finding
 Yeast cannot directly metabolize sucrose (table sugar). To use sucrose as an energy source, it must first convert it to the monosaccharides (simple sugars) glucose and fructose.
 
 ## Sucrose is split outside the cells
-
 <div class="centered">
 <img src="./images/invertase.gif" alt="invertase" height="200">
 </div>
@@ -219,9 +214,10 @@ In yeast, invertase is released outside the cell, so that sucrose is split into 
 
 However, the process is far from efficient: when yeast cells are isolated, the cost of producing the enzyme is higher than the benefit produced, as most of the monosaccharides produced are lost.
 
+## Sucrose is split outside the cells
 However, at high density yeast can be "cooperative": each cell produces the enzyme, and absorbs the monosaccharides produced by the pool, rather than their own. 
 
-This mechanism produces an Allee effect: at low densities, growth rate is negative, at high-densities, it is positive.
+**This mechanism produces an Allee effect: at low densities, growth rate is negative, at high-densities, it is positive.**
 
 ## Sucrose is split outside the cells
 
@@ -229,14 +225,14 @@ This mechanism produces an Allee effect: at low densities, growth rate is negati
 <img src="./images/sucrose.jpg" alt="sugar" height="550">David Healey
 </div>
 
-## Dai et al. Science 2012, Setup
-
+## Dai *et al.* Science 2012, Setup $\mathcal \Pi$
 Dai and colleagues grew *S. cerevisiae* in monoculture using sucrose. 
 
-They artificially imposed a mortality through daily dilutions.
+They artificially imposed a **mortality** through daily dilutions.
 
-They started at different initial densities and used a variety of dilution rates.
+They **started at different initial densities** and used a variety of dilution/mortality rates.
 
+## Dai *et al.* Science 2012, Setup
 This can be modeled as:
 
 $\dfrac{dN}{dt} = r N \left( \dfrac{N}{A} - 1 \right) \left( 1 - \dfrac{N}{K} \right) - mN$ 
@@ -245,12 +241,11 @@ Three equilibria:
 
 $N^* = 0$
 
-$N^* = \frac{1}{2} \left(-\sqrt{(A-K)^2-\frac{4 A K m}{r}}+A+K\right)$
+$N^* = \frac{1}{2} \left(-\sqrt{(A-K)^2-\dfrac{4 A K m}{r}}+A+K\right)$
 
 $N^* = \frac{\sqrt{r \left(r (A-K)^2-4 A K m\right)}+r (A+ K)}{2 r}$
 
 ## Equilibria and stability
-
 ```{r echo = FALSE}
 fluidRow(
   column(3,
@@ -292,7 +287,7 @@ renderPlot(height = 375, {
 })
 ```
 
-## Dai et al. Science 2012, Results
+## Dai et al. Science 2012, Results $\mathcal \Delta$
 ```{r echo = FALSE, message=FALSE, warning=FALSE}
 library(dplyr)
 library(ggplot2)
@@ -334,66 +329,59 @@ show(pl_growth)
 
 ## Expecting the unexpected
 
-System with Allee effect or similar mechanisms can experience abrupt, catastrophic regime shifts.
+System with Allee effect or similar mechanisms **can experience abrupt, catastrophic regime shifts**.
 
-Many natural and man-made systems experience similar mechanisms.
+**Many natural and man-made systems** experience similar phenomena.
 
-There is a growing interest in developing measures that can anticipate the approaching of such transitions.
+There is a growing interest in developing **measures that can anticipate the approaching of such transitions**.
 
 ## Climate
-
 <div class="centered">
-<img src="./images/climate.jpg" alt="climate" height="500">
+<img src="./images/climate.jpg" alt="climate" height="475">
 
 Lenton et al., PNAS 2007
 </div>
 
 ## Climate
-
 <div class="centered">
-<img src="./images/climate2.jpg" alt="climate" height="500">
+<img src="./images/climate2.jpg" alt="climate" height="475">
 
 Scheffer et al., Nature 2009
 </div>
 
 ## Vegetation in arid regions
-
 <div class="centered">
-<img src="./images/vegetation1.jpg" alt="climate" height="500">
+<img src="./images/vegetation1.jpg" alt="climate" height="475">
 
 Rietkerk et al., Science 2004
 </div>
 
 ## Vegetation in arid regions
-
 <div class="centered">
-<img src="./images/vegetation2.jpg" alt="climate" height="500">
+<img src="./images/vegetation2.jpg" alt="climate" height="475">
 
 Rietkerk et al., Science 2004
 </div>
 
 ## Epileptic seizures
-
 <div class="centered">
-<img src="./images/seizure.jpg" alt="seizure" height="500">
+<img src="./images/seizure.jpg" alt="seizure" height="475">
 
 Scheffer et al., Nature 2009
 </div>
 
-
-
-## Critical slowing down
-
+## Anticipating transitions: critical slowing down
 Take the model:
 
 $\dfrac{dN}{dt} = r N \left( \dfrac{N}{A} - 1 \right) \left( 1 - \dfrac{N}{K} \right)$
 
-When $N$ is close to $A$, we have that $\dfrac{N}{A} - 1$ is close to zero: the growth of the population will be slow. 
+When $N$ is close to $A$, we have that $\dfrac{N}{A} - 1$ is close to zero: the growth/decrease of the population will be **slow**. 
 
-Suppose that by altering the environmental conditions, we are increasing $A$ --- then we will see that 
+Suppose that by altering the environmental conditions, we are increasing $A$ --- then we will see that the response to perturbations will **slow down**. 
+
+Once we enter the basin of attraction of the zero equilibrium, the population will start collapsing.
 
 ## Slowing down at play: cyanobacteria
-
 *Aphanizomenon flos-aquae* is a photosynthetic bacterium, commonly found in brackish waters. The bacteria form large surface aggregations (blooms), typically triggered by eutrophication. Most varieties are toxic.
 
 <div class="centered">
@@ -402,37 +390,50 @@ Suppose that by altering the environmental conditions, we are increasing $A$ ---
 
 ## Photoinhibition
 
-Light is necessary for photosynthesis, but interestingly light (especially UV) also damages the molecular machinery responsible for photosynthesis. Hence, plants and photosynthetic bacteria are most productive at intermediate levels of light. 
+Light is necessary for photosynthesis, but interestingly **light** (especially UV) also **damages the molecular machinery responsible for photosynthesis**. Hence, plants and photosynthetic bacteria are **most productive at intermediate levels of light**.
 
-Cyanobacteria provide shading for each other. As such, we expect that when we go from darkness to increased light conditions, the population will grow. However, once we reach a critical point, we will observe the sudden collapse of photosynthetic activity.
+Cyanobacteria provide shading for each other. As such, we expect that when we go from darkness to increased light conditions, the population will grow. However, once we reach a critical point, **we will observe the sudden collapse of photosynthetic activity**.
 
 ## Photoinhibition
 <div class="centered">
-<img src="./images/photoinhibition1.png" alt="pi1" height="500"> goo.gl/mfAHku
+<img src="./images/photoinhibition1.png" alt="pi1" height="550"> goo.gl/mfAHku
 </div>
 
-## Veraart et al., Nature 2012 - Setup
+## Veraart *et al.*, Nature 2012 - Setup $\mathcal \Pi$
 <div class="centered">
-<img src="./images/chemostatportrait.jpg" alt="pi2" height="500"> goo.gl/mfAHku
+<img src="./images/chemostatportrait.jpg" alt="pi2" height="550"> goo.gl/mfAHku
 </div>
 
 ## Veraart et al., Nature 2012 - Perturbations
 <div class="centered">
-<img src="./images/photoinhibition2.png" alt="pi2" height="500"> goo.gl/mfAHku
+<img src="./images/photoinhibition2.png" alt="pi2" height="550"> goo.gl/mfAHku
 </div>
 
 
 ## Photoinhibition - Results
 <div class="centered">
-<img src="./images/photoinhibition3.png" alt="pi3" height="500"> goo.gl/mfAHku
+<img src="./images/photoinhibition3.png" alt="pi3" height="550"> goo.gl/mfAHku
 </div>
 
 ## Fisheries
+The Earth is largely covered by waters: we have $149 \cdot 10^6$ square km of land versus $361 \cdot 10^6$ of waters.
 
-TODO A slide on the importance of fisheries
+Marine habitats are great contributors to the total primary productivity of the biosphere.
+
+Gross primary production (GPP) is the amount of chemical energy as biomass that primary producers create in a given length of time.
+
+The GPP for terrestrial environments is 115B tons per year; that of marine environments is 55B per year.
+
+Most of the productivity of the ocean is not directly accessible to humans (we do not eat bacteria or phytoplankton). It is however possible to access part of this energy through fisheries.
+
+## Fisheries
+- 85% of the fish caught is used for human consumption.
+
+- Fish provide about 20% of the proteins consumed by the ~3B humans living in coastal areas. It makes 15% of the proteins for the remaining 4B.
+
+- Since the end of WWI, fisheries have been growing at an alarming rate. This has resulted in the loss of predatory fish: the abundance of cod, swordfish and tuna has declined of 90% in the last 50 years.
 
 ## Critical transitions in fisheries
-
 ```{r echo = FALSE, message=FALSE, warning=FALSE }
 require(ggplot2)
 require(dplyr)
@@ -445,7 +446,6 @@ show(pl_cod)
 ```
 
 ## Anchovies vs. Sardines
-
 <div class="centered">
 <img src="./images/sardines.jpg" alt="sardines" height="500"> 
 

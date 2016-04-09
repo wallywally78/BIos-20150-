@@ -69,8 +69,6 @@ sliderInput(
   label = "Years",
   min = -1000, 
   max = 2100, value = c(-1000, 2100))
-```
-```{r echo = FALSE, message=FALSE, warning=FALSE}
 library(ggplot2)
 library(ggthemes)
 library(grid)
@@ -410,7 +408,7 @@ In about 5730 years, half of the radioactive carbon has decayed. Hence, $r = -lo
 
 This method was proposed by Willard Libby (UofC) and collaborators in 1949. They were awarded the Nobel prize in 1960.
 
-## Exercise: Date a the Shroud of Turin
+## Exercise: Date the Shroud of Turin
 "The Shroud of Turin, which many people believe was used to wrap Christ's body, bears detailed front and back images of a man who appears to have suffered whipping and crucifixion.  It was first displayed at Lirey in France in the 1350s and subsequently passed into the hands of the Dukes of Savoy.  After many journeys the shroud was finally brought to Turin in 1578 where, in 1694, it was placed in the royal chapel of Turin Cathedral in a specially designed shrine." (Damon *et al.* *Nature*, 1988)
 
 In 1988, three laboratories analyzed the sample. They found that it had lost about $8\%$ of its $\mathrm{^{14}C}$. Can you date the Shroud?
@@ -438,7 +436,7 @@ You can use the forumla $N(t) = N(0) e^{-0.000121 t}$ to find the answer.
 - Efforts to contain rabbits included building three rabbit-proof fences (failed), releasing the virus for mixomatosis and rabbit  haemorrhagic disease. Read Bergstrom *et al.* 2009 for a detailed account on Macquarie Island in Tasmania.
 
 ## Limits to growth
-Thomas R. Malthus (anonymously) published in 1978 a book entitled *An Essay on the Principle of Population, as It Affects the Future Improvement of Society, With Remarks
+Thomas R. Malthus (anonymously) published in 1798 a book entitled *An Essay on the Principle of Population, as It Affects the Future Improvement of Society, With Remarks
 on the Speculations of Mr Godwin, Mr Condorcet and Other Writers*.
 
 The central idea of the book is that human populations will grow until they reach the limit of starvation. This negative view of progress inspired subsequent work (esp. Darwin), and elicited strong reactions (esp. Marx).
@@ -684,7 +682,7 @@ USFWS
 </div>
 
 ## Population structure
-- So far, we've considered populations in which each individual has the same probability of reproducing dying. 
+- So far, we've considered populations in which each individual has the same probability of reproducing/dying. 
 
 - Of course, that's not the case at all.
 
@@ -699,7 +697,7 @@ This contribution marks the beginning of life insurance!
 
 The data he analyzed was collected by Caspar Neumann, a theologian living in Breslau (now Wroclaw, Poland), who gathered it from parochial registries reporting births and deaths.
 
-Halley noticed that the number of births was close to the number of deaths in a given year. Halley assumed the population to be at **steady state**: the population aged $P_k$ and the number of deaths at age $k$, are constant. The number of newborns $P_0$ is also constant. Then:
+Halley noticed that the number of births was close to the number of deaths in a given year. Halley assumed the population to be at **steady state**: the population aged $P_k$ and the number of deaths at age $k$, $D_k$ are constant. The number of newborns $P_0$ is also constant. Then:
 
 $P_{k+1} = P_k - D_k$
 
