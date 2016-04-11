@@ -3,11 +3,10 @@ title: "Growth"
 author: "Stefano Allesina"
 date: ""
 runtime: shiny
-
 output: 
   ioslides_presentation:
+    self_contained: no
     widescreen: yes
-    smaller: true
 ---
 
 ## What is ecology?
@@ -147,22 +146,22 @@ of the growth of rabbits, giving raise to the famous Fibonacci's sequence.
 ## Rabbits {.build}
 Take a couple of rabbits.
 <div class="centered">
-<img src="./images/fib1.jpg" alt="f1" height="75">
+<img src="./images/fib1.jpg" alt="f1" height="60">
 </div>
 They're fully grown in one month.
 <div class="centered">
-<img src="./images/fib2.jpg" alt="fq" height="100">
+<img src="./images/fib2.jpg" alt="fq" height="90">
 </div>
 The next month they reproduce: a new pair of rabbits!
 <div class="centered">
-<img src="./images/fib2.jpg" alt="f2" height="100">
-<img src="./images/fib1.jpg" alt="f1" height="75">
+<img src="./images/fib2.jpg" alt="f2" height="90">
+<img src="./images/fib1.jpg" alt="f1" height="60">
 </div>
 They reproduce again, while their offspring matures:
 <div class="centered">
-<img src="./images/fib2.jpg" alt="f2" height="100">
-<img src="./images/fib2.jpg" alt="f2" height="100">
-<img src="./images/fib1.jpg" alt="f1" height="75">
+<img src="./images/fib2.jpg" alt="f2" height="90">
+<img src="./images/fib2.jpg" alt="f2" height="90">
+<img src="./images/fib1.jpg" alt="f1" height="60">
 </div>
 
 ## Many rabbits! $\mathcal \chi$
@@ -207,7 +206,10 @@ How long would it take to the sons of Noah to "people" the Earth? Euler consider
 
 $N_t = (1 + x) N_{t-1}$
 
-$x$ is called the *annual growth rate* of the population. Starting from a certain population size (i.e., knowing $N_0$), we can project forward:
+$x$ is called the *annual growth rate* of the population. 
+
+## Geometric growth
+Starting from a certain population size (i.e., knowing $N_0$), we can project forward:
 
 $N_1 = (1 + x) N_0$
 
@@ -228,6 +230,7 @@ $N_{200} = (1 + x)^{200} N_0$
 
 $10^6 = (1 + x)^{200} 6$
 
+## Geometric growth
 This looks very easy to solve, but it is not, if you don't have a calculator! Euler exploited a very recent invention, the table of logarithms (introduced by Napier in 1614):
 
 $\log_{10} (10^6) = \log_{10}((1 + x)^{200} 6)$
@@ -248,11 +251,12 @@ Hold this thought, as we're going to explore it later.
 ## Just how fast is geometric growth?
 Meet *Escherichia coli*, a Gram-negative bacterium that lives in your intestine (and in many other places). Some strains of *E. coli* can cause serious food poisoning.
 <div class="centered">
-<img src="./images/EscherichiaColi.jpg" alt="ecoli" height="200">
+<img src="./images/EscherichiaColi.jpg" alt="ecoli" height="300">
 </div>
 
 Under ideal conditions, it can reproduce every 20 minutes (72 times per day). Each cell weighs about $10^{-15}$kg.
 
+## Just how fast is geometric growth?
 We can write an equation for the mass of a population of *E. coli*, starting with a single bacterium, at time $d$ days:
 
 $M_d = M_0 2^{72 d}$
@@ -303,7 +307,7 @@ show(plcoli))
 - One of the most amazing cases is that of the banded mongoose (*Mungos mungo*): within a group, 64% of the births happen in the same night! (The reason for this is not very romantic: read Hodge *et al.* 2010).
 
 <div class="centered">
-![mungo](./images/mongoose.jpg) 
+<img src="./images/mongoose.jpg" alt="mongoose" height="200">
 </div>
 
 ## Births by day in US 1969-88 (50 states and DC) $\mathcal \Delta$
@@ -372,6 +376,7 @@ $\dfrac{d X(t)}{d t} = r X(t)$
 
 - $r$ intrinsic growth rate [units: 1 / time]. $r>0$ means the population grows, $r<0$ shrinks, $r=0$ is constant.
 
+## Exponential growth
 **Solution:**
 
 $X(t) = X(0) e^{r t}$
@@ -389,6 +394,9 @@ Independent of $X(0)>0$!
 
 $e^{r \tau} = 2$
 
+## Doubling time
+$e^{r \tau} = 2$
+
 $r \tau = \log(2)$
 
 $\tau = \frac{log(2)}{r} = \frac{0.301029995...}{r}$
@@ -404,7 +412,14 @@ Radioactive carbon forms $\mathrm{CO}_2$ that is used by plants. Animals eat pla
 
 $\mathrm{~^{14}_{6}C}\rightarrow\mathrm{~^{14}_{7}N}+ e^- + \bar{\nu}_e$
 
+## Halving time and carbon dating
 In about 5730 years, half of the radioactive carbon has decayed. Hence, $r = -log(2)/5730 = -0.00012096809$. If a tissue has only $0.75$ parts of $\mathrm{^{14}C}$ for every $10^{12}$ of $\mathrm{^{12}C}$, the tissue is 5730 years old. A proportion of of $0.25 / 10^{12}$ would yield 34380 years, and so forth.
+
+Dating a sample is equivalent to calculating for which $t$ the equation 
+
+$N(t) = N(0) e^{-0.000121 t}$
+
+is satisfied, where $N(t)$ is the concentration of $\mathrm{^{14}_{6}C}$ in the sample, and $N(0)$ is the original concentration ($1.5$ atoms of $\mathrm{^{14}C}$ for every $10^{12}$ of $\mathrm{^{12}C}$).
 
 This method was proposed by Willard Libby (UofC) and collaborators in 1949. They were awarded the Nobel prize in 1960.
 
@@ -416,16 +431,14 @@ In 1988, three laboratories analyzed the sample. They found that it had lost abo
 You can use the forumla $N(t) = N(0) e^{-0.000121 t}$ to find the answer.
 
 ## First law of ecology $\mathcal \Pi$
-<div class="centered">
-<h4>If left unchecked, populations will grow/decay very fast!</h4>
-</div>
 
+### If left unchecked, populations will grow/decay very fast
+
+
+## Example: rabbits (again)
 <div class="centered">
 <img src="./images/rabbits-mixo.jpg" alt="rabbitsmixo" height="200">
 </div>
-
-
-**Example: rabbits (again)**
 
 - Lore has it, Thomas Austin released 24 rabbits in his property near Victoria (Australia) in 1859.
 
@@ -441,6 +454,7 @@ on the Speculations of Mr Godwin, Mr Condorcet and Other Writers*.
 
 The central idea of the book is that human populations will grow until they reach the limit of starvation. This negative view of progress inspired subsequent work (esp. Darwin), and elicited strong reactions (esp. Marx).
 
+## Limits to growth
 *[...] the power of population is indefinitely greater than the power in the earth to produce subsistence for man. Population, when unchecked, increases in a  geometrical ratio. Subsistence increases only in an arithmetical ratio. A slight acquaintance with numbers will shew the immensity of the first power in comparison of the second. By that law of our nature which makes food necessary to the life of man, the effects of these two unequal powers must be kept equal. This implies a strong and constantly operating check on population from the difficulty of subsistence. This difficulty must fall somewhere; and must necessarily be severely felt by a large portion of mankind.*
 
 In the second edition, titled *An Essay on the Principle
@@ -455,7 +469,7 @@ He wrote a simple ordinary differential equation to describe the slowing down of
 
 $\dfrac{d X(t)}{d t} = r X(t) \left(1  - \dfrac{X(t)}{K} \right)$
 
-This is now known as **logistic growth**, with $r$ representing the intrinsic growth rate of the population when at low abundance, and $K$ being the carrying capacity.
+This is now known as **logistic growth**. $r \rightarrow$ intrinsic growth rate of the population when at low abundance; $K \rightarrow$ carrying capacity.
 
 ## Logistic growth: behavior $\mathcal \chi$
 ```{r echo = FALSE, message=FALSE, warning=FALSE}
@@ -647,7 +661,7 @@ Carrying capacity is the **maximum population size an environment can sustain in
 Overshooting the carrying capacity can have devastating effects:
 
 - 1944: St Matthew Island, Bering Sea. 29 reindeers introduced.
-- 1957: $>$ 1000 reindeers on the island. Individuals healthy; small patches overgrazed.
+- 1957: $>$ 1000 reindeers on the island. Individuals healthy; small patches of overgrazed vegetation.
 - 1963: $>$ 6000; thin and showing signs of stress; large overgrazed patches.
 - 1966: only 42 survivors; no males; extinction within one generation.
 
@@ -660,13 +674,22 @@ In the typical differential equations used to describe population growth, densit
 
 $\dfrac{d X(t)}{d t} = r X(t)$
 
-per-capita growth: $\dfrac{1}{X(t)}\dfrac{d X(t)}{d t} = r$  No density-dependence.
+per-capita growth: 
 
+$\dfrac{1}{X(t)}\dfrac{d X(t)}{d t} = r$  
+
+No density-dependence.
+
+## Intra-specific competition
 **Logistic growth:** 
 
 $\dfrac{d X(t)}{d t} = r X(t) \left(1  - \dfrac{X(t)}{K} \right) = r X(t) - \dfrac{r X(t)^2}{K}$
 
-per-capita growth: $\dfrac{1}{X(t)}\dfrac{d X(t)}{d t} = r - \dfrac{r X(t)}{K}$ Negative density dependence.
+per-capita growth: 
+
+$\dfrac{1}{X(t)}\dfrac{d X(t)}{d t} = r - \dfrac{r X(t)}{K}$ 
+
+Negative density dependence.
 
 ## Second law of ecology
 <div class="centered">
@@ -697,6 +720,7 @@ This contribution marks the beginning of life insurance!
 
 The data he analyzed was collected by Caspar Neumann, a theologian living in Breslau (now Wroclaw, Poland), who gathered it from parochial registries reporting births and deaths.
 
+## Halley's life tables 
 Halley noticed that the number of births was close to the number of deaths in a given year. Halley assumed the population to be at **steady state**: the population aged $P_k$ and the number of deaths at age $k$, $D_k$ are constant. The number of newborns $P_0$ is also constant. Then:
 
 $P_{k+1} = P_k - D_k$
