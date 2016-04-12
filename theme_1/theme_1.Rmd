@@ -75,7 +75,7 @@ library(gridExtra)
 library(scales)
 
 renderPlot(height = 400, {
-    human_pop <- read.csv("../../data/theme_1/world_population.csv", stringsAsFactors = FALSE)
+    human_pop <- read.csv("./data/world_population.csv", stringsAsFactors = FALSE)
     min_max <- input$range_years
     to_draw <- human_pop[(human_pop$year >= min_max[1]) & (human_pop$year <= min_max[2]),]
     if (dim(to_draw)[1] <= 2){
@@ -97,7 +97,7 @@ renderPlot(height = 400, {
 ## Why do we care? $\mathcal \Delta$
 ```{r echo = FALSE, message=FALSE, warning=FALSE}
 renderPlot(height = 400, {
-  human_pop <- read.csv("../../data/theme_1/world_population.csv", stringsAsFactors = FALSE)
+  human_pop <- read.csv("./data/world_population.csv", stringsAsFactors = FALSE)
 pl_zoom_human <- ggplot(human_pop, aes(x = year, y = world_population, colour = reference)) + 
       geom_point() + 
       geom_line() + 
@@ -111,7 +111,7 @@ pl_zoom_human <- ggplot(human_pop, aes(x = year, y = world_population, colour = 
 
 ## Why do we care? $\mathcal \Delta$
 ```{r echo = FALSE, message=FALSE, warning=FALSE}
-carbon <- read.csv("../../data/theme_1/carbon.csv")
+carbon <- read.csv("./data/carbon.csv")
 renderPlot(height = 400, {
 pl_zoom_carbon <- ggplot(carbon, aes(x = year, y = carbon)) + 
       geom_point() + 
@@ -312,7 +312,7 @@ show(plcoli))
 
 ## Births by day in US 1969-88 (50 states and DC) $\mathcal \Delta$
 ```{r echo = FALSE, message=FALSE, warning=FALSE}
-num_births_by_day <- read.csv("../../data/theme_1/births_69_88.csv")
+num_births_by_day <- read.csv("./data/births_69_88.csv")
 birthdays <- as.Date(paste(num_births_by_day$month, num_births_by_day$day, "1969"), "%m %d %Y")
 pl_birthdays_nohigh <- ggplot(data = data.frame(date_b = as.Date(birthdays), 
                                          number_of_births = num_births_by_day$births), 
@@ -332,7 +332,7 @@ show(pl_birthdays_nohigh))
 
 ## Births by day in US 1969-88 (50 states and DC) $\mathcal \Delta$
 ```{r echo = FALSE, message=FALSE, warning=FALSE}
-num_births_by_day <- read.csv("../../data/theme_1/births_69_88.csv")
+num_births_by_day <- read.csv("./data/births_69_88.csv")
 birthdays <- as.Date(paste(num_births_by_day$month, num_births_by_day$day, "1969"), "%m %d %Y")
 pl_birthdays <- ggplot(data = data.frame(date_b = as.Date(birthdays), 
                                          number_of_births = num_births_by_day$births), 
@@ -538,7 +538,7 @@ fluidRow(
 ```
 ```{r echo = FALSE, message=FALSE, warning=FALSE}
 renderPlot(height = 375, {
-us_pop <- read.csv("../../data/theme_1/us_pop.csv")
+us_pop <- read.csv("./data/us_pop.csv")
 year0 <- input$yearstart
 year1 <- input$yearstart + input$spacing
 year2 <- input$yearstart + 2 * input$spacing
@@ -728,7 +728,7 @@ $P_{k+1} = P_k - D_k$
 ## Halley's data: life table of Breslau $\mathcal \Delta$
 ```{r echo = FALSE, message=FALSE, warning=FALSE}
 require(ggplot2)
-halley <- read.csv("../../data/theme_1/halley.csv")
+halley <- read.csv("./data/halley.csv")
 pl_halley <- ggplot(data = halley, aes(x = Age, y = Number)) + geom_line() + 
   theme_bw() + 
   theme(axis.text = element_text(size = 14, face = "bold"), 
@@ -740,7 +740,7 @@ show(pl_halley)
 ## Population pyramid of Breslau $\mathcal \Delta$
 ```{r echo = FALSE, message=FALSE, warning=FALSE}
 require(ggplot2)
-halley <- read.csv("../../data/theme_1/halley.csv")
+halley <- read.csv("./data/halley.csv")
 pl_halley_bar <- ggplot(data = halley, aes(x = Age, y = Number)) + geom_bar(stat = "identity") + 
   theme_bw() + 
   theme(axis.text = element_text(size = 14, face = "bold"), 

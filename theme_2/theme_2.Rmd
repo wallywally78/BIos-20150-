@@ -292,7 +292,7 @@ renderPlot(height = 375, {
 library(dplyr)
 library(ggplot2)
 library(tidyr)
-dai_data <- read.csv("../../data/theme_2/DaiEtAl_Science2012_data.csv", sep = " ")
+dai_data <- read.csv("./data/DaiEtAl_Science2012_data.csv", sep = " ")
 
 pl_bifurc <- ggplot(dai_data %>% filter(dilution == 250 | dilution == 750 | dilution == 1266 | dilution == 1400), 
              aes(x = day, y = value, colour=extinction, group = paste(initial_density, replicate))) + 
@@ -309,7 +309,7 @@ show(pl_bifurc)
 library(dplyr)
 library(ggplot2)
 library(tidyr)
-dai_data <- read.csv("../../data/theme_2/DaiEtAl_Science2012_data.csv", sep = " ")
+dai_data <- read.csv("./data/DaiEtAl_Science2012_data.csv", sep = " ")
 
 data_growth <- dai_data %>% group_by(dilution, replicate, initial_density) %>% arrange(dilution, replicate, day) %>% mutate(y =  lead(value) / value) %>% ungroup()
 
@@ -437,7 +437,7 @@ Most of the productivity of the ocean is not directly accessible to humans (we d
 ```{r echo = FALSE, message=FALSE, warning=FALSE }
 require(ggplot2)
 require(dplyr)
-cod_data <- read.csv("../../data/theme_2/cod_newfoundland-NAFO.csv")
+cod_data <- read.csv("./data/cod_newfoundland-NAFO.csv")
 pl_cod <- ggplot(data = cod_data %>% filter(Division == "2J" | Division == "3PS" | Division == "3K" | Division == "4R"),
                  aes(x = Year, y = Catch, colour = Division)) + geom_line(size = 2, alpha = 0.8) + theme_bw() + 
   theme(axis.text = element_text(size = 14, face = "bold"), axis.title = element_text(size=14, face="bold")) +
