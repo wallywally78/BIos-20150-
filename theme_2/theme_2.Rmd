@@ -108,7 +108,7 @@ $\dfrac{dN}{dt} = r N \left( \dfrac{N}{A} - 1 \right) \left( 1 - \dfrac{N}{K} \r
 
 Where $A < K$ is the **critical population size**: if $N > A$, then the population grows; if $N < A$, on the other hand, the population decreases.
 
-## Model behavior
+## Model behavior $\mathcal \chi$
 ```{r echo = FALSE}
 fluidRow(
   column(3,
@@ -148,7 +148,7 @@ renderPlot(height = 400, {
       theme_bw() + 
       theme(axis.text=element_text(size=14, face="bold"), axis.title=element_text(size=14, face="bold")) +
       theme(legend.position = "none")
-    print(pl_logistic)
+    show(pl_logistic)
 })
 ```
 
@@ -183,7 +183,7 @@ renderPlot(height = 375, {
       theme_bw() + 
       theme(axis.text = element_text(size = 14, face = "bold"), axis.title = element_text(size=14, face="bold")) +
       theme(legend.position = "none")
-    print(eq_allee)
+    show(eq_allee)
 })
 ```
 
@@ -283,7 +283,7 @@ renderPlot(height = 375, {
       theme_bw() + 
       theme(axis.text = element_text(size = 14, face = "bold"), axis.title = element_text(size=14, face="bold")) +
       theme(legend.position = "none")
-    print(eq_allee)
+    show(eq_allee)
 })
 ```
 
@@ -433,7 +433,7 @@ Most of the productivity of the ocean is not directly accessible to humans (we d
 
 - Since the end of WWI, fisheries have been growing at an alarming rate. This has resulted in the loss of predatory fish: the abundance of cod, swordfish and tuna has declined of 90% in the last 50 years.
 
-## Critical transitions in fisheries
+## Critical transitions in fisheries $\mathcal \Delta$
 ```{r echo = FALSE, message=FALSE, warning=FALSE }
 require(ggplot2)
 require(dplyr)
@@ -447,22 +447,137 @@ show(pl_cod)
 
 ## Anchovies vs. Sardines
 <div class="centered">
-<img src="./images/sardines.jpg" alt="sardines" height="500"> 
+<img src="./images/sardines.jpg" alt="sardines" height="470"> 
 
 Lluch-Cota, PNAS 2013
 </div>
 
 ## Maximum Sustainable Yield
+**Idea:** maximum yield (landings) that can be sustained indefinitely. 
 
-TODO Concept of MSY
+From an economic standpoint, we want to get as much fish as possible. 
+
+On the other hand, we want also to be able to fish in the future!
+
+How much can we fish, before irrimediably depleting the pool?
 
 ## MSY - Derivation
 
-TODO Maths
+$\dfrac{d X(t)}{d t} = r X(t) \left(1  - \dfrac{X(t)}{K} \right) - H$
+
+$H \geq 0$ Harvesting
+
+Equilibria:
+
+$X^* = 0$,
+
+$r X^* \left(1  - \dfrac{X^*}{K} \right) = H$
+
+$X^* = \dfrac{K}{2} \pm \dfrac{\sqrt{K^2 - \frac{4  H K}{r} }}{2}$ for $r \geq \dfrac{4 H K}{r}$
+
+## When is $H$ maximized?
+
+$H$ is maximal when $r X(t) \left(1  - \dfrac{X(t)}{K} \right)$ is maximized. 
+
+Take derivative with respect to $X$:
+
+$\dfrac{\partial}{\partial X} r X - \dfrac{r X^2}{K} = r - \dfrac{2 r X}{K}$
+
+Set to zero and solve for $X$:
+
+$r - \dfrac{2 r X}{K} = 0$; $\;\;X = \dfrac{K}{2}$
+
+Keep the population at half of the carrying capacity, and you can harvest:
+
+$H_{\text{max}} = \dfrac{r K}{4}$
+
+## History
+
+Initially developed in the 1930s, it started picking up momentum after WWII. 
+
+It was rapidly adopted by several international organizations, as well as individual counrtries.
+
+In the late 1970s, scientists beginned writing strong critiques of the concept.
+
+But, as Walters and Maguire (1996) put it *"Even if scientists had suddenly reversed their conclusions and had called loudly and publicly for harvest restraints, by about 1982 an institutional juggernaut had been set in motion that no political decision maker would have dared try to stop until it was too late. The window of opportunity had closed."*
+
+Despite the collapse of many fisheries in the 1990s, MSY is still listed as a goal in many international treaties.
+
+## MSY -- European Commission, 2012
+<div class="centered">
+<img src="./images/eu_msy.jpg" alt="EU MSY" height="500"> 
+
+</div>
+
 
 ## MSY Leading to critical transition?
+```{r echo = FALSE}
+fluidRow(
+  column(3,
+       numericInput('r4', 'Intrinsic growth r', 0.25,
+                 min = 0, max = 2, step = 0.05)),
+  column(3,
+      numericInput('K4', 'Carrying capacity K', 1000,
+                 min = 0, max = 10000, step = 100)),
+  column(3,
+      numericInput('A4', 'Critical size A', 150,
+                 min = 0, max = 10000, step = 50)),
+  column(3,
+      numericInput('H', 'Harverst', 10,
+                 min = 0, max = 10000, step = 10))
+)
+renderPlot(height = 375, {
+  Xs <- seq(0, 1.15 * input$K4, length.out = 100)
+  growth_rate_msy <- data.frame(X = Xs, dXdt = input$r4 * Xs * (1 - Xs / input$K4) * (Xs / input$A4 - 1) - input$H)
+  eq_msy <- ggplot(growth_rate_msy, 
+                        aes(x = X, y = dXdt)) + 
+      geom_line(size = 2, alpha = 0.5, colour = "black") +
+      scale_x_continuous("N(t)") + 
+      scale_y_continuous("dN(t)/dt") +
+      geom_hline(yintercept = 0) + 
+      geom_vline(xintercept = 0) + 
+      theme_bw() + 
+      theme(axis.text = element_text(size = 14, face = "bold"), axis.title = element_text(size=14, face="bold")) +
+      theme(legend.position = "none")
+    show(eq_msy)
+})
+```
 
-TODO
+## Other problems with MSY
+- Single species.
+
+- No population structure.
+
+- Parameters $r$ and $K$ are not easy to measure in practice.
+
+- Populations are (naturally) fluctuating, a constant harvest leads to depletion.
+
+## MSY Epitaph (Larkin, 1977)
+<div class="centered">
+**M. S. Y. 1930s-1970s** 
+
+Here lies the concept, MSY. 
+
+It advocated yields too high, 
+
+And didn't spell out how to slice the pie. 
+
+We bury it  with the best of wishes, 
+
+Especially on behalf of fishes. 
+
+We don't know yet what will take its place, 
+
+But hope it's as good for the human race.
+
+R.I.P.
+</div>
 
 ## Conclusions
-
+- Dynamical systems can have **different attractors**.
+- Stochastic fluctuations can **move the system between states**.
+- **Allee effect** is sufficient to create bi-stable systems.
+- Bistable systems can be re-created in the laboratory, and the approaching of a critical transition can be measured.
+- In natural systems, we observe similar dynamics. 
+- This is especially worrisome in the case of fisheries---many cases of collapse in the past 20 years.
+- We need more holistic approaches for determining what can be harvested.

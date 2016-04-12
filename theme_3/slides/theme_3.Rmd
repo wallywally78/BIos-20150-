@@ -1,0 +1,914 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class=" is-copy-enabled is-u2f-enabled">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset='utf-8'>
+
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-7dda6f03f032bfdf2f2976a162bd336049cdb33c8b28b114031e22502d3a9084.css" integrity="sha256-fdpvA/Ayv98vKXahYr0zYEnNszyLKLEUAx4iUC06kIQ=" media="all" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-b217cc85e89b2df43726f496cf2808c69292927d481006b8343b0dcbcdf5e210.css" integrity="sha256-shfMheibLfQ3JvSWzygIxpKSkn1IEAa4NDsNy8314hA=" media="all" rel="stylesheet" />
+    
+    
+    
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/site-2d5d1699983d8dd7c384c67dfc183fbace8e3a24866e8822069d599f68e71fb2.css" integrity="sha256-LV0WmZg9jdfDhMZ9/Bg/us6OOiSGbogiBp1Zn2jnH7I=" media="all" rel="stylesheet" />
+
+    <link as="script" href="https://assets-cdn.github.com/assets/frameworks-17fc21583b56cf4c511436a15e7eb5f4f48d3d8c1006e654d3108ef67a707cae.js" rel="preload" />
+    
+    <link as="script" href="https://assets-cdn.github.com/assets/github-dca3f1d560e7cf5f824e15ca5642c3a24ea2a0518aa24ad2b56a1849f43d3182.js" rel="preload" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=1020">
+    
+    
+    <title>Bios20150/theme_3.Rmd at master · StefanoAllesina/Bios20150 · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="https://avatars2.githubusercontent.com/u/2273365?v=3&amp;s=400" name="twitter:image:src" /><meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="StefanoAllesina/Bios20150" name="twitter:title" /><meta content="Contribute to Bios20150 development by creating an account on GitHub." name="twitter:description" />
+      <meta content="https://avatars2.githubusercontent.com/u/2273365?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="StefanoAllesina/Bios20150" property="og:title" /><meta content="https://github.com/StefanoAllesina/Bios20150" property="og:url" /><meta content="Contribute to Bios20150 development by creating an account on GitHub." property="og:description" />
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    
+    <meta name="pjax-timeout" content="1000">
+    
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient>
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="809246E4:4DBE:FDB114C:570D156D" name="octolytics-dimension-request_id" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
+
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged Out">
+
+
+
+        <meta name="hostname" content="github.com">
+    <meta name="user-login" content="">
+
+        <meta name="expected-hostname" content="github.com">
+      <meta name="js-proxy-site-detection-payload" content="NmRlOTM4ZWJkMDFkZDMzYmFkZTkyN2ZlZGE0ZDdjNmZkODljZWJkZDdhMTlhZDMxMGU3Y2E1MmRkODc2ZDdiNnx7InJlbW90ZV9hZGRyZXNzIjoiMTI4LjE0Ni43MC4yMjgiLCJyZXF1ZXN0X2lkIjoiODA5MjQ2RTQ6NERCRTpGREIxMTRDOjU3MEQxNTZEIiwidGltZXN0YW1wIjoxNDYwNDc1MjQ4fQ==">
+
+      <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0">
+      <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+    <meta content="f52fc476ef2eee2c65d9b338ab76ae4f14b01c1f" name="form-nonce" />
+
+    <meta http-equiv="x-pjax-version" content="84787b4f3803509febe78d44c79ae41c">
+    
+
+      
+  <meta name="description" content="Contribute to Bios20150 development by creating an account on GitHub.">
+  <meta name="go-import" content="github.com/StefanoAllesina/Bios20150 git https://github.com/StefanoAllesina/Bios20150.git">
+
+  <meta content="2273365" name="octolytics-dimension-user_id" /><meta content="StefanoAllesina" name="octolytics-dimension-user_login" /><meta content="50700387" name="octolytics-dimension-repository_id" /><meta content="StefanoAllesina/Bios20150" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="50700387" name="octolytics-dimension-repository_network_root_id" /><meta content="StefanoAllesina/Bios20150" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/StefanoAllesina/Bios20150/commits/master.atom" rel="alternate" title="Recent Commits to Bios20150:master" type="application/atom+xml">
+
+
+      <link rel="canonical" href="https://github.com/StefanoAllesina/Bios20150/blob/master/slides/theme_3/theme_3.Rmd" data-pjax-transient>
+  </head>
+
+
+  <body class="logged-out   env-production linux vis-public page-blob">
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"></div>
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+
+    
+    
+    
+
+
+
+          <header class="site-header js-details-container" role="banner">
+  <div class="container-responsive">
+    <a class="header-logo-invertocat" href="https://github.com/" aria-label="Homepage" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
+    </a>
+
+    <button class="btn-link right site-header-toggle js-details-target" type="button" aria-label="Toggle navigation">
+      <svg aria-hidden="true" class="octicon octicon-three-bars" height="24" version="1.1" viewBox="0 0 12 16" width="18"><path d="M11.41 9H0.59c-0.59 0-0.59-0.41-0.59-1s0-1 0.59-1h10.81c0.59 0 0.59 0.41 0.59 1s0 1-0.59 1z m0-4H0.59c-0.59 0-0.59-0.41-0.59-1s0-1 0.59-1h10.81c0.59 0 0.59 0.41 0.59 1s0 1-0.59 1zM0.59 11h10.81c0.59 0 0.59 0.41 0.59 1s0 1-0.59 1H0.59c-0.59 0-0.59-0.41-0.59-1s0-1 0.59-1z"></path></svg>
+    </button>
+
+    <div class="site-header-menu">
+      <nav class="site-header-nav site-header-nav-main">
+        <a href="/personal" class="js-selected-navigation-item nav-item nav-item-personal" data-ga-click="Header, click, Nav menu - item:personal" data-selected-links="/personal /personal">
+          Personal
+</a>        <a href="/open-source" class="js-selected-navigation-item nav-item nav-item-opensource" data-ga-click="Header, click, Nav menu - item:opensource" data-selected-links="/open-source /open-source">
+          Open source
+</a>        <a href="/business" class="js-selected-navigation-item nav-item nav-item-business" data-ga-click="Header, click, Nav menu - item:business" data-selected-links="/business /business/features /business/customers /business">
+          Business
+</a>        <a href="/explore" class="js-selected-navigation-item nav-item nav-item-explore" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship /explore">
+          Explore
+</a>      </nav>
+
+      <div class="site-header-actions">
+            <a class="btn btn-primary site-header-actions-btn" href="/join?source=header-repo" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+          <a class="btn site-header-actions-btn mr-2" href="/login?return_to=%2FStefanoAllesina%2FBios20150%2Fblob%2Fmaster%2Fslides%2Ftheme_3%2Ftheme_3.Rmd" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+      </div>
+
+        <nav class="site-header-nav site-header-nav-secondary">
+          <a class="nav-item" href="/pricing">Pricing</a>
+          <a class="nav-item" href="/blog">Blog</a>
+          <a class="nav-item" href="https://help.github.com">Support</a>
+          <a class="nav-item header-search-link" href="https://github.com/search">Search GitHub</a>
+              <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
+  <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/StefanoAllesina/Bios20150/search" class="js-site-search-form" data-scoped-search-url="/StefanoAllesina/Bios20150/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <label class="form-control header-search-wrapper js-chromeless-input-container">
+      <div class="header-search-scope">This repository</div>
+      <input type="text"
+        class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable"
+        data-hotkey="s"
+        name="q"
+        placeholder="Search"
+        aria-label="Search this repository"
+        data-unscoped-placeholder="Search GitHub"
+        data-scoped-placeholder="Search"
+        tabindex="1"
+        autocapitalize="off">
+    </label>
+</form></div>
+
+        </nav>
+    </div>
+  </div>
+</header>
+
+
+
+    <div id="start-of-content" class="accessibility-aid"></div>
+
+      <div id="js-flash-container">
+</div>
+
+
+    <div role="main" class="main-content">
+        <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
+    <div id="js-repo-pjax-container" data-pjax-container>
+      
+<div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+  <div class="container repohead-details-container">
+
+    
+
+<ul class="pagehead-actions">
+
+  <li>
+      <a href="/login?return_to=%2FStefanoAllesina%2FBios20150"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to watch a repository" rel="nofollow">
+    <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6c4.94 0 7.94-6 7.94-6S13 2 8.06 2z m-0.06 10c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4z m2-4c0 1.11-0.89 2-2 2s-2-0.89-2-2 0.89-2 2-2 2 0.89 2 2z"></path></svg>
+    Watch
+  </a>
+  <a class="social-count" href="/StefanoAllesina/Bios20150/watchers">
+    1
+  </a>
+
+  </li>
+
+  <li>
+      <a href="/login?return_to=%2FStefanoAllesina%2FBios20150"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to star a repository" rel="nofollow">
+    <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M14 6l-4.9-0.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14l4.33-2.33 4.33 2.33L10.4 9.26 14 6z"></path></svg>
+    Star
+  </a>
+
+    <a class="social-count js-social-count" href="/StefanoAllesina/Bios20150/stargazers">
+      0
+    </a>
+
+  </li>
+
+  <li>
+      <a href="/login?return_to=%2FStefanoAllesina%2FBios20150"
+        class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+        aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path d="M8 1c-1.11 0-2 0.89-2 2 0 0.73 0.41 1.38 1 1.72v1.28L5 8 3 6v-1.28c0.59-0.34 1-0.98 1-1.72 0-1.11-0.89-2-2-2S0 1.89 0 3c0 0.73 0.41 1.38 1 1.72v1.78l3 3v1.78c-0.59 0.34-1 0.98-1 1.72 0 1.11 0.89 2 2 2s2-0.89 2-2c0-0.73-0.41-1.38-1-1.72V9.5l3-3V4.72c0.59-0.34 1-0.98 1-1.72 0-1.11-0.89-2-2-2zM2 4.2c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z m3 10c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z m3-10c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z"></path></svg>
+        Fork
+      </a>
+
+    <a href="/StefanoAllesina/Bios20150/network" class="social-count">
+      0
+    </a>
+  </li>
+</ul>
+
+    <h1 class="entry-title public ">
+  <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M4 9h-1v-1h1v1z m0-3h-1v1h1v-1z m0-2h-1v1h1v-1z m0-2h-1v1h1v-1z m8-1v12c0 0.55-0.45 1-1 1H6v2l-1.5-1.5-1.5 1.5V14H1c-0.55 0-1-0.45-1-1V1C0 0.45 0.45 0 1 0h10c0.55 0 1 0.45 1 1z m-1 10H1v2h2v-1h3v1h5V11z m0-10H2v9h9V1z"></path></svg>
+  <span class="author" itemprop="author"><a href="/StefanoAllesina" class="url fn" rel="author">StefanoAllesina</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a href="/StefanoAllesina/Bios20150" data-pjax="#js-repo-pjax-container">Bios20150</a></strong>
+
+</h1>
+
+  </div>
+  <div class="container">
+    
+<nav class="reponav js-repo-nav js-sidenav-container-pjax"
+     itemscope
+     itemtype="http://schema.org/BreadcrumbList"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container">
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/StefanoAllesina/Bios20150" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /StefanoAllesina/Bios20150" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M9.5 3l-1.5 1.5 3.5 3.5L8 11.5l1.5 1.5 4.5-5L9.5 3zM4.5 3L0 8l4.5 5 1.5-1.5L2.5 8l3.5-3.5L4.5 3z"></path></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a href="/StefanoAllesina/Bios20150/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /StefanoAllesina/Bios20150/issues" itemprop="url">
+        <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7S10.14 13.7 7 13.7 1.3 11.14 1.3 8s2.56-5.7 5.7-5.7m0-1.3C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7S10.86 1 7 1z m1 3H6v5h2V4z m0 6H6v2h2V10z"></path></svg>
+        <span itemprop="name">Issues</span>
+        <span class="counter">0</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/StefanoAllesina/Bios20150/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /StefanoAllesina/Bios20150/pulls" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M11 11.28c0-1.73 0-6.28 0-6.28-0.03-0.78-0.34-1.47-0.94-2.06s-1.28-0.91-2.06-0.94c0 0-1.02 0-1 0V0L4 3l3 3V4h1c0.27 0.02 0.48 0.11 0.69 0.31s0.3 0.42 0.31 0.69v6.28c-0.59 0.34-1 0.98-1 1.72 0 1.11 0.89 2 2 2s2-0.89 2-2c0-0.73-0.41-1.38-1-1.72z m-1 2.92c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2zM4 3c0-1.11-0.89-2-2-2S0 1.89 0 3c0 0.73 0.41 1.38 1 1.72 0 1.55 0 5.56 0 6.56-0.59 0.34-1 0.98-1 1.72 0 1.11 0.89 2 2 2s2-0.89 2-2c0-0.73-0.41-1.38-1-1.72V4.72c0.59-0.34 1-0.98 1-1.72z m-0.8 10c0 0.66-0.55 1.2-1.2 1.2s-1.2-0.55-1.2-1.2 0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2z m-1.2-8.8c-0.66 0-1.2-0.55-1.2-1.2s0.55-1.2 1.2-1.2 1.2 0.55 1.2 1.2-0.55 1.2-1.2 1.2z"></path></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="counter">0</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+
+  <a href="/StefanoAllesina/Bios20150/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /StefanoAllesina/Bios20150/pulse">
+    <svg aria-hidden="true" class="octicon octicon-pulse" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0V10h3.6L4.5 8.2l0.9 5.4L9 8.5l1.6 1.5H14V8H11.5z"></path></svg>
+    Pulse
+</a>
+  <a href="/StefanoAllesina/Bios20150/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /StefanoAllesina/Bios20150/graphs">
+    <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M16 14v1H0V0h1v14h15z m-11-1H3V8h2v5z m4 0H7V3h2v10z m4 0H11V6h2v7z"></path></svg>
+    Graphs
+</a>
+
+</nav>
+
+  </div>
+</div>
+
+<div class="container new-discussion-timeline experiment-repo-nav">
+  <div class="repository-content">
+
+    
+
+<a href="/StefanoAllesina/Bios20150/blob/e50bdf1029b16803b275d2fc19171c12c6165009/slides/theme_3/theme_3.Rmd" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+<!-- blob contrib key: blob_contributors:v21:de5c7a81793a02fdbcc58015c9eea13e -->
+
+<div class="file-navigation js-zeroclipboard-container">
+  
+<div class="select-menu branch-select-menu js-menu-container js-select-menu left">
+  <button class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
+    title="master"
+    type="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <i>Branch:</i>
+    <span class="js-select-button css-truncate-target">master</span>
+  </button>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M7.48 8l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75-1.48-1.48 3.75-3.75L0.77 4.25l1.48-1.48 3.75 3.75 3.75-3.75 1.48 1.48-3.75 3.75z"></path></svg>
+        <span class="select-menu-title">Switch branches/tags</span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="form-control js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open selected"
+               href="/StefanoAllesina/Bios20150/blob/master/slides/theme_3/theme_3.Rmd"
+               data-name="master"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5L4 13 0 9l1.5-1.5 2.5 2.5 6.5-6.5 1.5 1.5z"></path></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text" title="master">
+                master
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  <div class="btn-group right">
+    <a href="/StefanoAllesina/Bios20150/find/master"
+          class="js-pjax-capture-input btn btn-sm"
+          data-pjax
+          data-hotkey="t">
+      Find file
+    </a>
+    <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button>
+  </div>
+  <div class="breadcrumb js-zeroclipboard-target">
+    <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/StefanoAllesina/Bios20150"><span>Bios20150</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/StefanoAllesina/Bios20150/tree/master/slides"><span>slides</span></a></span><span class="separator">/</span><span class="js-path-segment"><a href="/StefanoAllesina/Bios20150/tree/master/slides/theme_3"><span>theme_3</span></a></span><span class="separator">/</span><strong class="final-path">theme_3.Rmd</strong>
+  </div>
+</div>
+
+<include-fragment class="commit-tease" src="/StefanoAllesina/Bios20150/contributors/master/slides/theme_3/theme_3.Rmd">
+  <div>
+    Fetching contributors&hellip;
+  </div>
+
+  <div class="commit-tease-contributors">
+    <img alt="" class="loader-loading left" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" />
+    <span class="loader-error">Cannot retrieve contributors at this time</span>
+  </div>
+</include-fragment>
+<div class="file">
+  <div class="file-header">
+  <div class="file-actions">
+
+    <div class="btn-group">
+      <a href="/StefanoAllesina/Bios20150/raw/master/slides/theme_3/theme_3.Rmd" class="btn btn-sm " id="raw-url">Raw</a>
+        <a href="/StefanoAllesina/Bios20150/blame/master/slides/theme_3/theme_3.Rmd" class="btn btn-sm js-update-url-with-hash">Blame</a>
+      <a href="/StefanoAllesina/Bios20150/commits/master/slides/theme_3/theme_3.Rmd" class="btn btn-sm " rel="nofollow">History</a>
+    </div>
+
+
+        <button type="button" class="btn-octicon disabled tooltipped tooltipped-nw"
+          aria-label="You must be signed in to make or propose changes">
+          <svg aria-hidden="true" class="octicon octicon-pencil" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M0 12v3h3l8-8-3-3L0 12z m3 2H1V12h1v1h1v1z m10.3-9.3l-1.3 1.3-3-3 1.3-1.3c0.39-0.39 1.02-0.39 1.41 0l1.59 1.59c0.39 0.39 0.39 1.02 0 1.41z"></path></svg>
+        </button>
+        <button type="button" class="btn-octicon btn-octicon-danger disabled tooltipped tooltipped-nw"
+          aria-label="You must be signed in to make or propose changes">
+          <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M10 2H8c0-0.55-0.45-1-1-1H4c-0.55 0-1 0.45-1 1H1c-0.55 0-1 0.45-1 1v1c0 0.55 0.45 1 1 1v9c0 0.55 0.45 1 1 1h7c0.55 0 1-0.45 1-1V5c0.55 0 1-0.45 1-1v-1c0-0.55-0.45-1-1-1z m-1 12H2V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9z m1-10H1v-1h9v1z"></path></svg>
+        </button>
+  </div>
+
+  <div class="file-info">
+      397 lines (264 sloc)
+      <span class="file-info-divider"></span>
+    14.6 KB
+  </div>
+</div>
+
+  
+  <div id="readme" class="readme blob instapaper_body">
+    <article class="markdown-body entry-content" itemprop="text"><table data-table-type="yaml-metadata">
+  <thead>
+  <tr>
+  <th>title</th>
+
+  <th>author</th>
+
+  <th>date</th>
+
+  <th>runtime</th>
+
+  <th>output</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><div>The Plague</div></td>
+
+  <td><div>Stefano Allesina</div></td>
+
+  <td><div></div></td>
+
+  <td><div>shiny</div></td>
+
+  <td><div><table>
+  <thead>
+  <tr>
+  <th>ioslides_presentation</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><div><table>
+  <thead>
+  <tr>
+  <th>widescreen</th>
+
+  <th>smaller</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><div>true</div></td>
+
+  <td><div>true</div></td>
+  </tr>
+  </tbody>
+</table></div></td>
+  </tr>
+  </tbody>
+</table></div></td>
+  </tr>
+  </tbody>
+</table>
+
+<h2><a id="user-content-can-a-pandemic-wipe-out-the-human-race" class="anchor" href="#can-a-pandemic-wipe-out-the-human-race" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Can a pandemic wipe out the human race?</h2>
+
+<p><strong>Pile upon pile the throng of their own dead:</strong>
+<strong>And weary with woe and weeping wandered home;</strong>
+<strong>And then the most would take to bed from grief.</strong>
+<strong>Nor could be found not one, whom nor disease</strong>
+<strong>Nor death, nor woe had not in those dread times</strong>
+<strong>Attacked.</strong> <em>De Rerum Natura (around 50 BCE) by Lucretius</em></p>
+
+<p>*<em>It was the peculiar and dreadful distinction of our visitation, that none who had been attacked by the pestilence had recovered. The first symptom of the disease was the death-warrant, which in no single instance had been followed by pardon or reprieve. *</em> <em>The Last Man (1826) by Mary Shelley</em></p>
+
+<p><strong>the astonishing quickness with which this germ destroyed human beings, and [by] the fact that it inevitably killed any human body it entered. [...] From the moment of the first signs of it, a man would be dead in an hour. Some lasted for several hours. Many died within ten or fifteen minutes of the appearance of the first signs</strong> <em>The Scarlet Plague (1915) by Jack London</em></p>
+
+<h2><a id="user-content-deadly-pandemics" class="anchor" href="#deadly-pandemics" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Deadly pandemics</h2>
+
+<p>-<em>Plague of Justinian</em> (541-542 CE) <strong>Bubonic plague</strong> -- ca. 40% of the population of Europe</p>
+
+<p>-<em>Black Death</em> (1346-1350)  <strong>Plague</strong> -- up to 70% of the population of Europe</p>
+
+<p>-<em>Cocoliztli</em> (1545-1548) <strong>Viral hemorragic fever</strong> -- 80% of the population of Mexico</p>
+
+<p>-<em>Spanish flu</em> (1918-1920) <strong>Influenza</strong> -- 75M deaths around the world</p>
+
+<p>-<em>AIDS</em> (1960-today) <strong>HIV/AIDS</strong> -- More than 30M victims</p>
+
+<p>-<em>No name</em> (today) <strong>Yellow fever</strong> -- hundreds of victims in Angola</p>
+
+<p>-<em>Swine flu</em> (today) <strong>Influenza A, H1N1</strong> -- &gt;2000 victims in India</p>
+
+<p>-<em>Zika</em> (today) <strong>Zika virus</strong> -- hundreds of cases</p>
+
+<h2><a id="user-content-infectious-disease" class="anchor" href="#infectious-disease" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Infectious disease</h2>
+
+<p>Illness resulting from the presence of pathogenic microbial agent:</p>
+
+<ul>
+<li><p>Virus (e.g., HIV/AIDS, chickenpox, Herpes, Human Papilloma Virus, Ebola)</p></li>
+<li><p>Bacteria (e.g., tubercolosis, <em>Legionella</em>)</p></li>
+<li><p>Fungi (e.g., <em>Candida</em>)</p></li>
+<li><p>Protozoa, helmints, trematodes (e.g., malaria, caused by the protozoan <em>Plasmodium</em>; Scistosomiasis, caused by the trematode <em>Schistosoma</em>)</p></li>
+<li><p>Prions (e.g., mad cow disease)</p></li>
+</ul>
+
+<p><em>Communicable</em> diseases can be spread from person to person. Some diseases are <em>infectious</em> but not <em>communicable</em> (e.g., tetanus).</p>
+
+<h2><a id="user-content-mode-of-transmission" class="anchor" href="#mode-of-transmission" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Mode of transmission</h2>
+
+<ul>
+<li><p><strong>Person-to-person</strong>: either direct (e.g., STDs) or indirect contact (e.g., exchange of blood or other bodily fluids).</p></li>
+<li><p><strong>Airborne</strong>: ihalation of infected air (e.g., influenza, chickenpox, measles, tubercolosis).</p></li>
+<li><p><strong>Vector-borne</strong>: transmitted by a vector (e.g., mosquito, tick, snail). West Nile virus, malaria, dengue, Zika are all vector-borne.</p></li>
+<li><p><strong>Food-borne</strong> and <strong>water-borne</strong>: ingestion of contaminated food or water. E.g., salmonella, cholera.</p></li>
+<li><p><strong>Vertical</strong>: from mother to child before birth (e.g., hepatitis B, herpes simplex).</p></li>
+</ul>
+
+<h2><a id="user-content-questions" class="anchor" href="#questions" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Questions</h2>
+
+<ul>
+<li><p>Can we predict the size and timing of an epidemic outbreak? (Hospitalization, economic loss, death toll)</p></li>
+<li><p>Can we predict the emergence of new pathogens?</p></li>
+<li><p>Can we understand when pathogens will jump hosts? (Ebola, Bird Flu)</p></li>
+<li><p>What is the role of co-infection?</p></li>
+<li><p>Can we use evolutionary theory to produce better vaccines?</p></li>
+</ul>
+
+<h2><a id="user-content-modeling-infectious-diseases" class="anchor" href="#modeling-infectious-diseases" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Modeling infectious diseases</h2>
+
+<p>In 1926 Anderson Gray McKendrick published <em>Applications of mathematics to medical problems</em>, which contained a continuous-time dynamical model that serves as the jumping board for many models produced today. </p>
+
+<p>In 1927 McKendrick and William Ogilvy Kermack published <em>Contributions to the mathematical theory of epidemics</em>, where they studied the famed S-I-R model.</p>
+
+<p>Main assumptions:</p>
+
+<ul>
+<li><p>$N$ individuals (constant --- no births/immigration).</p></li>
+<li><p>Each individual is in one of three states: $S$, susceptible; $I$, infected; $R$, recovered.</p></li>
+<li><p>Susceptibles can become Infected; Infected can Recover.</p></li>
+</ul>
+
+<h2><a id="user-content-contacts" class="anchor" href="#contacts" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Contacts</h2>
+
+<p>$N$ is the number of people in the population. </p>
+
+<p>$c N$ is the number of contacts one infected individual makes per unit time. We assume that the population is well-mixed (i.e., every person has the same contact rate). </p>
+
+<p>$S(t) / N$ is the probability that a contact involves a susceptible individual.</p>
+
+<p>Therefore, $c N S(t) / N = c S(t)$ is the number of contacts between an infected individual and susceptibles per unit time.</p>
+
+<p>If each contact leads to the transmission of the disease with probability $p$, then $p c S(t)$ is the number of susceptibles that an infected individual infects per unit time. </p>
+
+<p>If there are $I(t)$ infected and $S(t)$ susceptibles, $p c S(t) I(t) = \beta S(t) I(t)$ is the number of individuals that are infected per unit time.</p>
+
+<p>Therefore:</p>
+
+<p>$\dfrac{d S(t)}{d t} = - \beta S(t) I(t)$</p>
+
+<h2><a id="user-content-susceptible-infected" class="anchor" href="#susceptible-infected" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Susceptible-Infected</h2>
+
+<p>Suppose that one cannot recover from the disease, and that the disease does not really change the mortality of individuals. The most fitting example is not the spread of a disease, but of rumors or other information.</p>
+
+<p>We have two equations:
+$\begin{cases}
+\dfrac{d S(t)}{d t} = - \beta S(t) I(t)\
+\dfrac{d I(t)}{d t} = \beta S(t) I(t)
+\end{cases}$</p>
+
+<p>But because we keep the population fixed, $N = S(t) + I(t)$, we really have only one equation:</p>
+
+<p>$\dfrac{d I(t)}{d t} = \beta S(t) I(t) = \beta S(t) (N - S(t)) = -\beta N S(t) (1 - S(t)/N)$, </p>
+
+<p>which should remind you of something....</p>
+
+<p>$\dfrac{d X(t)}{d t} = r X(t) (1 - X(t) / K)$</p>
+
+<p>Then, for any positive initial number of infected, $I(0)$, the whole population is infected in the end. </p>
+
+<h2><a id="user-content-models" class="anchor" href="#models" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Models</h2>
+
+<div class="highlight highlight-source-r"><pre>fluidRow(
+  column(<span class="pl-c1">3</span>,
+  selectInput(<span class="pl-v">inputId</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>model<span class="pl-pds">"</span></span>,
+                <span class="pl-v">label</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Model:<span class="pl-pds">"</span></span>,
+                <span class="pl-v">choices</span> <span class="pl-k">=</span> c(<span class="pl-s"><span class="pl-pds">"</span>S-I<span class="pl-pds">"</span></span>      <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>si<span class="pl-pds">"</span></span>,
+                            <span class="pl-s"><span class="pl-pds">"</span>S-I-S<span class="pl-pds">"</span></span>    <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>sis<span class="pl-pds">"</span></span>,
+                            <span class="pl-s"><span class="pl-pds">"</span>S-I-R<span class="pl-pds">"</span></span>    <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>sir<span class="pl-pds">"</span></span>),
+                <span class="pl-v">selected</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>si<span class="pl-pds">"</span></span>)),
+  column(<span class="pl-c1">3</span>,
+    numericInput(<span class="pl-s"><span class="pl-pds">'</span>i_t0<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>I(0)<span class="pl-pds">'</span></span>, <span class="pl-c1">0.01</span>,
+                 <span class="pl-v">min</span> <span class="pl-k">=</span> <span class="pl-c1">0</span>, <span class="pl-v">max</span> <span class="pl-k">=</span> <span class="pl-c1">1.0</span>, <span class="pl-v">step</span> <span class="pl-k">=</span> <span class="pl-c1">0.05</span>)),
+
+    column(<span class="pl-c1">3</span>,
+           numericInput(<span class="pl-s"><span class="pl-pds">'</span>beta<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Contact rate<span class="pl-pds">'</span></span>, <span class="pl-c1">0.1</span>,
+                 <span class="pl-v">min</span> <span class="pl-k">=</span> <span class="pl-c1">0</span>, <span class="pl-v">max</span> <span class="pl-k">=</span> <span class="pl-c1">1000.0</span>, <span class="pl-v">step</span> <span class="pl-k">=</span> <span class="pl-c1">0.1</span>)),
+
+    uiOutput(<span class="pl-s"><span class="pl-pds">"</span>gamma<span class="pl-pds">"</span></span>)
+    )</pre></div>
+
+<div class="highlight highlight-source-r"><pre>library(<span class="pl-smi">deSolve</span>)
+library(<span class="pl-smi">ggplot2</span>)
+library(<span class="pl-smi">ggthemes</span>)
+library(<span class="pl-smi">gridExtra</span>)
+library(<span class="pl-smi">reshape2</span>)
+<span class="pl-en">de_si</span> <span class="pl-k">&lt;-</span> <span class="pl-k">function</span>(<span class="pl-smi">time</span>, <span class="pl-smi">state</span>, <span class="pl-smi">params</span>){
+  with(as.list(c(<span class="pl-smi">state</span>, <span class="pl-smi">params</span>)), {
+    <span class="pl-smi">dSdt</span> <span class="pl-k">&lt;-</span> <span class="pl-k">-</span><span class="pl-smi">beta</span> <span class="pl-k">*</span> <span class="pl-smi">S</span> <span class="pl-k">*</span> <span class="pl-smi">I</span>
+    <span class="pl-smi">dIdt</span> <span class="pl-k">&lt;-</span> <span class="pl-smi">beta</span> <span class="pl-k">*</span> <span class="pl-smi">S</span> <span class="pl-k">*</span> <span class="pl-smi">I</span>
+    <span class="pl-k">return</span>(<span class="pl-k">list</span>(c(<span class="pl-smi">dSdt</span>, <span class="pl-smi">dIdt</span>)))
+  })
+}
+
+<span class="pl-en">de_sis</span> <span class="pl-k">&lt;-</span> <span class="pl-k">function</span>(<span class="pl-smi">time</span>, <span class="pl-smi">state</span>, <span class="pl-smi">params</span>){
+  with(as.list(c(<span class="pl-smi">state</span>, <span class="pl-smi">params</span>)), {
+    <span class="pl-smi">dSdt</span> <span class="pl-k">&lt;-</span> <span class="pl-k">-</span><span class="pl-smi">beta</span> <span class="pl-k">*</span> <span class="pl-smi">S</span> <span class="pl-k">*</span> <span class="pl-smi">I</span> <span class="pl-k">+</span> <span class="pl-smi">gamma</span> <span class="pl-k">*</span> <span class="pl-smi">I</span>
+    <span class="pl-smi">dIdt</span> <span class="pl-k">&lt;-</span> <span class="pl-smi">beta</span> <span class="pl-k">*</span> <span class="pl-smi">S</span> <span class="pl-k">*</span> <span class="pl-smi">I</span> <span class="pl-k">-</span> <span class="pl-smi">gamma</span> <span class="pl-k">*</span> <span class="pl-smi">I</span>
+    <span class="pl-k">return</span>(<span class="pl-k">list</span>(c(<span class="pl-smi">dSdt</span>, <span class="pl-smi">dIdt</span>)))
+  })
+}
+
+<span class="pl-en">de_sir</span> <span class="pl-k">&lt;-</span> <span class="pl-k">function</span>(<span class="pl-smi">time</span>, <span class="pl-smi">state</span>, <span class="pl-smi">params</span>){
+  with(as.list(c(<span class="pl-smi">state</span>, <span class="pl-smi">params</span>)), {
+    <span class="pl-smi">dSdt</span> <span class="pl-k">&lt;-</span> <span class="pl-k">-</span><span class="pl-smi">beta</span> <span class="pl-k">*</span> <span class="pl-smi">S</span> <span class="pl-k">*</span> <span class="pl-smi">I</span> 
+    <span class="pl-smi">dIdt</span> <span class="pl-k">&lt;-</span> <span class="pl-smi">beta</span> <span class="pl-k">*</span> <span class="pl-smi">S</span> <span class="pl-k">*</span> <span class="pl-smi">I</span> <span class="pl-k">-</span> <span class="pl-smi">gamma</span> <span class="pl-k">*</span> <span class="pl-smi">I</span>
+    <span class="pl-smi">dRdt</span> <span class="pl-k">&lt;-</span> <span class="pl-smi">gamma</span> <span class="pl-k">*</span> <span class="pl-smi">I</span>
+    <span class="pl-k">return</span>(<span class="pl-k">list</span>(c(<span class="pl-smi">dSdt</span>, <span class="pl-smi">dIdt</span>, <span class="pl-smi">dRdt</span>)))
+  })
+}
+
+<span class="pl-smi">output</span><span class="pl-k">$</span><span class="pl-v">gamma</span> <span class="pl-k">=</span> renderUI(
+  {
+    <span class="pl-k">if</span> (<span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">model</span> <span class="pl-k">%in%</span> c(<span class="pl-s"><span class="pl-pds">"</span>sis<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>sir<span class="pl-pds">"</span></span>))
+    {
+      column(<span class="pl-c1">3</span>,
+      numericInput(<span class="pl-s"><span class="pl-pds">'</span>gamma<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Recovery rate<span class="pl-pds">'</span></span>, <span class="pl-c1">0.05</span>,
+                   <span class="pl-v">min</span> <span class="pl-k">=</span> <span class="pl-c1">0</span>, <span class="pl-v">max</span> <span class="pl-k">=</span> <span class="pl-c1">1000.0</span>, <span class="pl-v">step</span> <span class="pl-k">=</span> <span class="pl-c1">0.01</span>))
+    }
+  })
+  renderPlot({ 
+    <span class="pl-k">if</span> (<span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">model</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>si<span class="pl-pds">"</span></span>){
+      <span class="pl-smi">pars</span> <span class="pl-k">&lt;-</span> c(<span class="pl-v">beta</span> <span class="pl-k">=</span> <span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">beta</span>)
+      <span class="pl-smi">yini</span> <span class="pl-k">&lt;-</span> c(<span class="pl-v">S</span> <span class="pl-k">=</span> <span class="pl-c1">1.0</span> <span class="pl-k">-</span> <span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">i_t0</span>, <span class="pl-v">I</span> <span class="pl-k">=</span> <span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">i_t0</span>)
+      <span class="pl-smi">times</span> <span class="pl-k">&lt;-</span> seq(<span class="pl-c1">0</span>, <span class="pl-c1">100</span>, <span class="pl-v">by</span> <span class="pl-k">=</span> <span class="pl-c1">0.05</span>)
+      <span class="pl-smi">out</span> <span class="pl-k">&lt;-</span> as.data.frame(ode(<span class="pl-smi">yini</span>, <span class="pl-smi">times</span>, <span class="pl-smi">de_si</span>, <span class="pl-smi">pars</span>))
+      <span class="pl-smi">m</span> <span class="pl-k">&lt;-</span> melt(<span class="pl-smi">out</span>, <span class="pl-v">id.vars</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>time<span class="pl-pds">"</span></span>)
+      <span class="pl-smi">pl</span> <span class="pl-k">&lt;-</span> ggplot(<span class="pl-smi">m</span>, aes(<span class="pl-v">x</span> <span class="pl-k">=</span> <span class="pl-smi">time</span>, <span class="pl-v">y</span> <span class="pl-k">=</span> <span class="pl-smi">value</span>, <span class="pl-v">colour</span> <span class="pl-k">=</span> <span class="pl-smi">variable</span>)) <span class="pl-k">+</span> geom_line(<span class="pl-v">size</span> <span class="pl-k">=</span> <span class="pl-c1">2</span>)
+      <span class="pl-smi">pl</span> <span class="pl-k">&lt;-</span> <span class="pl-smi">pl</span> <span class="pl-k">+</span> theme_bw() <span class="pl-k">+</span> theme(<span class="pl-v">axis.text</span> <span class="pl-k">=</span> element_text(<span class="pl-v">size</span> <span class="pl-k">=</span> <span class="pl-c1">14</span>, <span class="pl-v">face</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>bold<span class="pl-pds">"</span></span>), <span class="pl-v">axis.title</span> <span class="pl-k">=</span> element_text(<span class="pl-v">size</span><span class="pl-k">=</span><span class="pl-c1">14</span>, <span class="pl-v">face</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>bold<span class="pl-pds">"</span></span>))
+      show(<span class="pl-smi">pl</span>)
+    }
+    <span class="pl-k">if</span> (<span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">model</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>sis<span class="pl-pds">"</span></span>){
+      <span class="pl-c">#shiny:::flushReact()</span>
+      <span class="pl-smi">pars</span> <span class="pl-k">&lt;-</span> c(<span class="pl-v">beta</span> <span class="pl-k">=</span> <span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">beta</span>, <span class="pl-v">gamma</span> <span class="pl-k">=</span> <span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">gamma</span>)
+      <span class="pl-smi">yini</span> <span class="pl-k">&lt;-</span> c(<span class="pl-v">S</span> <span class="pl-k">=</span> <span class="pl-c1">1.0</span> <span class="pl-k">-</span> <span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">i_t0</span>, <span class="pl-v">I</span> <span class="pl-k">=</span> <span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">i_t0</span>)
+      <span class="pl-smi">times</span> <span class="pl-k">&lt;-</span> seq(<span class="pl-c1">0</span>, <span class="pl-c1">100</span>, <span class="pl-v">by</span> <span class="pl-k">=</span> <span class="pl-c1">0.05</span>)
+      <span class="pl-smi">out</span> <span class="pl-k">&lt;-</span> as.data.frame(ode(<span class="pl-smi">yini</span>, <span class="pl-smi">times</span>, <span class="pl-smi">de_sis</span>, <span class="pl-smi">pars</span>))
+      <span class="pl-smi">m</span> <span class="pl-k">&lt;-</span> melt(<span class="pl-smi">out</span>, <span class="pl-v">id.vars</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>time<span class="pl-pds">"</span></span>)
+      <span class="pl-smi">pl</span> <span class="pl-k">&lt;-</span> ggplot(<span class="pl-smi">m</span>, aes(<span class="pl-v">x</span> <span class="pl-k">=</span> <span class="pl-smi">time</span>, <span class="pl-v">y</span> <span class="pl-k">=</span> <span class="pl-smi">value</span>, <span class="pl-v">colour</span> <span class="pl-k">=</span> <span class="pl-smi">variable</span>)) <span class="pl-k">+</span> geom_line(<span class="pl-v">size</span> <span class="pl-k">=</span> <span class="pl-c1">2</span>)
+      <span class="pl-smi">pl</span> <span class="pl-k">&lt;-</span> <span class="pl-smi">pl</span> <span class="pl-k">+</span> theme_bw() <span class="pl-k">+</span> theme(<span class="pl-v">axis.text</span> <span class="pl-k">=</span> element_text(<span class="pl-v">size</span> <span class="pl-k">=</span> <span class="pl-c1">14</span>, <span class="pl-v">face</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>bold<span class="pl-pds">"</span></span>), <span class="pl-v">axis.title</span> <span class="pl-k">=</span> element_text(<span class="pl-v">size</span><span class="pl-k">=</span><span class="pl-c1">14</span>, <span class="pl-v">face</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>bold<span class="pl-pds">"</span></span>))
+      show(<span class="pl-smi">pl</span>)
+    }
+    <span class="pl-k">if</span> (<span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">model</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>sir<span class="pl-pds">"</span></span>){
+      <span class="pl-smi">pars</span> <span class="pl-k">&lt;-</span> c(<span class="pl-v">beta</span> <span class="pl-k">=</span> <span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">beta</span>, <span class="pl-v">gamma</span> <span class="pl-k">=</span> <span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">gamma</span>)
+      <span class="pl-smi">yini</span> <span class="pl-k">&lt;-</span> c(<span class="pl-v">S</span> <span class="pl-k">=</span> <span class="pl-c1">1.0</span> <span class="pl-k">-</span> <span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">i_t0</span>, <span class="pl-v">I</span> <span class="pl-k">=</span> <span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">i_t0</span>, <span class="pl-v">R</span> <span class="pl-k">=</span> <span class="pl-c1">0.0</span>)
+      <span class="pl-smi">times</span> <span class="pl-k">&lt;-</span> seq(<span class="pl-c1">0</span>, <span class="pl-c1">100</span>, <span class="pl-v">by</span> <span class="pl-k">=</span> <span class="pl-c1">0.05</span>)
+      <span class="pl-smi">out</span> <span class="pl-k">&lt;-</span> as.data.frame(ode(<span class="pl-smi">yini</span>, <span class="pl-smi">times</span>, <span class="pl-smi">de_sir</span>, <span class="pl-smi">pars</span>))
+      <span class="pl-smi">m</span> <span class="pl-k">&lt;-</span> melt(<span class="pl-smi">out</span>, <span class="pl-v">id.vars</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>time<span class="pl-pds">"</span></span>)
+      <span class="pl-smi">pl</span> <span class="pl-k">&lt;-</span> ggplot(<span class="pl-smi">m</span>, aes(<span class="pl-v">x</span> <span class="pl-k">=</span> <span class="pl-smi">time</span>, <span class="pl-v">y</span> <span class="pl-k">=</span> <span class="pl-smi">value</span>, <span class="pl-v">colour</span> <span class="pl-k">=</span> <span class="pl-smi">variable</span>)) <span class="pl-k">+</span> geom_line(<span class="pl-v">size</span> <span class="pl-k">=</span> <span class="pl-c1">2</span>)
+      <span class="pl-smi">pl</span> <span class="pl-k">&lt;-</span> <span class="pl-smi">pl</span> <span class="pl-k">+</span> theme_bw() <span class="pl-k">+</span> theme(<span class="pl-v">axis.text</span> <span class="pl-k">=</span> element_text(<span class="pl-v">size</span> <span class="pl-k">=</span> <span class="pl-c1">14</span>, <span class="pl-v">face</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>bold<span class="pl-pds">"</span></span>), <span class="pl-v">axis.title</span> <span class="pl-k">=</span> element_text(<span class="pl-v">size</span><span class="pl-k">=</span><span class="pl-c1">14</span>, <span class="pl-v">face</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>bold<span class="pl-pds">"</span></span>))
+      show(<span class="pl-smi">pl</span>)
+    }
+  })</pre></div>
+
+<h2><a id="user-content-recovery-rate" class="anchor" href="#recovery-rate" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Recovery rate</h2>
+
+<p>Suppose that at time $0$, a certain number of individuals, $I(0)$ is infected, and that they are isolated from the rest of the population.  We call $\gamma$ the "recovery rate" of infected individuals, and write:</p>
+
+<p>$\dfrac{d I(t)}{d t} = - \gamma I(t)$</p>
+
+<p>This is an equation we know how to solve:</p>
+
+<p>$I(t) = I(0) e^{-\gamma t}$ (exponential growth/decay). </p>
+
+<p>Then, $I(t) / I(0)$ is the proportion of individuals who are still infected at time $t$, and</p>
+
+<p>$1 - \dfrac{I(t)}{I(0)} = 1 - e^{-\gamma t}$ </p>
+
+<p>is the probability of having recovered in the time interval $[0, t)$. </p>
+
+<h2><a id="user-content-recovery-rate-1" class="anchor" href="#recovery-rate-1" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Recovery rate</h2>
+
+<p>Because this is a cumulative distribution function, taking derivatives we find the probability density function:</p>
+
+<p>$\dfrac{\partial \left( 1 - e^{-\gamma t} \right)}{\partial t} = \gamma e^{-\gamma t}$</p>
+
+<p>Taking the expectation (average time spent infected):</p>
+
+<p>$\int_0^\infty t (\gamma e^{-\gamma t}) dt = \dfrac{1}{\gamma}$</p>
+
+<p>Which means that $\gamma$ is simply the inverse than the mean time spent in the infected class.
+For example, influenza lasts about 5 days, meaning that $\gamma \approx 1/5$.</p>
+
+<p>We can therefore write:</p>
+
+<p>$\dfrac{d I(t)}{d t} = \beta S(t) I(t) - \gamma I(t)$</p>
+
+<h2><a id="user-content-susceptible-infected-susceptible" class="anchor" href="#susceptible-infected-susceptible" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Susceptible-Infected-Susceptible</h2>
+
+<p>Now we can write a slightly more complex model, in which individuals go back to the susceptible class once they recover from the disease. This is the case of bacterial infections, or other infections that do not provide lifelong immunity.</p>
+
+<p>$\begin{cases}
+\dfrac{d S(t)}{d t} = - \beta S(t) I(t) + \gamma I(t)\
+\dfrac{d I(t)}{d t} = \beta S(t) I(t) - \gamma I(t)
+\end{cases}$</p>
+
+<p>Again, we really have only one equation, as $S(t) = N - I(t)$:</p>
+
+<p>$\dfrac{d I(t)}{d t} = \beta I(t) (N - I(t)) - \gamma I(t)$</p>
+
+<p>With some rearranging, we obtain:</p>
+
+<p>$\dfrac{d I(t)}{d t} = (\beta N - \gamma) I(t) \left(1 - \dfrac{I(t)}{\frac{\beta N -\gamma}{\beta}}\right)$</p>
+
+<p>...which is again a logistic growth! $I(\infty) = N - \frac{\gamma}{\beta}$, provided that $(\beta N - \gamma) &gt; 0$</p>
+
+<h2><a id="user-content-susceptible-infected-recovered" class="anchor" href="#susceptible-infected-recovered" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Susceptible-Infected-Recovered</h2>
+
+<p>Finally, we can write the famous S-I-R model, which plays a major role in understanding viral diseases (e.g., childhood diseases). Instead of making the recovered individuals susceptible again, we move them into a new class ($R$, recovered, or, in the case of deadly diseases, removed).</p>
+
+<p>$\begin{cases}
+\dfrac{d S(t)}{d t} = - \beta S(t) I(t)\
+\dfrac{d I(t)}{d t} = \beta S(t) I(t) - \gamma I(t)\
+\dfrac{d R(t)}{d t} =  \gamma I(t)
+\end{cases}$</p>
+
+<p>$N(t) = S(t) + R(t) + I(t)$. From the equations, we see that </p>
+
+<p>$\dfrac{d N(t)}{d t} = \dfrac{d S(t)}{d t} + \dfrac{d I(t)}{d t} + \dfrac{d R(t)}{d t} = 0$ --- we have constant population size.</p>
+
+<ul>
+<li><p>The number of susceptibles is always declining in time.</p></li>
+<li><p>The number of recovered is always increasing in time.</p></li>
+<li><p>The number of infected is increasing whenever $\beta S(t) &gt; \gamma$. </p></li>
+</ul>
+
+<h2><a id="user-content-basic-reproductive-number" class="anchor" href="#basic-reproductive-number" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Basic reproductive number</h2>
+
+<p>Suppose that at the beginning of the epidemic we have only a few infected individuals, and that no one has recovered yet. Then: $R(0) = 0$</p>
+
+<p>Will we have an epidemic? We write:</p>
+
+<p>$\dfrac{1}{I(t)}\dfrac{d I(t)}{d t} = \beta S(t) - \gamma$</p>
+
+<p>Substituting $S(0) \approx N$, we have: $\dfrac{1}{I(0)}\dfrac{d I(0)}{d t} \approx \beta N - \gamma$.</p>
+
+<p>Thus, the infection will spread whenever $\beta N - \gamma &gt; 0$, which we write as:</p>
+
+<p>$\dfrac{\beta N}{\gamma} = \mathscr R_0 &gt; 1$</p>
+
+<p>$\mathscr R_0$ ("r-naught") is the <strong>basic reproduction number</strong>, and it expresses the number of infections generated by the first infected individual in a otherwise susceptible population.</p>
+
+<p>If $\mathscr R_0 &gt; 1$, we will see an epidemic outbreak.</p>
+
+<h2><a id="user-content-the-end-of-the-outbreak" class="anchor" href="#the-end-of-the-outbreak" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>The end of the outbreak</h2>
+
+<p>We would like to find $S(\infty)$ and $R(\infty)$. We divide the equation for the growth of $S$ by that for the growth of $R$:</p>
+
+<p>$\dfrac{d S(t)}{d R(t)} = -\dfrac{\beta}{\gamma} S(t)$</p>
+
+<p>This is like the equation of the exponential growth. Solving:</p>
+
+<p>$S(t) = S(0) e^{-\frac{\beta}{\gamma} R(t)}$, which is surely greater than $S(t) = S(0) e^{-\frac{\beta}{\gamma} N}$. Hence, $S(t) &gt; 0$ for all $t$.</p>
+
+<p>This is very important: no matter the dynamics of the disease, a certain fraction of the susceptible population will be left untouched. The epidemic does not end because all individuals have been infected and have either died or recovered; rather, finding new susceptibles becomes more difficult, and at some point $\beta S(t) - \gamma &lt; 0$, and the outbreak size starts decreasing.</p>
+
+<h2><a id="user-content-fitting-data" class="anchor" href="#fitting-data" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Fitting data</h2>
+
+<p>We want to fit the SIR model to real data.</p>
+
+<p>Basically, we need to fit two parameters: $\beta$, the contact rate, and $\gamma$, the recovery rate. </p>
+
+<p>The data we're going to use is the number of infected individuals at time $t$, $I(t)$. </p>
+
+<p>For each choice of $\beta$ and $\gamma$, we obtain the predicted number of cases $I_{\text{pred}}(t)$, and we choose the parameters that minimize the sum of squares:</p>
+
+<p>$SSQ = \sum_i (I(t) - I_{\text{pred}}(t))^2$</p>
+
+<h2><a id="user-content-english-boarding-school" class="anchor" href="#english-boarding-school" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>English boarding school</h2>
+
+<div>
+- In Jan and Feb 1978, an epidemic of H1N1 influenza struck a boarding school in England
+- A boy returning from Hong Kong was sick on Jan 15-18
+- On Jan 22, three boys were sick
+- Eventually, only 19 out of 738 boys escaped the outbreak
+- We would like to fit the SIR model to this data
+- For each day, we have the number of boys who are infected
+- We expect a $\gamma$ of about $1/2$, as after a few days, boys were bed-ridden, and thus could not spread the disease.
+
+
+```{r kable, echo = FALSE}
+library(knitr)
+data_eng &lt;- read.csv("../../data/theme_3/BoardingSchool.csv")  
+kable(data_eng, pad = 0, format = "html")
+```
+</div>
+
+<h2><a id="user-content-model-fit" class="anchor" href="#model-fit" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Model fit</h2>
+
+<div class="highlight highlight-source-r"><pre>library(<span class="pl-smi">ggplot2</span>)
+<span class="pl-smi">data_eng</span> <span class="pl-k">&lt;-</span> read.csv(<span class="pl-s"><span class="pl-pds">"</span>../../data/theme_3/BoardingSchool.csv<span class="pl-pds">"</span></span>)
+source(<span class="pl-s"><span class="pl-pds">"</span>code/fit_SIR.R<span class="pl-pds">"</span></span>)
+<span class="pl-smi">days</span> <span class="pl-k">&lt;-</span> <span class="pl-smi">data_eng</span>[,<span class="pl-c1">1</span>]
+<span class="pl-smi">infected</span> <span class="pl-k">&lt;-</span> <span class="pl-smi">data_eng</span>[,<span class="pl-c1">2</span>]
+<span class="pl-smi">N</span> <span class="pl-k">&lt;-</span> <span class="pl-c1">763</span>
+<span class="pl-smi">initial.gamma</span> <span class="pl-k">&lt;-</span> <span class="pl-c1">1</span><span class="pl-k">/</span><span class="pl-c1">2</span>
+<span class="pl-smi">initial.beta</span> <span class="pl-k">&lt;-</span> <span class="pl-c1">0.001</span>
+<span class="pl-smi">best_pars</span> <span class="pl-k">&lt;-</span> get_best_pars(<span class="pl-smi">initial.beta</span>, <span class="pl-smi">initial.gamma</span>, <span class="pl-smi">N</span>, <span class="pl-smi">infected</span>, <span class="pl-smi">days</span>)
+<span class="pl-smi">best_sol</span> <span class="pl-k">&lt;-</span> best_predict(<span class="pl-smi">best_pars</span><span class="pl-k">$</span><span class="pl-smi">beta</span>, <span class="pl-smi">best_pars</span><span class="pl-k">$</span><span class="pl-smi">gamma</span>, <span class="pl-smi">N</span>, <span class="pl-smi">infected</span>, <span class="pl-smi">days</span>)
+<span class="pl-smi">eng_df</span> <span class="pl-k">&lt;-</span> <span class="pl-k">data.frame</span>(<span class="pl-v">day</span> <span class="pl-k">=</span> <span class="pl-smi">days</span>, <span class="pl-v">observed</span> <span class="pl-k">=</span> <span class="pl-smi">infected</span>, <span class="pl-v">predicted</span> <span class="pl-k">=</span> <span class="pl-smi">best_sol</span>)
+
+<span class="pl-smi">pl_eng</span> <span class="pl-k">&lt;-</span> ggplot(<span class="pl-v">data</span> <span class="pl-k">=</span> <span class="pl-smi">eng_df</span>,
+             aes(<span class="pl-v">x</span> <span class="pl-k">=</span> <span class="pl-smi">day</span>, <span class="pl-v">y</span> <span class="pl-k">=</span> <span class="pl-smi">observed</span>))<span class="pl-k">+</span> geom_point() <span class="pl-k">+</span> geom_line(aes(<span class="pl-v">x</span> <span class="pl-k">=</span> <span class="pl-smi">day</span>, <span class="pl-v">y</span> <span class="pl-k">=</span> <span class="pl-smi">predicted</span>)) <span class="pl-k">+</span> 
+  theme_bw() <span class="pl-k">+</span> theme(<span class="pl-v">axis.text</span> <span class="pl-k">=</span> element_text(<span class="pl-v">size</span> <span class="pl-k">=</span> <span class="pl-c1">14</span>, <span class="pl-v">face</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>bold<span class="pl-pds">"</span></span>), <span class="pl-v">axis.title</span> <span class="pl-k">=</span> element_text(<span class="pl-v">size</span><span class="pl-k">=</span><span class="pl-c1">14</span>, <span class="pl-v">face</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>bold<span class="pl-pds">"</span></span>)) <span class="pl-k">+</span> ylab(<span class="pl-s"><span class="pl-pds">"</span>infected<span class="pl-pds">"</span></span>)
+show(<span class="pl-smi">pl_eng</span>)</pre></div>
+
+<h2><a id="user-content-endemic-sir" class="anchor" href="#endemic-sir" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Endemic SIR</h2>
+
+<h2><a id="user-content-vaccination" class="anchor" href="#vaccination" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Vaccination</h2>
+
+<h2><a id="user-content-seir" class="anchor" href="#seir" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>SEIR</h2>
+
+<h2><a id="user-content-more-complex-models" class="anchor" href="#more-complex-models" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>More complex models</h2>
+</article>
+  </div>
+
+</div>
+
+<button type="button" data-facebox="#jump-to-line" data-facebox-class="linejump" data-hotkey="l" class="hidden">Jump to Line</button>
+<div id="jump-to-line" style="display:none">
+  <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="" class="js-jump-to-line-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <input class="form-control linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" aria-label="Jump to line" autofocus>
+    <button type="submit" class="btn">Go</button>
+</form></div>
+
+  </div>
+  <div class="modal-backdrop"></div>
+</div>
+
+
+    </div>
+  </div>
+
+    </div>
+
+        <div class="container site-footer-container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links right">
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com" aria-label="Homepage" class="site-footer-mark">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" title="GitHub " version="1.1" viewBox="0 0 16 16" width="24"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
+</a>
+    <ul class="site-footer-links">
+      <li>&copy; 2016 <span title="0.13222s from github-fe134-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+    
+    
+
+    <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+      <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M15.72 12.5l-6.85-11.98C8.69 0.21 8.36 0.02 8 0.02s-0.69 0.19-0.87 0.5l-6.85 11.98c-0.18 0.31-0.18 0.69 0 1C0.47 13.81 0.8 14 1.15 14h13.7c0.36 0 0.69-0.19 0.86-0.5S15.89 12.81 15.72 12.5zM9 12H7V10h2V12zM9 9H7V5h2V9z"></path></svg>
+      <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+        <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M7.48 8l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75-1.48-1.48 3.75-3.75L0.77 4.25l1.48-1.48 3.75 3.75 3.75-3.75 1.48 1.48-3.75 3.75z"></path></svg>
+      </button>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      
+      <script crossorigin="anonymous" integrity="sha256-F/whWDtWz0xRFDahXn619PSNPYwQBuZU0xCO9npwfK4=" src="https://assets-cdn.github.com/assets/frameworks-17fc21583b56cf4c511436a15e7eb5f4f48d3d8c1006e654d3108ef67a707cae.js"></script>
+      <script async="async" crossorigin="anonymous" integrity="sha256-3KPx1WDnz1+CThXKVkLDok6ioFGKokrStWoYSfQ9MYI=" src="https://assets-cdn.github.com/assets/github-dca3f1d560e7cf5f824e15ca5642c3a24ea2a0518aa24ad2b56a1849f43d3182.js"></script>
+      
+      
+      
+      
+      
+    <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner hidden">
+      <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M15.72 12.5l-6.85-11.98C8.69 0.21 8.36 0.02 8 0.02s-0.69 0.19-0.87 0.5l-6.85 11.98c-0.18 0.31-0.18 0.69 0 1C0.47 13.81 0.8 14 1.15 14h13.7c0.36 0 0.69-0.19 0.86-0.5S15.89 12.81 15.72 12.5zM9 12H7V10h2V12zM9 9H7V5h2V9z"></path></svg>
+      <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+      <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    </div>
+    <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M7.48 8l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75-1.48-1.48 3.75-3.75L0.77 4.25l1.48-1.48 3.75 3.75 3.75-3.75 1.48 1.48-3.75 3.75z"></path></svg>
+    </button>
+  </div>
+</div>
+
+  </body>
+</html>
+
