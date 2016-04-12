@@ -22,8 +22,8 @@ The only downside is that whenever the material is updated, you will need to dow
 
 You can also browse the material online:
 ### Here are the slides: 
-- Theme 1 [RMarkDown](https://github.com/StefanoAllesina/Bios20150/blob/master/theme_1/theme_1.Rmd)[PDF](https://github.com/StefanoAllesina/Bios20150/blob/master/theme_1/theme_1.pdf)
-- Theme 2 [RMarkDown](https://github.com/StefanoAllesina/Bios20150/blob/master/theme_2/theme_2.Rmd)[PDF](https://github.com/StefanoAllesina/Bios20150/blob/master/theme_2/theme_2.pdf)
+- Theme 1 [RMarkDown](https://github.com/StefanoAllesina/Bios20150/blob/master/theme_1/theme_1.Rmd) [PDF](https://github.com/StefanoAllesina/Bios20150/blob/master/theme_1/theme_1.pdf)
+- Theme 2 [RMarkDown](https://github.com/StefanoAllesina/Bios20150/blob/master/theme_2/theme_2.Rmd) [PDF](https://github.com/StefanoAllesina/Bios20150/blob/master/theme_2/theme_2.pdf)
 
 The folder for each theme also contains the data and readings.
 
