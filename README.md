@@ -21,14 +21,16 @@ The only downside is that whenever the material is updated, you will need to dow
 ## Browsing the material
 
 You can also browse the material online:
-- [Here](https://github.com/StefanoAllesina/Bios20150/tree/master/slides) are the slides
-- [Here](https://github.com/StefanoAllesina/Bios20150/tree/master/data) are the data
-- [Here](https://github.com/StefanoAllesina/Bios20150/tree/master/readings) are the readings
+### Here are the slides: 
+- Theme 1 [RMarkDown](https://github.com/StefanoAllesina/Bios20150/blob/master/theme_1/theme_1.Rmd) [PDF](https://github.com/StefanoAllesina/Bios20150/blob/master/theme_1/theme_1.pdf)
+- Theme 2 [RMarkDown](https://github.com/StefanoAllesina/Bios20150/blob/master/theme_2/theme_2.Rmd) [PDF](https://github.com/StefanoAllesina/Bios20150/blob/master/theme_2/theme_2.pdf)
+
+The folder for each theme also contains the data and readings.
 
 ## Computable slides
 
 The slides are in a special format, called `RMarkDown`. Basically, they can be "knitted" in `RStudio` to produce a dynamic `html` file, so that we can do real-time calculations and graphics. 
 
-One cool feature, is that all the code for generating the figures, simulating the models, etc., can be run in `R` with a simple copy and paste. See for example the code for [Theme 2](https://github.com/StefanoAllesina/Bios20150/blob/master/slides/theme_2/theme_2.Rmd).
+One cool feature, is that all the code for generating the figures, simulating the models, etc., can be run in `R` with a simple copy and paste. See for example the code for [Theme 2](https://github.com/StefanoAllesina/Bios20150/blob/master/theme_2/theme_2.Rmd).
 
 To be able to knit the slides and run the code in `RStudio`, you need to install a number of packages, including `knitr`, `dplyr`, `ggplot2`, `reshape2`, `tidyr`, `deSolve`. Installing a package in `RStudio` [is quite easy](https://www.youtube.com/watch?v=u1r5XTqrCTQ).
