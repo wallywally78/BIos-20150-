@@ -12,4 +12,5 @@
 scratch/
 .ipynb_checkpoints/
 *.fai
+*.html
 
