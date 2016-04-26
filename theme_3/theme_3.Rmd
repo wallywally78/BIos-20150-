@@ -111,8 +111,7 @@ $\beta$ 1/(time * individuals)
 $S(t)$, $I(t)$ individuals
 
 ## Susceptible-Infected
-Suppose that one cannot recover from the disease, and that the disease does not really change the mortality of individuals. The most fitting example is not the spread of an actual disease, but of rumors or other information.
-
+Suppose one cannot recover from the disease, and that the disease does not really change the mortality of individuals. The most fitting example is not the spread of an actual disease, but of rumors or other information.
 We have only two equations. 
 
 $\begin{cases}
@@ -254,7 +253,10 @@ Taking the expectation (average time spent infected):
 $\int_0^\infty t (\gamma e^{-\gamma t}) dt = \dfrac{1}{\gamma}$
 
 Which means that $\gamma$ is simply the inverse than the mean time spent in the infected class.
-For example, influenza lasts about 5 days, meaning that $\gamma \approx 1/5$. We can therefore write:
+For example, influenza lasts about 5 days, meaning that $\gamma \approx 1/5$. 
+
+## Recovery rate
+We can therefore write:
 
 $\dfrac{d I(t)}{d t} = \beta S(t) I(t) - \gamma I(t)$
 
@@ -291,6 +293,9 @@ $\begin{cases}
 \dfrac{d I(t)}{d t} = \beta S(t) I(t) - \gamma I(t)\\
 \dfrac{d R(t)}{d t} =  \gamma I(t)
 \end{cases}$
+
+
+## Susceptible-Infected-Recovered
 
 $N(t) = S(t) + R(t) + I(t)$. From the equations, we see that 
 
@@ -351,6 +356,9 @@ $\dfrac{d S(t)}{d R(t)} = -\dfrac{\beta}{\gamma} S(t)$
 
 This is like the equation of the exponential growth. Solving:
 
+$S(t) = S(0) e^{-\frac{\beta}{\gamma} R(t)}$, which is surely greater than $S(0) e^{-\frac{\beta}{\gamma} N}$. Hence, $S(t) > 0$ for all $t$.
+
+## The end of the outbreak
 $S(t) = S(0) e^{-\frac{\beta}{\gamma} R(t)}$, which is surely greater than $S(0) e^{-\frac{\beta}{\gamma} N}$. Hence, $S(t) > 0$ for all $t$.
 
 This is very important: no matter the dynamics of the disease, a certain fraction of the susceptible population will be left untouched. The epidemic does not end because all individuals have been infected and have either died or recovered; rather, finding new susceptibles becomes more difficult, and at some point $\beta S(t) - \gamma < 0$, and the outbreak size starts decreasing.

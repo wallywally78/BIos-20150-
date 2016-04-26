@@ -487,6 +487,10 @@ Set to zero and solve for $X$:
 
 $r - \dfrac{2 r X}{K} = 0$; $\;\;X = \dfrac{K}{2}$
 
+## When is $H$ maximized?
+
+$\dfrac{d X(t)}{d t} = r X(t) \left(1  - \dfrac{X(t)}{K} \right) - H$
+
 Keep the population at half of the carrying capacity, and you can harvest:
 
 $H_{\text{max}} = \dfrac{r K}{4}$

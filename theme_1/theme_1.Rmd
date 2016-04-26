@@ -150,17 +150,17 @@ Take a couple of rabbits.
 </div>
 They're fully grown in one month.
 <div class="centered">
-<img src="./images/fib2.jpg" alt="fq" height="90">
+<img src="./images/fib2.jpg" alt="fq" height="80">
 </div>
 The next month they reproduce: a new pair of rabbits!
 <div class="centered">
-<img src="./images/fib2.jpg" alt="f2" height="90">
+<img src="./images/fib2.jpg" alt="f2" height="80">
 <img src="./images/fib1.jpg" alt="f1" height="60">
 </div>
 They reproduce again, while their offspring matures:
 <div class="centered">
-<img src="./images/fib2.jpg" alt="f2" height="90">
-<img src="./images/fib2.jpg" alt="f2" height="90">
+<img src="./images/fib2.jpg" alt="f2" height="80">
+<img src="./images/fib2.jpg" alt="f2" height="80">
 <img src="./images/fib1.jpg" alt="f1" height="60">
 </div>
 
@@ -363,7 +363,6 @@ $\dfrac{d X(t)}{d t} = r X(t)$
 
 ## Exponential growth
 Define initial population $X(0) = X_0$. 
-
 We model the **growth rate** of the population as:
 
 $\dfrac{d X(t)}{d t} = r X(t)$
@@ -469,7 +468,15 @@ He wrote a simple ordinary differential equation to describe the slowing down of
 
 $\dfrac{d X(t)}{d t} = r X(t) \left(1  - \dfrac{X(t)}{K} \right)$
 
-This is now known as **logistic growth**. $r \rightarrow$ intrinsic growth rate of the population when at low abundance; $K \rightarrow$ carrying capacity.
+## Logistic growth
+
+$\dfrac{d X(t)}{d t} = r X(t) \left(1  - \dfrac{X(t)}{K} \right)$
+
+This is now known as **logistic growth**. 
+
+$r \rightarrow$ intrinsic growth rate of the population when at low abundance; 
+
+$K \rightarrow$ carrying capacity.
 
 ## Logistic growth: behavior $\mathcal \chi$
 ```{r echo = FALSE, message=FALSE, warning=FALSE}
@@ -576,7 +583,7 @@ When $X > K$, then the growth is negative.
 
 
 ## Equilibria $\mathcal \chi$
-For which values of $X(t)$ does $\dfrac{d X(t)}{d t} = 0$?
+For which values of $X(t)$ does $\frac{d X(t)}{d t} = 0$?
 ```{r echo = FALSE, message=FALSE, warning=FALSE}
 fluidRow(
   column(4,
@@ -830,5 +837,3 @@ show(pl_halley_bar)
 - Human populations follow a demographic transition, going from high mortality and high natality, to low mortality and low natality.
 
 - The stage in which mortality is low and birth rates are still high see the rapid rise of population numbers. 
-
-## Questions??
