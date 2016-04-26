@@ -49,7 +49,7 @@ Illness resulting from the presence of pathogenic microbial agent:
 
 - **Fungi** (e.g., *Candida*)
 
-- **Protozoa, helmints, trematodes** (e.g., malaria, caused by the protozoan *Plasmodium*; Scistosomiasis, caused by the trematode *Schistosoma*)
+- **Protozoa, helminths, trematodes** (e.g., malaria, caused by the protozoan *Plasmodium*; Scistosomiasis, caused by the trematode *Schistosoma*)
 
 - **Prions** (e.g., mad cow disease)
 
@@ -61,6 +61,15 @@ Illness resulting from the presence of pathogenic microbial agent:
 - **Vector-borne**: transmitted by a vector (e.g., mosquito, tick, snail). West Nile virus, malaria, dengue, Zika are all vector-borne.
 - **Food-borne** and **water-borne**: ingestion of contaminated food or water. E.g., salmonella, cholera.
 - **Vertical**: from mother to child before birth (e.g., hepatitis B, herpes simplex).
+
+## Famous victims
+- **Cholera** (*Vibrio cholera*, bacterium): Charlex X, king of France;  Friedrich Hegel; Carl von Clausewitz; Sadi Carnot (thermodynamics); Pyotr Ilyich Tchaikovsky (disputed)
+
+- **Malaria** (protozoa of the genus *Plasmodium*): Raffaello Sanzio; Caravaggio (?); George Byron; Amerigo Vespucci
+
+- **Tuberculosis** (*Mycobacterium tuberculosis*, bacterium): Tutankhamen; Baruch Spinoza; Simon Bolivar; Elizabeth Barrett Browning; Edgar Allan Poe; Frederic Chopin; Emily Bronte; Eleanor Roosevelt; George Orwell
+
+- **Syphilis** (*Treponema pallidum*, bacterium) Henri de Toulouse-Lautrec; Paul Gaugin; Edouard Manet; Oscar Wilde; Guy de Maupassant; Charles Baudelaire; Al Capone
 
 ## Modeling infectious diseases
 In 1926 Anderson Gray McKendrick published *Applications of mathematics to medical problems*, which contained a continuous-time dynamical model that serves as the jumping board for many models produced today. 
@@ -87,11 +96,19 @@ Therefore, $c N S(t) / N = c S(t)$ is the number of contacts between an individu
 If each contact leads to the transmission of the disease with probability $p$, then $p c S(t)$ is the number of susceptibles that an infected individual infects per unit time. 
 
 ## Contacts
-If there are $I(t)$ infected and $S(t)$ susceptibles, $p c S(t) I(t) / N = \beta S(t) I(t) /N$ is the number of individuals that are infected per unit time.
+If there are $I(t)$ infected and $S(t)$ susceptibles, $p c S(t) I(t) = \beta S(t) I(t)$ is the number of individuals that are infected per unit time.
 
 Therefore:
 
-$\dfrac{d S(t)}{d t} = - \beta S(t) \dfrac{I(t)}{N}$
+$\dfrac{d S(t)}{d t} = - \beta S(t) I(t)$
+
+Units:
+
+$\dfrac{d S(t)}{d t}$ individuals / time
+
+$\beta$ 1/(time * individuals)
+
+$S(t)$, $I(t)$ individuals
 
 ## Susceptible-Infected
 Suppose that one cannot recover from the disease, and that the disease does not really change the mortality of individuals. The most fitting example is not the spread of an actual disease, but of rumors or other information.
@@ -99,22 +116,22 @@ Suppose that one cannot recover from the disease, and that the disease does not 
 We have only two equations. 
 
 $\begin{cases}
-\dfrac{d S(t)}{d t} = - \beta S(t) \dfrac{I(t)}{N}\\
-\dfrac{d I(t)}{d t} = \beta S(t) \dfrac{I(t)}{N}
+\dfrac{d S(t)}{d t} = - \beta S(t) I(t)\\
+\dfrac{d I(t)}{d t} = \beta S(t) I(t)
 \end{cases}$
 
 But because we keep the population fixed, $N = S(t) + I(t)$, we really have only one equation:
 
-$\dfrac{d I(t)}{d t} = \beta S(t) \dfrac{I(t)}{N} = \beta (N - I(t)) \dfrac{I(t)}{N} = -\beta I(t) \left(1 - \dfrac{I(t)}{N}\right)$ 
+$\dfrac{d I(t)}{d t} = \beta S(t) I(t) = \beta (N - I(t)) I(t) = \beta N I(t) \left(1 - \dfrac{I(t)}{N}\right)$ 
 
 ## Susceptible-Infected
-$\dfrac{d I(t)}{d t} = \beta S(t) \dfrac{I(t)}{N} = \beta (N - I(t)) \dfrac{I(t)}{N} = -\beta I(t) \left(1 - \dfrac{I(t)}{N}\right)$ 
+$\dfrac{d I(t)}{d t} = \beta S(t) I(t) = \beta (N - I(t)) I(t) = \beta N I(t) \left(1 - \dfrac{I(t)}{N}\right)$ 
 
 which should remind you of something....
 
 $\dfrac{d X(t)}{d t} = r X(t) (1 - X(t) / K)$
 
-Then, for any positive initial number of infected, $I(0)$, the whole population is infected in the end, as long as $\beta >0$. 
+Then, for any positive initial number of infected, $I(0)$, the whole population is infected in the end, as long as $\beta N > 0$. 
 
 ## Models
 ```{r echo = FALSE, warning=FALSE, message=FALSE}
@@ -230,7 +247,7 @@ is the probability of having recovered in the time interval $[0, t)$.
 ## Recovery rate
 Because this is a cumulative distribution function, taking derivatives we find the probability density function:
 
-$\dfrac{\partial 1 - e^{-\gamma t}}{\partial t} = \gamma e^{-\gamma t}$
+$\dfrac{\partial \left(1 - e^{-\gamma t}\right)}{\partial t} = \gamma e^{-\gamma t}$
 
 Taking the expectation (average time spent infected):
 
@@ -245,20 +262,26 @@ $\dfrac{d I(t)}{d t} = \beta S(t) I(t) - \gamma I(t)$
 Now we can write a slightly more complex model, in which individuals go back to the susceptible class once they recover from the disease. This is the case of bacterial infections, or other infections that do not provide lifelong immunity.
 
 $\begin{cases}
-\dfrac{d S(t)}{d t} = -\beta S(t) \dfrac{I(t)}{N} + \gamma I(t)\\
-\dfrac{d I(t)}{d t} = \beta S(t) \dfrac{I(t)}{N} - \gamma I(t)
+\dfrac{d S(t)}{d t} = -\beta S(t) I(t) + \gamma I(t)\\
+\dfrac{d I(t)}{d t} = \beta S(t) I(t) - \gamma I(t)
 \end{cases}$
 
 Again, we really have only one equation, as $S(t) = N - I(t)$:
 
-$\dfrac{d I(t)}{d t} = \beta \dfrac{I(t)}{N} (N - I(t)) - \gamma I(t)$
+$\dfrac{d I(t)}{d t} = \beta I(t) (N - I(t)) - \gamma I(t)$
 
 ## Susceptible-Infected-Susceptible
-With some rearranging, we obtain:
+$\dfrac{d I(t)}{d t} = \beta I(t) (N - I(t)) - \gamma I(t)$
 
-$\dfrac{d I(t)}{d t} = (\beta - \gamma) I(t) \left(1 - \dfrac{I(t)}{N -\frac{\gamma}{\beta}}\right)$
+$\beta I(t) (N - I(t)) - \gamma I(t) = \beta I(t) N - \gamma I(t) - \beta I(t)^2 =$
 
-...which is again a logistic growth! $I(\infty) = N - \frac{\gamma}{\beta}$
+$(\beta N - \gamma)I(t) - \beta I(t)^2 = (\beta N - \gamma)I(t) \left(1 - \dfrac{I(t)}{N - \dfrac{\gamma}{\beta}}\right)$
+
+...which is again a logistic growth! 
+
+$I(\infty) = N - \frac{\gamma}{\beta}$
+
+as long as $(\beta N - \gamma) > 0$
 
 ## Susceptible-Infected-Recovered
 Finally, we can write the famous S-I-R model, which plays a major role in understanding viral diseases. Instead of making the recovered individuals susceptible again, we move them into a new class ($R$, recovered, or, in the case of deadly diseases, removed).
@@ -293,7 +316,7 @@ Will we have an epidemic? We write:
 
 $\dfrac{1}{I(t)}\dfrac{d I(t)}{d t} = \beta S(t) - \gamma$
 
-Substituting $S(0) \approx N$, we have: $\dfrac{1}{I(0)}\dfrac{d I(0)}{d t} \beta N - \gamma$.
+Substituting $S(0) \approx N$, we have: $\dfrac{1}{I(0)}\dfrac{d I(0)}{d t} = \beta N - \gamma$.
 
 Thus, the infection will spread whenever $\beta N - \gamma > 0$, which we write as:
 
@@ -308,6 +331,19 @@ $\mathscr R_0$ ("r-naught") is the **basic reproduction number**, and it express
 <div class="centered">
 <img src="./images/R0.jpg" alt="rnaught" height="500">
 </div>
+
+## Faustian Limerick (Robert M. May, 1982)
+
+*The deeper understanding Faust sought,*
+
+*Could not from the Devil be brought,*
+
+*But now we are told,*
+
+*By theorists bold,*
+
+*All we need to know is* $\mathscr R_0$
+
 ## The end of the outbreak
 We would like to find $S(\infty)$ and $R(\infty)$. We divide the equation for the growth of $S$ by that for the growth of $R$:
 
@@ -315,16 +351,16 @@ $\dfrac{d S(t)}{d R(t)} = -\dfrac{\beta}{\gamma} S(t)$
 
 This is like the equation of the exponential growth. Solving:
 
-$S(t) = S(0) e^{-\frac{\beta}{\gamma} R(t)}$, which is surely greater than $S(t) = S(0) e^{-\frac{\beta}{\gamma} N}$. Hence, $S(t) > 0$ for all $t$.
+$S(t) = S(0) e^{-\frac{\beta}{\gamma} R(t)}$, which is surely greater than $S(0) e^{-\frac{\beta}{\gamma} N}$. Hence, $S(t) > 0$ for all $t$.
 
 This is very important: no matter the dynamics of the disease, a certain fraction of the susceptible population will be left untouched. The epidemic does not end because all individuals have been infected and have either died or recovered; rather, finding new susceptibles becomes more difficult, and at some point $\beta S(t) - \gamma < 0$, and the outbreak size starts decreasing.
 
 ## Fitting data
 We want to fit the SIR model to real data.
 
-Basically, we need to fit two parameters: $\beta$, the contact rate, and $\gamma$, the recovery rate. 
+If we know $N$, $S(0)$, $I(0)$ and $R(0)$, we need to fit two parameters: $\beta$, the contact rate, and $\gamma$, the recovery rate. 
 
-The data we're going to use is the number of infected individuals at time $t$, $I(t)$. 
+The data we're going to fit is the number of infected individuals at time $t$, $I(t)$. 
 
 For each choice of $\beta$ and $\gamma$, we obtain the predicted number of cases $I_{\text{pred}}(t)$, and we choose the parameters that minimize the sum of squares:
 
@@ -337,7 +373,7 @@ $SSQ = \sum_i (I(t) - I_{\text{pred}}(t))^2$
 - On Jan 22, three boys were sick
 - Eventually, only 19 out of 738 boys escaped the outbreak
 - For each day, we have the number of boys who are infected
-- We expect a $\gamma$ of about $1/2$, as after a few days, boys were bed-ridden, and thus could not spread the disease.
+- We expect a $\gamma$ of about $1/2$, as after a few days the boys were bed-ridden, and thus could not spread the disease.
 
 ```{r kable, echo = FALSE}
 library(knitr)
@@ -366,7 +402,6 @@ pl_eng <- ggplot(data = eng_df,
 show(pl_eng)
 ```
 
-
 ## SIR for endemic diseases
 The model we've seen deals with epidemics, which is the spread of the disease over a short period of time (hence, we could consider the population to be fixed).
 
@@ -378,8 +413,11 @@ $\begin{cases}
 \dfrac{d R(t)}{d t} =  \gamma I(t) - \mu R(t)
 \end{cases}$
 
-Where $\mu N = \mu S + \mu I + \mu R$. Using the same derviation done above, we find 
-$\mathscr R_0 = \dfrac{\beta N}{\gamma + \mu}$
+Where $\mu N = \mu S + \mu I + \mu R$: the birth rate equals the death rate, so that the population is constant through time. 
+
+## Derivation of $\mathscr R_0$
+
+
 
 ## Vaccination
 Suppose that we vaccinate a proportion $v$ of all newborns. The equations become:
@@ -476,28 +514,28 @@ The $\mathscr R_0$ is about 7. Calculate the what proportion of children should 
 <div class="centered">
 <img src="./images/DrakeEtAl-Ebola.jpg" alt="ebola" height="450">
 
-Drake et. al, Emerg Infect Dis. 2015
+Drake et al., Emerg Infect Dis. 2015
 </div>
 
 ## More Complex Models: Ebola
 <div class="centered">
 <img src="./images/ebola_flow.jpg" alt="ebola" height="350">
 
-Rivers et. al, PLoS Curr. 2014
+Rivers et al., PLoS Curr. 2014
 </div>
 
 ## Malaria -- model evolution!
 <div class="centered">
 <img src="./images/malaria.jpg" alt="malaria" height="450">
 
-Silal et. al, Health Systems 2015
+Silal et al., Health Systems 2015
 </div>
 
 ## Pertussis: contact network
 <div class="centered">
 <img src="./images/pertussis-network.jpg" alt="pertussis" height="450">
 
-Rohani et. al, Science 2010
+Rohani et al., Science 2010
 </div>
 ## Foot and mouth -- spatial model
 <div class="centered">
@@ -514,4 +552,20 @@ Keeling et al., Science 2001
 ## Evolution of virulence 1
 ## Evolution of virulence 2
 ## Evolution of virulence 3
+
+## Jumping hosts
+
+## Complex life cycles: *Plasmodium*
+<div class="centered">
+<img src="./images/malaria-lifecycle.jpg" alt="malaria" height="450">
+</div>
+
+## Complex life cycles: Schistosomiasis
+<div class="centered">
+<img src="./images/schistosomiasis.jpg" alt="scisto" height="450">
+</div>
+
+## Modification of behavior
+
+Interesting [TED Talk by Ed Yong](https://goo.gl/UItDdP)
 ## Conclusions

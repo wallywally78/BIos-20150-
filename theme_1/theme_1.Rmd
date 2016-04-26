@@ -430,12 +430,12 @@ In 1988, three laboratories analyzed the sample. They found that it had lost abo
 
 You can use the forumla $N(t) = N(0) e^{-0.000121 t}$ to find the answer.
 
-## First law of ecology $\mathcal \Pi$
+## First law of ecology 
 
 ### If left unchecked, populations will grow/decay very fast
 
 
-## Example: rabbits (again)
+## Example: rabbits (again) $\mathcal \Pi$
 <div class="centered">
 <img src="./images/rabbits-mixo.jpg" alt="rabbitsmixo" height="200">
 </div>
@@ -750,69 +750,72 @@ pl_halley_bar <- ggplot(data = halley, aes(x = Age, y = Number)) + geom_bar(stat
 show(pl_halley_bar)
 ```
 
+
+
 ## Demographic transition
 <div class="centered">
 <img src="./images/DemographicTransition.jpg" alt="demotrans" height="550">
 </div>
-
+  
 ## Demographic transition
 <div class="centered">
 <img src="./images/DemographicTransition2.jpg" alt="demotrans" height="550">
 </div>
-
+  
 ## Demographic transition and pyramids
 <div class="centered">
 <img src="./images/Pyramids.jpg" alt="demotrans" height="275">
 </div>
-
+  
 ## Stage 1
 <div class="centered">
 <img src="./images/P_Angola.jpg" alt="angola" height="500">
 <img src="./images/P_Benin.jpg" alt="benin" height="500">
 </div>
-
+  
 ## Stage 4
 <div class="centered">
 <img src="./images/P_UK.jpg" alt="UK" height="500">
 <img src="./images/P_US.jpg" alt="US" height="500">
-</div>
-
+/div>
+  
 ## Stage 5
 <div class="centered">
 <img src="./images/P_Italy.jpg" alt="it" height="500">
 <img src="./images/P_Japan.jpg" alt="jp" height="500">
 </div>
-
+  
 ## World then and now
 <div class="centered">
 <img src="./images/P_W1950.jpg" alt="1950" height="500">
 <img src="./images/P_W2016.jpg" alt="2016" height="500">
 </div>
 
-## Life expectancy Men/Women\
+## Life expectancy Men/Women
+<div class="centered">
 <img src="./images/gender_life_expectancy_CIA_factbook.jpg" alt="menwomen" height="500"> 
-
+</div>
+    
 ## Projected growth $\mathcal \Pi$
 <div class="centered">
-<img src="./images/graphic_population.jpg" alt="growth" height="1150">
+<img src="./images/graphic_population.jpg" alt="growth" height="500">
 </div>
 
 ## Fertility and family planning
 - One of the main responses to rapid growth has been setting up voluntary family-planning programs
-
 - In the developing world, 74M unwanted pregnancies per year. About 40% of total pregnancies. About half result in induced abortion.
 
 ## Age at first marriage and total fertility
 <div class="centered">
 <img src="./images/WomensAgeMarriage.jpg" alt="womenage" height="400">
 </div>
-
+  
 ## Education and total fertility
 <div class="centered">
-<img src="./images/WomensEducFamSize.jpg" alt="growth" height="400">
+<img src="./images/WomensEducFamSize.jpg" alt="fert" height="300">
 </div>
 
-## Summary
+## Summary 
 - Human population has grown rapidly (1800, 1B; 1927, 2B; 1960, 3B; 1974, 4B; 1987, 5B; 1999, 6B; 2011, 7B).
 
 - Humans have strong impact on the environment.
@@ -821,9 +824,11 @@ show(pl_halley_bar)
 
 - However, soon they will reach an asymptote (logistic).
 
+## Summary 2
 - Humans were able to keep moving the asymptote by changing the environment and through technological developments.
 
 - Human populations follow a demographic transition, going from high mortality and high natality, to low mortality and low natality.
 
 - The stage in which mortality is low and birth rates are still high see the rapid rise of population numbers. 
 
+## Questions??
