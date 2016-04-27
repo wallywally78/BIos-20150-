@@ -132,7 +132,7 @@ $\dfrac{d X(t)}{d t} = r X(t) (1 - X(t) / K)$
 
 Then, for any positive initial number of infected, $I(0)$, the whole population is infected in the end, as long as $\beta N > 0$. 
 
-## Models
+## Models $\mathcal \Chi \mathcal \Pi$
 ```{r echo = FALSE, warning=FALSE, message=FALSE}
 fluidRow(
   column(3,
@@ -411,9 +411,7 @@ show(pl_eng)
 ```
 
 ## SIR for endemic diseases
-The model we've seen deals with epidemics, which is the spread of the disease over a short period of time (hence, we could consider the population to be fixed).
-
-For endemic diseases (i.e., which are circulating and maintained within the population), we need to accound for births and deaths. For simplicity, say that the population is at equilibrium, such that the number of births is close to the number of deaths:
+The model we've seen deals with epidemics, which is the spread of the disease over a short period of time (hence, we could consider the population to be fixed). For endemic diseases (i.e., which are circulating and maintained within the population), we need to accound for births and deaths. For simplicity, say that the population is at equilibrium, such that the number of births is close to the number of deaths:
 
 $\begin{cases}
 \dfrac{d S(t)}{d t} = - \beta S(t) I(t) + \mu N - \mu S(t) \\
@@ -425,29 +423,57 @@ Where $\mu N = \mu S + \mu I + \mu R$: the birth rate equals the death rate, so 
 
 ## Derivation of $\mathscr R_0$
 
+We have spread of the disease whenever
 
+$\beta S(t) I(t) - \gamma I(t) - \mu I(t) > 0$
+
+divde by $I(t)$, and set $S(t) = N$
+
+$\beta N - \gamma - \mu > 0$
+
+Hence:
+
+$\mathscr R_0 = \dfrac{\beta N}{\gamma + \mu}$
+
+again, if $\mathscr R_0 > 1$ the disease can spread.
+
+## Equilibria
+
+There are two equilibria:
+
+- **Disease free** $S^* = N, I^*=0$
+
+- **Endemic** $S^* = \dfrac{\gamma +\mu }{\beta }, I^* = \dfrac{\mu  N}{\gamma +\mu } - \frac{\mu }{\beta }, R^* = \dfrac{\gamma  N}{\gamma +\mu }-\dfrac{\gamma }{\beta}$
+
+but $\mathscr R_0 = \dfrac{\beta N}{\mu + \gamma}$, then $S^* = N / \mathscr R_0$
+
+Similarly, $I^* = \mu (\mathscr R_0 - 1)/\beta$, and $R^* = \gamma (\mathscr R_0 - 1)/\beta$
 
 ## Vaccination
-Suppose that we vaccinate a proportion $v$ of all newborns. The equations become:
+Suppose that we vaccinate a proportion $p$ of all newborns. The equations become:
 
 $\begin{cases}
-\dfrac{d S(t)}{d t} = - \beta S(t) I(t) + \mu N (1-v) - \mu S(t) \\
+\dfrac{d S(t)}{d t} = - \beta S(t) I(t) + \mu N (1-p) - \mu S(t) \\
 \dfrac{d I(t)}{d t} = \beta S(t) I(t) - \gamma I(t) - \mu I(t) \\
-\dfrac{d R(t)}{d t} =  \gamma I(t) - \mu R(t) + \mu N v
+\dfrac{d R(t)}{d t} =  \gamma I(t) - \mu R(t) + \mu N p
 \end{cases}$
 
-....
+Then the disease-free equilibrium is $S^* = N (1-p)$, with $I^*=0$ and $R^*=0$
+
+The disease cannot spread whenever $\beta N(1-p) - \gamma - \mu < 0$
 
 ## Critical vaccination
-We saw that the disease cannot spread when $(1-v) \mathscr R_0 < 1$
+The disease cannot spread when $\beta N(1-p) - \gamma - \mu < 0$
+which can be written as 
 
-Then if we can vaccinate $v > 1 - \dfrac{1}{\mathscr R_0}$ of the newborns (or small children who haven't experienced the disease yet), we can eradicate the disease completely.
+$(1-p) \mathscr R_0 < 1$
 
+Then if we can vaccinate $p > 1 - \dfrac{1}{\mathscr R_0}$ of the newborns (or small children who haven't experienced the disease yet), we can eradicate the disease completely.
+
+## Critical vaccination
 Clearly, this is easier to do for diseases that are not highly contagious (small $\mathscr R_0$). 
-
 If  $\mathscr R_0 \approx 5$ (polio, smallpox), we need to vaccinate $>80\%$ of the newborns. This is "easy" to do.
 
-## Critical vaccination
 However, for very contagious diseases, with say $\mathscr R_0 \approx 15$ (measles), we need to vaccinate $>93\%$ of the newborns. The actual required proportion is actually higher, as no vaccine has 100% efficacy (e.g., for measles the first shot is effective in about 90% of cases; the efficacy increases with a second dose), and not everybody can be vaccinated (particular medical conditions, etc.) 
 
 ## Critical vaccination
@@ -510,7 +536,13 @@ If we achieve this **critical level of vaccination**, we have **herd immunity**:
 </div>
 
 ## Eradication?
-Biological warfare
+In 1978, a medical photographer died of smallpox, which he had contracted at the U. Birmingham.
+[Malcom Casadaban died of *Y. pestis* at UofC in 2011]
+
+
+This led to the decision of destroying the stock smallpox used for research. However, being in the height of the cold war, both the US and the Soviet Union decided to retain some samples (which of course could be used for bacteriological warfare...). In the US, the **CDC** conserves smallpox samples, while in Russia these are conserved at the **State Research Center of Virology and Biotechnology VECTOR in Koltsovo** (straight out of a James Bond movie).
+
+The distruction of these samples (which would not bee needed for producing vaccines, should the need arise), as caused much controversy. See the 2011 NYT Op Ed from US Secretary of Health (*"Destroying the virus now is merely a symbolic act that would slow our progress and could even stop it completely, leaving the world vulnerable"*).
 
 ## Exercise: 
 Diphteria is an infection caused by the bacterium *Corynebacterium diphtheriae*. It is fatal in 5-10% of cases (much higher fatalities for small children and adults over forty). After the fall of the Soviet Union vaccination faltered, leading to a large increase in the number of cases. 
@@ -546,6 +578,7 @@ Silal et al., Health Systems 2015
 
 Rohani et al., Science 2010
 </div>
+
 ## Foot and mouth -- spatial model
 <div class="centered">
 <img src="./images/footandmouth.jpg" alt="foot" height="450">
@@ -558,12 +591,6 @@ Keeling et al., Science 2001
 <img src="./images/zombie.jpg" alt="zombie" height="250">
 </div>
 
-## Evolution of virulence 1
-## Evolution of virulence 2
-## Evolution of virulence 3
-
-## Jumping hosts
-
 ## Complex life cycles: *Plasmodium*
 <div class="centered">
 <img src="./images/malaria-lifecycle.jpg" alt="malaria" height="450">
@@ -574,7 +601,39 @@ Keeling et al., Science 2001
 <img src="./images/schistosomiasis.jpg" alt="scisto" height="450">
 </div>
 
-## Modification of behavior
+## Modification of behavior: toxoplasmosis $\mathcal Pi$
+
+Caused by the protozoan *Toxoplasma gondii*, can only reproduce in cats and other *Felidae*. Rodents can become infected by consuming infected faeces. Interestingly, infected rodents become "more extrovert" and lose their fear of cats.
+
+Several published articles show that toxoplasmosis affects human behavior as well (e.g., much higher probability of traffic accident)---including their "national culture" (see Lafferty 2006).
+
+In humans toxoplasmosis can be very common (up to 80% incidence), and is typically aquired by eating undercooked meat, or exposure to cats. 
+
+## Gordian worm $\mathcal Pi$
+
+<div class="centered">
+<img src="./images/gordian.gif" alt="gordian" height="350">
+</div>
 
 Interesting [TED Talk by Ed Yong](https://goo.gl/UItDdP)
-## Conclusions
+
+## Summary
+
+- Infectious diseases have played a prominent role in history
+
+- Simple mathematical models can help understand disease dynamics, including size of the epidemics
+
+- $\mathscr R_0$, measuring the number of new infections caused by the first infective, is a critical parameter
+
+- For any disease outbreak, a (possibly small) proportion of the population is left untouched
+
+- This is because the susceptibles that "fuel" the disease become difficult to find
+
+## Summary
+- Diseases with small $\mathscr R_0$ can be eradicated through mass-vaccination
+
+- Mass vaccination provides herd immunity for those still susceptible (newborns, immunodepressed)
+
+- More complex models are needed for diseases with complex life cycle
+
+- More precise predictions can be made by measuring contact network and modeling spatial spread
