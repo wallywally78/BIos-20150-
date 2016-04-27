@@ -447,6 +447,7 @@ Clearly, this is easier to do for diseases that are not highly contagious (small
 
 If  $\mathscr R_0 \approx 5$ (polio, smallpox), we need to vaccinate $>80\%$ of the newborns. This is "easy" to do.
 
+## Critical vaccination
 However, for very contagious diseases, with say $\mathscr R_0 \approx 15$ (measles), we need to vaccinate $>93\%$ of the newborns. The actual required proportion is actually higher, as no vaccine has 100% efficacy (e.g., for measles the first shot is effective in about 90% of cases; the efficacy increases with a second dose), and not everybody can be vaccinated (particular medical conditions, etc.) 
 
 ## Critical vaccination
