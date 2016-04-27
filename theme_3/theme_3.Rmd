@@ -132,7 +132,7 @@ $\dfrac{d X(t)}{d t} = r X(t) (1 - X(t) / K)$
 
 Then, for any positive initial number of infected, $I(0)$, the whole population is infected in the end, as long as $\beta N > 0$. 
 
-## Models $\mathcal \Chi \mathcal \Pi$
+## Models $\mathcal \chi \mathcal \Pi$
 ```{r echo = FALSE, warning=FALSE, message=FALSE}
 fluidRow(
   column(3,
@@ -419,7 +419,7 @@ $\begin{cases}
 \dfrac{d R(t)}{d t} =  \gamma I(t) - \mu R(t)
 \end{cases}$
 
-Where $\mu N = \mu S + \mu I + \mu R$: the birth rate equals the death rate, so that the population is constant through time. 
+Where $\mu N = \mu S + \mu I + \mu R$
 
 ## Derivation of $\mathscr R_0$
 
@@ -601,7 +601,7 @@ Keeling et al., Science 2001
 <img src="./images/schistosomiasis.jpg" alt="scisto" height="450">
 </div>
 
-## Modification of behavior: toxoplasmosis $\mathcal Pi$
+## Modification of behavior: toxoplasmosis $\mathcal \Pi$
 
 Caused by the protozoan *Toxoplasma gondii*, can only reproduce in cats and other *Felidae*. Rodents can become infected by consuming infected faeces. Interestingly, infected rodents become "more extrovert" and lose their fear of cats.
 
@@ -609,7 +609,7 @@ Several published articles show that toxoplasmosis affects human behavior as wel
 
 In humans toxoplasmosis can be very common (up to 80% incidence), and is typically aquired by eating undercooked meat, or exposure to cats. 
 
-## Gordian worm $\mathcal Pi$
+## Gordian worm $\mathcal \Pi$
 
 <div class="centered">
 <img src="./images/gordian.gif" alt="gordian" height="350">
