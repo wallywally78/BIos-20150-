@@ -459,7 +459,7 @@ From an economic standpoint, we want to get as much fish as possible.
 
 On the other hand, we want also to be able to fish in the future!
 
-How much can we fish, before irrimediably depleting the pool?
+How much can we fish, before irremediably depleting the pool?
 
 ## MSY - Derivation
 
@@ -499,9 +499,9 @@ $H_{\text{max}} = \dfrac{r K}{4}$
 
 Initially developed in the 1930s, it started picking up momentum after WWII. 
 
-It was rapidly adopted by several international organizations, as well as individual counrtries.
+It was rapidly adopted by several international organizations, as well as individual countries.
 
-In the late 1970s, scientists beginned writing strong critiques of the concept.
+In the late 1970s, scientists began writing strong critiques of the concept.
 
 But, as Walters and Maguire (1996) put it *"Even if scientists had suddenly reversed their conclusions and had called loudly and publicly for harvest restraints, by about 1982 an institutional juggernaut had been set in motion that no political decision maker would have dared try to stop until it was too late. The window of opportunity had closed."*
 

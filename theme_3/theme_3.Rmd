@@ -28,7 +28,7 @@ output:
 
 -*Black Death* (1346-1350)  **Plague** -- up to 70% of the population of Europe
 
--*Cocoliztli* (1545-1548) **Viral hemorragic fever** -- 80% of the population of Mexico
+-*Cocoliztli* (1545-1548) **Viral hemorrhagic fever** -- 80% of the population of Mexico
 
 -*Spanish flu* (1918-1920) **Influenza** -- 75M deaths around the world
 
@@ -57,19 +57,19 @@ Illness resulting from the presence of pathogenic microbial agent:
 
 ## Mode of transmission
 - **Person-to-person**: either direct (e.g., STDs) or indirect contact (e.g., exchange of blood or other bodily fluids).
-- **Airborne**: ihalation of infected air (e.g., influenza, chickenpox, measles, tubercolosis).
+- **Airborne**: inhalation of infected air (e.g., influenza, chickenpox, measles, tuberculosis).
 - **Vector-borne**: transmitted by a vector (e.g., mosquito, tick, snail). West Nile virus, malaria, dengue, Zika are all vector-borne.
 - **Food-borne** and **water-borne**: ingestion of contaminated food or water. E.g., salmonella, cholera.
 - **Vertical**: from mother to child before birth (e.g., hepatitis B, herpes simplex).
 
 ## Famous victims
-- **Cholera** (*Vibrio cholera*, bacterium): Charlex X, king of France;  Friedrich Hegel; Carl von Clausewitz; Sadi Carnot (thermodynamics); Pyotr Ilyich Tchaikovsky (disputed)
+- **Cholera** (*Vibrio cholera*, bacterium): Charles X, king of France;  Friedrich Hegel; Carl von Clausewitz; Sadi Carnot (thermodynamics); Pyotr Ilyich Tchaikovsky (disputed)
 
 - **Malaria** (protozoa of the genus *Plasmodium*): Raffaello Sanzio; Caravaggio (?); George Byron; Amerigo Vespucci
 
 - **Tuberculosis** (*Mycobacterium tuberculosis*, bacterium): Tutankhamen; Baruch Spinoza; Simon Bolivar; Elizabeth Barrett Browning; Edgar Allan Poe; Frederic Chopin; Emily Bronte; Eleanor Roosevelt; George Orwell
 
-- **Syphilis** (*Treponema pallidum*, bacterium) Henri de Toulouse-Lautrec; Paul Gaugin; Edouard Manet; Oscar Wilde; Guy de Maupassant; Charles Baudelaire; Al Capone
+- **Syphilis** (*Treponema pallidum*, bacterium) Henri de Toulouse-Lautrec; Paul Gauguin; Edouard Manet; Oscar Wilde; Guy de Maupassant; Charles Baudelaire; Al Capone
 
 ## Modeling infectious diseases
 In 1926 Anderson Gray McKendrick published *Applications of mathematics to medical problems*, which contained a continuous-time dynamical model that serves as the jumping board for many models produced today. 
@@ -411,7 +411,7 @@ show(pl_eng)
 ```
 
 ## SIR for endemic diseases
-The model we've seen deals with epidemics, which is the spread of the disease over a short period of time (hence, we could consider the population to be fixed). For endemic diseases (i.e., which are circulating and maintained within the population), we need to accound for births and deaths. For simplicity, say that the population is at equilibrium, such that the number of births is close to the number of deaths:
+The model we've seen deals with epidemics, which is the spread of the disease over a short period of time (hence, we could consider the population to be fixed). For endemic diseases (i.e., which are circulating and maintained within the population), we need to account for births and deaths. For simplicity, say that the population is at equilibrium, such that the number of births is close to the number of deaths:
 
 $\begin{cases}
 \dfrac{d S(t)}{d t} = - \beta S(t) I(t) + \mu N - \mu S(t) \\
@@ -427,7 +427,7 @@ We have spread of the disease whenever
 
 $\beta S(t) I(t) - \gamma I(t) - \mu I(t) > 0$
 
-divde by $I(t)$, and set $S(t) = N$
+divdie by $I(t)$, and set $S(t) = N$
 
 $\beta N - \gamma - \mu > 0$
 
@@ -508,7 +508,7 @@ If we achieve this **critical level of vaccination**, we have **herd immunity**:
 ## Vaccination
 - Inoculation (variolation) started in China in the 10th century.
 - Take scabs from infected patients, and inoculate in the skin of healthy patients.
-- Care was taken in selecting patient who had contracted *Variola minor* (with much lower mortaility).
+- Care was taken in selecting patient who had contracted *Variola minor* (with much lower mortality).
 - A localized reaction would form, and the patient would gain immunity to both viruses.
 - Variolation still led to a $\approx 1\%$ mortality!
 - In 1796  Edward Jenner showed that immunity to smallpox could be produced by inoculating cowpox (a virus of the same family targeting cattle).
@@ -540,14 +540,14 @@ In 1978, a medical photographer died of smallpox, which he had contracted at the
 [Malcom Casadaban died of *Y. pestis* at UofC in 2011]
 
 
-This led to the decision of destroying the stock smallpox used for research. However, being in the height of the cold war, both the US and the Soviet Union decided to retain some samples (which of course could be used for bacteriological warfare...). In the US, the **CDC** conserves smallpox samples, while in Russia these are conserved at the **State Research Center of Virology and Biotechnology VECTOR in Koltsovo** (straight out of a James Bond movie).
+This led to the decision of destroying the stock of smallpox used for research. However, being in the height of the cold war, both the US and the Soviet Union decided to retain some samples (which of course could be used for biological warfare...). In the US, the **CDC** conserves smallpox samples, while in Russia these are conserved at the **State Research Center of Virology and Biotechnology VECTOR in Koltsovo** (straight out of a James Bond movie).
 
-The distruction of these samples (which would not bee needed for producing vaccines, should the need arise), as caused much controversy. See the 2011 NYT Op Ed from US Secretary of Health (*"Destroying the virus now is merely a symbolic act that would slow our progress and could even stop it completely, leaving the world vulnerable"*).
+The destruction of these samples (which would not be needed for producing vaccines, should the need arise), as caused much controversy. See the 2011 NYT Op Ed from US Secretary of Health (*"Destroying the virus now is merely a symbolic act that would slow our progress and could even stop it completely, leaving the world vulnerable"*).
 
 ## Exercise: 
-Diphteria is an infection caused by the bacterium *Corynebacterium diphtheriae*. It is fatal in 5-10% of cases (much higher fatalities for small children and adults over forty). After the fall of the Soviet Union vaccination faltered, leading to a large increase in the number of cases. 
+Diphtheria is an infection caused by the bacterium *Corynebacterium diphtheriae*. It is fatal in 5-10% of cases (much higher fatalities for small children and adults over forty). After the fall of the Soviet Union vaccination faltered, leading to a large increase in the number of cases. 
 
-In the US, children are immunized through the pentavalent DTP-HepB-Hib vaccine (Diphteria; Tetanus; Pertussis; Hepatitis B, Haemophilus influenza type B).
+In the US, children are immunized through the pentavalent DTP-HepB-Hib vaccine (Diphtheria; Tetanus; Pertussis; Hepatitis B, Haemophilus influenza type B).
 
 The $\mathscr R_0$ is about 7. Calculate the what proportion of children should be vaccinated in order to achieve herd immunity, taking into account that the efficacy of the vaccine is about 97%.
 
@@ -603,11 +603,11 @@ Keeling et al., Science 2001
 
 ## Modification of behavior: toxoplasmosis $\mathcal \Pi$
 
-Caused by the protozoan *Toxoplasma gondii*, can only reproduce in cats and other *Felidae*. Rodents can become infected by consuming infected faeces. Interestingly, infected rodents become "more extrovert" and lose their fear of cats.
+Caused by the protozoan *Toxoplasma gondii*, can only reproduce in cats and other *Felidae*. Rodents can become infected by consuming infected feces. Interestingly, infected rodents become "more extrovert" and lose their fear of cats.
 
 Several published articles show that toxoplasmosis affects human behavior as well (e.g., much higher probability of traffic accident)---including their "national culture" (see Lafferty 2006).
 
-In humans toxoplasmosis can be very common (up to 80% incidence), and is typically aquired by eating undercooked meat, or exposure to cats. 
+In humans toxoplasmosis can be very common (up to 80% incidence), and is typically acquired by eating undercooked meat, or exposure to cats. 
 
 ## Gordian worm $\mathcal \Pi$
 

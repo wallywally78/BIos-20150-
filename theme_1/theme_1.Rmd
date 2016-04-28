@@ -403,11 +403,11 @@ $\tau = \frac{log(2)}{r} = \frac{0.301029995...}{r}$
 Thus, if $r = 0.01$, then the population doubles every 30 years or so; $r = 0.05$, every 6 years; and so on.
 
 ## Halving time and carbon dating
-Unstable atoms release energy through radioactive decay. This process is random, and, at the level of the single atom, cannot be predicted. However, we can measure statistically  the rate at which atoms decay. The Carbon isotope $\mathrm{^{14}C}$ is formed in the athmosphere when cosmic rays strike Nitrogen atoms:
+Unstable atoms release energy through radioactive decay. This process is random, and, at the level of the single atom, cannot be predicted. However, we can measure statistically  the rate at which atoms decay. The Carbon isotope $\mathrm{^{14}C}$ is formed in the atmosphere when cosmic rays strike Nitrogen atoms:
 
 $n + \mathrm{^{14}_{7}N} \rightarrow \mathrm{^{14}_{6}C} + p$
 
-Radioactive carbon forms $\mathrm{CO}_2$ that is used by plants. Animals eat plants, etc. so that it is widely distributed in the biosphere. When an organism dies, it stops acquiring  $\mathrm{^{14}_{6}C}$. In the athmosphere/living organisms, there are about $1.5$ atoms of $\mathrm{^{14}C}$ for every $10^{12}$ of $\mathrm{^{12}C}$. The radioactive carbon loses an electron, and changes a proton into a neutron by emitting an electron antineutrino, resulting in Nitrogen. 
+Radioactive carbon forms $\mathrm{CO}_2$ that is used by plants. Animals eat plants, etc. so that it is widely distributed in the biosphere. When an organism dies, it stops acquiring  $\mathrm{^{14}_{6}C}$. In the atmosphere/living organisms, there are about $1.5$ atoms of $\mathrm{^{14}C}$ for every $10^{12}$ of $\mathrm{^{12}C}$. The radioactive carbon loses an electron, and changes a proton into a neutron by emitting an electron antineutrino, resulting in Nitrogen. 
 
 $\mathrm{~^{14}_{6}C}\rightarrow\mathrm{~^{14}_{7}N}+ e^- + \bar{\nu}_e$
 
@@ -427,7 +427,7 @@ This method was proposed by Willard Libby (UofC) and collaborators in 1949. They
 
 In 1988, three laboratories analyzed the sample. They found that it had lost about $8\%$ of its $\mathrm{^{14}C}$. Can you date the Shroud?
 
-You can use the forumla $N(t) = N(0) e^{-0.000121 t}$ to find the answer.
+You can use the formula $N(t) = N(0) e^{-0.000121 t}$ to find the answer.
 
 ## First law of ecology 
 
@@ -445,7 +445,7 @@ You can use the forumla $N(t) = N(0) e^{-0.000121 t}$ to find the answer.
 
 - In the 1920s, they were billions.
 
-- Efforts to contain rabbits included building three rabbit-proof fences (failed), releasing the virus for mixomatosis and rabbit  haemorrhagic disease. Read Bergstrom *et al.* 2009 for a detailed account on Macquarie Island in Tasmania.
+- Efforts to contain rabbits included building three rabbit-proof fences (failed), releasing the virus for mixomatosis and rabbit  hemorrhagic disease. Read Bergstrom *et al.* 2009 for a detailed account on Macquarie Island in Tasmania.
 
 ## Limits to growth
 Thomas R. Malthus (anonymously) published in 1798 a book entitled *An Essay on the Principle of Population, as It Affects the Future Improvement of Society, With Remarks
@@ -721,7 +721,7 @@ USFWS
 ## Halley's life tables 
 Edmond Halley was an astronomer, mathematician, and polymath. He was instrumental in encouraging Newton to publish his *Principia* (Halley also funded the publication). Halley's comet is named after him (last time seen in 1986, will be back in 2061).
 
-Halley also published the first *life table* in the 1693 article *"An estimate of the degrees of the mortality of mankind, drawn from curious tables of the births and funerals at the city of Breslaw, with an attempt to ascertain the price of annuities upon lives"*. 
+Halley also published the first *life table* in the 1693 article *"An estimate of the degrees of the mortality of mankind, drawn from curious tables of the births and funerals at the city of Breslau, with an attempt to ascertain the price of annuities upon lives"*. 
 
 This contribution marks the beginning of life insurance!
 
