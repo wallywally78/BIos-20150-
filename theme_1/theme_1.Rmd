@@ -137,7 +137,7 @@ system we use today.
 
 In 1202 he published the *Liber Abaci* where he introduced the number system
 that rapidly spread through Europe. The book contains a problem on the growth
-of the growth of rabbits, giving raise to the famous Fibonacci's sequence.
+of rabbits, giving raise to the famous Fibonacci's sequence.
 
 <div class="centered">
 <img src="./images/liber_abaci.jpg" alt="fib" height="600">
@@ -445,7 +445,7 @@ You can use the formula $N(t) = N(0) e^{-0.000121 t}$ to find the answer.
 
 - In the 1920s, they were billions.
 
-- Efforts to contain rabbits included building three rabbit-proof fences (failed), releasing the virus for mixomatosis and rabbit  hemorrhagic disease. Read Bergstrom *et al.* 2009 for a detailed account on Macquarie Island in Tasmania.
+- Efforts to contain rabbits included building three rabbit-proof fences (failed), releasing the virus for myxomatosis and rabbit  hemorrhagic disease. Read Bergstrom *et al.* 2009 for a detailed account on Macquarie Island in Tasmania.
 
 ## Limits to growth
 Thomas R. Malthus (anonymously) published in 1798 a book entitled *An Essay on the Principle of Population, as It Affects the Future Improvement of Society, With Remarks
@@ -836,4 +836,4 @@ show(pl_halley_bar)
 
 - Human populations follow a demographic transition, going from high mortality and high natality, to low mortality and low natality.
 
-- The stage in which mortality is low and birth rates are still high see the rapid rise of population numbers. 
+- The stage in which mortality is low and birth rates are still high has a rapid rise in population numbers. 
